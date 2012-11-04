@@ -210,11 +210,11 @@ We suggest that it cannot exist stably over time, unless it undergoes some proce
 If a process (or construction) remains stochastic (i.e. optional) in its behavior over time without fully specializing, the only way this situation can be maintained is if the process is \textbf{partially} specialized, but along some dimension of use which will not allow the construction to fully specialize because of some characteristic of the dimension itself.
 
 \subsubsection{Expanding the Argument to Phonology}
-It is worth noting that two of our case studies are morphophonological processes: {\it -in/-ing} Variation and {\it t/d} Deletion.
+It is worth noting that two of our case studies are morphophonological processes: {\sl -in}/{\sl -ing} Variation and {\sl t}/{\sl d} Deletion.
 Approaches to explaining variation within phonology, either stably optional or changing, have largely differed from approaches within syntax.
 The tendency has largely been to incorporate probabilities into the grammatical statements of the variable processes.
 
-Take, for example, the finely articulated specification of a variable rule from \citet{3288} for {\it t/d} Deletion in African American English.
+Take, for example, the finely articulated specification of a variable rule from \citet{3288} for {\sl t}/{\sl d} Deletion in African American English.
 \begin{exe}
  \ex $\left[\begin{array}{rl}
 	-&\mbox{cont}\\
@@ -237,7 +237,10 @@ Take, for example, the finely articulated specification of a variable rule from 
 \beta(\sim \mbox{V})$ \label{variable.rule}
 \end{exe}
 The variables, $\alpha, \beta, \gamma \ldots$ included in the definition of the triggering environment represent weights, or preferences, which bias the application of the deletion process. 
-They are assigned in order of the magnitude of the effect ($\alpha$: whether or not the preceding segment is consonantal, $\beta$: whether or not the following segment is a vowel), and are attached to features of segmental phonology (including those of the target) and to morphological boundaries (the $\gamma$ and $\delta$ effects).
+They are assigned in order of the magnitude of the effect ($\alpha$: whether or not the preceding segment is consonantal\footnote{From the data in \citet{3288}, it appears that in AAE, {\sl t}/{\sl d} deletion is not absolutely restricted to occur only within coda clusters.
+Rather, it is just more likely to occur in coda clusters.
+This raises an interesting question as to which elements ought to be included in the categorical vs.\ probabilistic components of variable descriptions.},
+$\beta$: whether or not the following segment is a vowel), and are attached to features of segmental phonology (including those of the target) and to morphological boundaries (the $\gamma$ and $\delta$ effects).
 \citet{Coetzee2011} offer a nice summary of more recent approaches to incorporating variation into grammars within different flavors of Optimality Theory, including Partially Ordered Constraints (essentially a form of underspecification), Stochastic OT, Noisy Harmonic Grammars, and Maximum Entropy Grammars.
 These formalisms differ in their evaluation, and in the probability distributions they produce, but one qualitative similarity between them is that they all encode the conditioning of variation \emph{within the grammar}. 
 For example, \citet{Coetzee2012} propose the following constraint set to account for contextual conditioning on English {\it t/d} Deletion.
@@ -253,6 +256,31 @@ For example, \citet{Coetzee2012} propose the following constraint set to account
 \end{exe}
 The constraints {\sc Max-Pre-V} and {\sc Max-Pre-Pause} correspond roughly to the $\beta$ effect in (\ref{variable.rule}). 
 A Noisy Harmonic Grammar assigns weights to each constraint in this constraint set, as well a constraint-specific noise parameter, allowing it to generate variable output.
+
+The Competing Grammars approach to variation is fundamentally different from the probabilistic grammar approach in the following way: the factors which influence the selection of one grammar or the other are not themselves part of the grammar.
+Redescribing the constraint set in (\ref{noisy.hg}) in terms of Competing Grammars would give us the constraint set in (\ref{competing.ot}), which eliminates the contextual versions of {\sc Max}.
+Two competing grammars given this constraint set are given in (\ref{ot.grammars}).
+Grammar 1 (\ref{ot.grammar1}) produces {\sl t}/{\sl d} deletion, and Grammar 2 (\ref{ot.grammar2}) does not.
+\begin{exe}
+	\ex \label{competing.ot}\ \\
+	\begin{tabular}{lp{3in}}
+	*{\sc Ct}]_{Word}& Assign one violation mark for every word that ends in the sequence [-Ct] or [-Cd]\\
+	{\sc Max} & Assign one violation mark for every input segment lacking an output correspondent (no deletion).
+	\end{tabular}
+	\ex \label{ot.grammars}
+		\begin{xlist}
+			\ex Grammar 1: *{\sc Ct}]_{Word} $\gg$ {\sc Max} \label{ot.grammar1}
+			\ex Grammar 2: {\sc Max} $\gg$ *{\sc Ct}]_{Word} \label{ot.grammar2}
+		\end{xlist}
+\end{exe}
+
+The selection of Grammar 1 or Grammar 2 is probabilistic, and driven by perhaps the same kind of cognitive system that selects different flavors of functional heads in syntactic variation.
+It has been richly established that Topicalization and Heavy NP Shift are sensitive to syntactic and pragmatic factors, as well as prosodic factors, such as the phonological weight of the object to be moved. %% Citation Please
+Likewise {\sl t}/{\sl d} deletion is sensitive the featural properties of the preceding and following segments, morphological boundaries, frequency of the target word, and as recently demonstrated by \citet{MacKenzie.Tamminga2012}, whether or not {\sl t}/{\sl d} deletion applied at its most recent opportunity.
+The proposal of the Competing Grammars hypothesis is that all of these influencing factors exist outside of the grammar proper.
+
+Is it worthwhile to try to reframe phonological variation in this way?
+Obviously, our answer is yes, 
 
 
 
