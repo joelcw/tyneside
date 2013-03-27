@@ -99,10 +99,18 @@ for(gen in 1:ngenerations){
 
 generations.df <- rbind.fill(generations)
 
-ggplot(generations.df, aes(iter, Ing))+
-  geom_step()+
-  facet_wrap(~generation)+
-  ylim(50,100)
+generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
+
+
+ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
+    geom_step()+
+    facet_wrap(~generation)+
+    ylim(30,100)
+
+#ggplot(generations.df, aes(iter, Ing))+
+#  geom_step()+
+#  facet_wrap(~generation)+
+#  ylim(50,100)
 
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
