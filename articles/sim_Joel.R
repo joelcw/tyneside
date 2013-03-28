@@ -16,8 +16,39 @@ generate_new_speaker <- function(niter, generation, min = 0, max = 100){
                      iter  = 1:niter,
                      generation = rep(generation, niter)
                     )
-  experience[["Ing"]][1]   <- (max-min)/2
-  experience[["In"]][1]    <- (max-min)/2
+#  experience[["Ing"]][1]   <- (max-min)/2
+#  experience[["In"]][1]    <- (max-min)/2
+
+#JCW: I am changing the above to be values generated from old_speaker
+
+
+currentobs <- generate_from_speaker(old_speaker)
+
+if(currentobs[["token"]] == "Ing"){
+	while(currentobs[["token"]] == "Ing"){
+		lastobs <- currentobs
+		currentobs <- generate_from_speaker(old_speaker)
+	}
+
+   	experience[["Ing"]][1]   <- lastobs[["style"]]
+   	experience[["In"]][1]    <- currentobs[["style"]]
+	print("Ing")
+	print(lastobs[["style"]])
+	print(currentobs[["style"]])
+}
+
+else {
+	while(currentobs[["token"]] == "In"){
+		lastobs <- currentobs
+		currentobs <- generate_from_speaker(old_speaker)
+	}
+
+   	experience[["Ing"]][1]   <- currentobs[["style"]]
+   	experience[["In"]][1]    <- lastobs[["style"]]
+	print("In")
+	print(lastobs[["style"]])
+	print(currentobs[["style"]])
+}
   experience[["token"]][1] <- NA
   experience[["style"]][1] <- NA
   return(experience)
@@ -68,6 +99,8 @@ generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
   
   return(list(style = style, token = token))
 }
+
+#initializing old speaker. these will be the style values for generation 0.
 
 #old_speaker should have SAME STYLE for in/ing, to model first generation after doublet is innovated
 old_speaker <- list(In    = 50,
