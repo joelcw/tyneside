@@ -32,6 +32,8 @@ if(currentobs[["token"]] == "Ing"){
 
    	experience[["Ing"]][1]   <- lastobs[["style"]]
    	experience[["In"]][1]    <- currentobs[["style"]]
+	
+	#debug
 	print("Ing")
 	print(lastobs[["style"]])
 	print(currentobs[["style"]])
@@ -45,6 +47,8 @@ else {
 
    	experience[["Ing"]][1]   <- currentobs[["style"]]
    	experience[["In"]][1]    <- lastobs[["style"]]
+	
+	#debug
 	print("In")
 	print(lastobs[["style"]])
 	print(currentobs[["style"]])
@@ -109,7 +113,7 @@ old_speaker <- list(In    = 50,
                      style = NA)
 
 ngenerations <- 12
-niter <- 11000
+niter <- 20000
 lambda <- 0.3
 
 generations <- vector(length = ngenerations, mode = "list")
