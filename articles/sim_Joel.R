@@ -75,8 +75,8 @@ old_speaker <- list(In    = 50,
                      token = NA,
                      style = NA)
 
-ngenerations <- 10
-niter <- 10000
+ngenerations <- 12
+niter <- 11000
 lambda <- 0.3
 
 generations <- vector(length = ngenerations, mode = "list")
@@ -105,7 +105,7 @@ generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
     facet_wrap(~generation)+
-    ylim(20,100)
+    ylim(0,100)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
