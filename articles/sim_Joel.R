@@ -70,13 +70,13 @@ generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
 }
 
 #old_speaker should have SAME STYLE for in/ing, to model first generation after doublet is innovated
-old_speaker <- list(In    = 40,
-                     Ing   = 70,
+old_speaker <- list(In    = 50,
+                     Ing   = 50,
                      token = NA,
                      style = NA)
 
 ngenerations <- 10
-niter <- 7000
+niter <- 10000
 lambda <- 0.3
 
 generations <- vector(length = ngenerations, mode = "list")
@@ -105,7 +105,7 @@ generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
     facet_wrap(~generation)+
-    ylim(30,100)
+    ylim(20,100)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
