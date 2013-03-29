@@ -112,7 +112,7 @@ old_speaker <- list(In    = 50,
                      token = NA,
                      style = NA)
 
-ngenerations <- 12
+ngenerations <- 20
 niter <- 20000
 lambda <- 0.3
 
@@ -138,6 +138,7 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
+pdf("20000iterPerGen.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
@@ -152,3 +153,58 @@ ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=var
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
   facet_wrap(~generation)
+
+dev.off()
+
+
+#Reinitializing old speaker for new run. These will be the style values for generation 0.
+
+#old_speaker should have SAME STYLE for in/ing, to model first generation after doublet is innovated
+old_speaker <- list(In    = 50,
+                     Ing   = 50,
+                     token = NA,
+                     style = NA)
+
+ngenerations <- 20
+niter <- 1000
+lambda <- 0.3
+
+generations <- vector(length = ngenerations, mode = "list")
+
+
+for(gen in 1:ngenerations){
+  new_speaker <- generate_new_speaker(niter = niter, generation=gen)
+  for(iter in 2:niter){
+    obs <- generate_from_speaker(old_speaker)
+#obs is a token and its associated style    
+    token <- obs[["token"]]
+    style <- obs[["style"]]
+    
+    new_speaker <- update_speaker(new_speaker, lambda=lambda, iter=iter, token=token, style=style)
+  }
+  generations[[gen]] <- as.data.frame(new_speaker)
+  old_speaker <- new_speaker
+}
+
+
+generations.df <- rbind.fill(generations)
+
+generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
+
+pdf("1000iterPerGen.pdf")
+
+ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
+    geom_step()+
+    facet_wrap(~generation)+
+    ylim(0,100)
+
+#ggplot(generations.df, aes(iter, Ing))+
+#  geom_step()+
+#  facet_wrap(~generation)+
+#  ylim(50,100)
+
+ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
+  stat_density(color = "black", position = "fill")+
+  facet_wrap(~generation)
+
+dev.off()
