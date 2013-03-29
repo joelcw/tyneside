@@ -66,10 +66,14 @@ other_token <- c(In = "Ing", Ing = "In")
 
 #expectation is a style value    
   previous_expectation <- speaker[[token]][iter-1]
-  dist    <- max(1, abs(style-previous_expectation))
+
 #If its closer than 1 unit to the expectation than dist = 1
+  dist    <- max(1, abs(style-previous_expectation))
+
+#weight is smaller at larger distances from the expectation
   weight  <- lambda * (1/(dist^2))
-  
+
+#check this update with Joe  
   new_expectation <- (previous_expectation * (1-weight)) + (style * weight)
   
   speaker[[token]][iter]   <- new_expectation
