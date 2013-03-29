@@ -117,7 +117,7 @@ old_speaker <- list(In    = 50,
                      style = NA)
 
 ngenerations <- 20
-niter <- 20000
+niter <- 1000
 lambda <- 0.3
 
 generations <- vector(length = ngenerations, mode = "list")
@@ -142,7 +142,7 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("20000iterPerGen.pdf")
+pdf("1000iterPerGen.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
@@ -170,7 +170,7 @@ old_speaker <- list(In    = 50,
                      style = NA)
 
 ngenerations <- 20
-niter <- 1000
+niter <- 20000
 lambda <- 0.3
 
 generations <- vector(length = ngenerations, mode = "list")
@@ -195,7 +195,7 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("1000iterPerGen.pdf")
+pdf("20000iterPerGen.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
