@@ -14,7 +14,7 @@ generate_new_speaker <- function(niter, generation, min = 0, max = 100){
                      token = vector(length = niter),
                      style = vector(length = niter),
                      iter  = 1:niter,
-                     generation = rep(generation, niter)
+                     generation = rep(generation, niter),
 		     InP = vector(length = niter),
 		     IngP = vector(length = niter)
                     )
@@ -59,9 +59,31 @@ else {
   experience[["style"]][1] <- NA
 
 #When the new speaker is generated, the overall probability of producing each variant is updated in order to model the competing grammars/replacement scenario. Note that this is only updated each generation, not each iteration.
-#Follows the logistic:
-  experience[["IngP"]][1] <- old_speaker[["IngP"]]
-  experience[["InP"]][1] <- old_speaker[["InP"]]
+
+#A logistic function, evaluated wrt generation, is used to generate the new probability for this generation.
+
+#The slope of the logistic is calculated as the nat log of the difference between the two variants' style expectation values from the last generation (divided by 100 so that they are between 0 and 1). The reason for this is that the slope will approach 0 as the difference between the two variants approaches 1; i.e. as the variants are more specialised, the change will slow down. Note that the slope will be negative, which means that the current scenario is with "in" being replaced by "ing".
+
+#The max func with .01 is so that the slope is not infinite when the style values are identical. Slope is divided by 10 so that it is not too steep.
+
+diff <- (old_speaker[["In"]]-old_speaker[["Ing"]])/100
+slope <- log(max(.01,abs(diff)))/10
+
+#The constant k is 0 below, so that the initial inp is 0.5. This is under a scenario where the specialization begins in the middle of a change.
+#generation starts at 0 rather than 1, so that the specialisation has an extra generation to start
+
+inp <- exp(slope*(generation-1))/(1+exp(slope*(generation-1)))
+ingp <- 1-inp
+
+  experience[["IngP"]] <- rep(ingp, niter)
+  experience[["InP"]] <- rep(inp, niter)
+
+#debug
+	print("slope inp ingp")
+	print(slope)
+	print(inp)
+	print(ingp)
+
   return(experience)
 }
 
@@ -112,7 +134,12 @@ generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
   
   #For the competing grammars/replacement scenario, these probabilities must be multipled by the overall prob of producing the given variant in that generation
 
-  token <- sample(c("In","Ing"), size=1, prob=c(In_prob,Ing_prob))
+  In_combined <- In_prob*speaker[["InP"]][1]
+  Ing_combined <- Ing_prob*speaker[["IngP"]][1]
+  
+  #this might be a silly way of doing this, but I assume that if neither In nor Ing are selected on the basis of the probabilities above, then the speaker has chosen something ineffable and must try again
+
+  	token <- sample(c("In","Ing"), size=1, prob=c(In_combined,Ing_combined))
   
   return(list(style = style, token = token))
 }
@@ -153,7 +180,7 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation", "InP", "IngP"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("1000iterPerGen.pdf")
+pdf("1000iterPerGen_replace.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
@@ -178,7 +205,9 @@ dev.off()
 old_speaker <- list(In    = 50,
                      Ing   = 50,
                      token = NA,
-                     style = NA)
+                     style = NA,
+		     InP = 0.5,
+		     IngP = 0.5)
 
 ngenerations <- 20
 niter <- 20000
@@ -206,7 +235,7 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation", "InP", "IngP"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("20000iterPerGen.pdf")
+pdf("20000iterPerGen_repl.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
     geom_step()+
