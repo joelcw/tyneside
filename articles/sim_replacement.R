@@ -192,6 +192,12 @@ ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=var
 #  facet_wrap(~generation)+
 #  ylim(50,100)
 
+ggplot(generations.df.melt, aes(generation, InP))+
+  geom_line()+
+  ylim(0,1)
+
+dev.off()
+
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
   facet_wrap(~generation)
@@ -250,5 +256,9 @@ ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=var
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
   facet_wrap(~generation)
+
+ggplot(generations.df.melt, aes(generation, InP))+
+  geom_line()+
+  ylim(0,1)
 
 dev.off()
