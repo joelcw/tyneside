@@ -1,0 +1,10 @@
+1) Theoretical benefits to viewing all variation/optionality as competing grammars
+   a. Syntax (heads)
+   b. Phonology (rewrite rules, determined by left-hand of rules, like a PCFG)
+   c. Morphology (rewrite rules, Spell-Out Rules)
+
+2) Specialization and replacement
+
+3) Why doesn't all the variation specialize (or resolve through replacement)? How could any optionality still exist?
+
+4) Answer, and prediction: it only exists when first, specialization has taken plance (stopping any change in progress), and secondly, the specialization is along a continuous dimension (at least -- of course, other dimensions may also be involved).
