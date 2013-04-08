@@ -73,7 +73,8 @@ update_speaker <- function(speaker, lambda, iter, token, style){
   #weight is smaller at larger distances from the expectation
   weight  <- lambda * (1/(dist^2))
   
-  #check this update with Joe  
+  #This is a weighted average. Instead of half of the new expectation coming from the old exp and half from the current style, we use the weight to figure out the proportions of the new expectation that should come from each the old and the current style. And as the current style gets farther away from the old expectation, we use less of it in determining the new expection.
+
   new_expectation <- (previous_expectation * (1-weight)) + (style * weight)
   
   speaker[[token]][iter]   <- new_expectation
