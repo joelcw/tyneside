@@ -169,7 +169,7 @@ old_speaker <- list(In    = 50,
                     InP = 0.5,
                     IngP = 0.5)
 
-ngenerations <- 20
+ngenerations <- 30
 niter <- 1000
 lambda <- 0.3
 
@@ -231,7 +231,7 @@ old_speaker <- list(In    = 50,
                     InP = 0.5,
                     IngP = 0.5)
 
-ngenerations <- 20
+ngenerations <- 30
 niter <- 20000
 lambda <- 0.3
 
