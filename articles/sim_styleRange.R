@@ -4,7 +4,7 @@ library(reshape2)
 library(plyr)
 
 
-generate_new_speaker <- function(niter, generation, min = 0, max = 200, old_speaker){
+generate_new_speaker <- function(niter, generation, min = 0, max = 137, old_speaker){
   # This function generates a new learner.
   #"In" and "Ing" are the (mean) style values for each variant
   #token is whihc variant they just heard
@@ -85,7 +85,7 @@ update_speaker <- function(speaker, lambda, iter, token, style){
   return(speaker)
 }
 
-generate_from_speaker <- function(speaker, min = 0, max = 200, eps = 0.001){
+generate_from_speaker <- function(speaker, min = 0, max = 137, eps = 0.001){
   # this function generates a tokens from a mature speaker
   #Choose style to speak, which is an independent choice
   style <- runif(1, min, max)
@@ -143,17 +143,17 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("1000iterPerGen_Style200.pdf")
+pdf("1000iterPerGen_Style137.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
-  ylim(0,200)
+  ylim(0,137)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
 #  facet_wrap(~generation)+
-#  ylim(50,200)
+#  ylim(50,137)
 
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
@@ -196,17 +196,17 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("20000iterPerGen_Style200.pdf")
+pdf("20000iterPerGen_Style137.pdf")
 
 ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
-  ylim(0,200)
+  ylim(0,137)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
 #  facet_wrap(~generation)+
-#  ylim(50,200)
+#  ylim(50,137)
 
 ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   stat_density(color = "black", position = "fill")+
