@@ -194,11 +194,13 @@ for(gen in 1:ngenerations){
 
 generations.df <- rbind.fill(generations)
 
+#The melting allows us to plot both variants later on
+
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
 pdf("20000iterPerGen.pdf")
 
-ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
+ggplot(subset(generations.df.melt,iter%%10==0), aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
   ylim(0,100)
