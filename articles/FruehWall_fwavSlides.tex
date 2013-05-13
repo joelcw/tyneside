@@ -33,9 +33,8 @@
 %gets rid of navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
-\title{Indirect questions: variation, competition and diachrony}
-\author{Joel C. Wallenberg and Josef Fruehwald\\Newcastle University, University of Pennsylvania}%\\
-    %\texttt{\{joel.wallenberg,w.a.m.van-der-wurff\}@ncl.ac.uk}}
+\title{Optionality is Stable Variation is Competing Grammars}
+\author{Joel C. Wallenberg and Josef Fruehwald\\Newcastle University, University of Pennsylvania}
 \institute{}
 %\date[]{March 18, 2013 \\ University of Oslo}
 
@@ -56,19 +55,23 @@
 			\item Leads to language change via the replacement of one grammatical process by another.
 			\item Competition is parameterized in some fashion, as in competing flavors of the same functional head \citep{kroch1994}.
 		\end{itemize}
-		\item Optionality
+		\item Optionality (within a grammar?)
 		\begin{itemize}
-			\item Stable variation between grammatical processes.
+			\item Diachronically stable variation between grammatical processes.
 		\end{itemize}
 	\end{enumerate}
 	
 \end{frame}
 
 \begin{frame}{Introduction}
-	We will argue that grammatical optionality is handled by the same formal mechanisms as competing grammars, with the following consequences.
+	We will argue that grammatical optionality is formally the same as competing grammars, with the following consequences:
 	\begin{itemize}
-		\item The difference between language change and stable variation must be explained by some mechanism outside of the formal grammar. We will argue that one possible explanation is the partial specialization of one variant along a continuous dimension.
-		\item Optionality in grammar must also be parameterized. The implications of this point are greater for stable phonological variation.
+		\item The difference between language change and stable variation/optionality must be explained by some mechanism outside of the grammar itself. 
+%		\item The linguistic system (and therefore the variation) interacts with various dimensions of language use, which have their own characteristics. 
+%the (in)stability of a competing grammars situation
+		\item We argue that it depends on the mathematical character of some extragrammatical dimension with which the variation interacts.
+			\begin{itemize} \item Partial specialization of variants along a continuous dimension. \end{itemize}
+%		\item Optionality in grammar must also be parameterized. The implications of this point are greater for stable phonological variation.
 	\end{itemize}
 
 \end{frame}
@@ -79,12 +82,12 @@
 \end{frame}
 
 
-\section{Evolution and Acquisition}
+\section{Blocking and Contrast}
 %Maybe revise presentation
-\subsection{Blocking and Contrast}
+\subsection{How doublets resolve, and why.}
 \begin{frame}
 \frametitle{Blocking and Contrast}
-\begin{block}{The Blocking Effect}
+\begin{block}{``Blocking Effect''}
 	\begin{itemize}
 		\item General cognitive pressure against two forms existing for one function (``doublet'') (e.g. morphosyntactic doublets as in \citealt{kroch1994}).
 		%\item The possible historical outcomes of a doublet are replacement (one form left) or specialisation (forms diverge in function).
@@ -111,9 +114,10 @@
 	\item A doublet is two variants competing for finite resources, as in e.g. biological evolution.
 		\begin{itemize} 
 			\item Instead of competing for something like food, they are competing for use (time in the mouths/brains of speakers) 
-			\item Selection operates on the number of times a variant is \textbf{heard} (i.e. and processed) by an acquirer. 		\end{itemize}
+			%\item Selection operates on the number of times a variant is \textbf{heard} (i.e. and processed) by an acquirer. 		
+			\end{itemize}
 	\item Either one variant has an advantage, and so replaces the other \citep[following a logistic function;][]{nowak2006}.
-	\item Or neither variant has an advantage, in which case random walk behaviour ensues (until drift kills one variant, in a finite population model).
+	\item Or neither variant has an advantage, in which case random walk behaviour ensues.
 	\item But in linguistic doublets, random walk cannot persist indefinitely because of the acquisition pressure of the Principle of Contrast.
 \end{itemize}
 \end{frame}
@@ -122,10 +126,10 @@
 \frametitle{Competing Grammars}
 \begin{itemize}
 	\item This entire interpretation is dependent on some notion of ``competing grammars'' \citep{kroch1989, kroch1994}
-	\item \textbf{Competing Grammars, general form}: 2 variants are available to a speaker with overlapping functions (e.g. the same meaning), and can't both be used at the same time.
+	\item[ ] \textbf{Competing Grammars, general form}: 2 variants are available to a speaker with overlapping functions (e.g. the same meaning), and can't both be used at the same time.
 		\begin{itemize}
-			\item E.g. two versions of the same syntactic head, and which occupy the same place in the phrase structure. 
-			\item E.g. two different output mappings for the same phonological input
+			\item E.g. two featural versions of the same syntactic head. 
+			\item E.g. two different output mappings for the same phonological input.
 			\item E.g. two different spell-outs of a morpheme.
 		\end{itemize}
 	\item Necessary for the description of \textbf{any} linguistic change in a categorical dimension.
@@ -138,7 +142,7 @@
 
 
 \begin{frame}{Blocking and Contrast}
-	The possible historical outcomes of doublets (Competing Grammars) driven by the Blocking Effect and the Principle of Contrast are
+	The possible historical outcomes of doublets (Competing Grammars) driven by the Blocking Effect and the Principle of Contrast are:
 	\begin{itemize} 
 		\item Replacement of one by the other.
 		\item Specialization of the two forms to different functions or meaning.
@@ -264,10 +268,11 @@ And she'll feed \textbf{the third} \textbf{junk food}.\\
 \begin{frame}
 \frametitle{Topicalization in Minimalism}
 \begin{itemize}
-	\item Under current assumptions, Move is triggered by the feature content of some head.
+	\item Move is triggered by the feature content of some head.
 	\item Given ``Merge...preempts Move'' \citep{chomsky2000}, a feature cannot encode optional movement.
 	\item Therefore, optional movement must involve a choice (for the \textbf{Numeration}) between two variants of a functional head, out of an inventory of possible heads:
 \end{itemize}
+\vspace{2mm}
 
 \Tree [.CP XP_i [.C' {C\\$[F]$} \qroof{...t_i...}.TP ] ] \Tree [.CP C \qroof{...XP...}.TP ]
 
@@ -281,12 +286,12 @@ And she'll feed \textbf{the third} \textbf{junk food}.\\
 \begin{frame}
 \frametitle{A Minimalist Hypothesis}
 \begin{itemize}
-	\item Given that: 
+	\item[ ] Given that: 
 		\begin{itemize} 
 		\item these mechanics are necessary to encode syntactic optionality in a Minimalist system,
 		\item the same mechanics are necessary to describe a change in progress
 		\end{itemize}
-	\item Then, the system is simplest if no more machinery is added to deal with optionality/variation.
+	\item[ ] Then, the system is simplest if no more machinery is added to deal with optionality/variation.
 \end{itemize}
 
 \end{frame}
@@ -306,11 +311,11 @@ And she'll feed \textbf{the third} \textbf{junk food}.\\
 
 \end{frame}
 
-%\section{Embedded Polar Questions}
+\subsection{Example: Embedded Polar Questions}
 
 \begin{frame}
 \frametitle{Example: Embedded Polar Questions}
-A quantitative study of embedded \textsl{yes/no}-questions in English and Icelandic, comparing the use of \textsl{whether} vs. \textsl{if}, and \textsl{hvort} vs \textsl{ef} found specialisation in English, and replacement in Icelandic (Bailey, Wallenberg, \& van der Wurff 2012) \nocite{baileywallenbergwurff2012}.\\
+A quantitative study of embedded \textsl{yes/no}-questions in English and Icelandic, comparing the use of \textsl{whether} vs. \textsl{if}, and \textsl{hvort} vs \textsl{ef} found specialisation in English, and replacement in Icelandic (Bailey, Wallenberg, \& van der Wurff 2012). \nocite{baileywallenbergwurff2012}\\
 	\begin{exe}
 		\ex John wondered whether Mary was coming to the party.
 		\ex John wondered if Mary was coming to the party.
@@ -362,7 +367,6 @@ A quantitative study of embedded \textsl{yes/no}-questions in English and Icelan
 
 
 
-\subsection{Quantitative Study}
 
 %\begin{frame}
 %\frametitle{A Quantitative Study}
@@ -550,12 +554,15 @@ IcePaHC \small{(Wallenberg, AK Ingason, EF Sigurðsson, \& E Rögnvaldsson 2011)
 %\end{frame}
 %
 
+\section{Stable Variation}
 \begin{frame}
 \frametitle{Continuous Dimensions}
+\textbf{Hypothesis:} Stable variation, i.e. optionality, results from categorical variants specializing along a continuous dimension.\\
+\vspace{4mm}
 There are many possible continuous dimensions, including language internal dimensions like
 	\begin{itemize}
-		\item weight
-		\item prosody
+		\item weight (word length)
+		\item prosodic accent (number of aligned prosodic peaks, degree of stress clash between two positions)
 	\end{itemize}
 and language external dimensions like
 	\begin{itemize}
@@ -564,7 +571,7 @@ and language external dimensions like
 	\end{itemize}
 \end{frame}
 
-
+\subsection{Example: Topicalization}
 \begin{frame}
 \frametitle{Example: English Topicalization}
 
@@ -585,6 +592,7 @@ and language external dimensions like
 	\end{exe}
 \end{frame}
 
+\subsection{Example: -\textipa{In}$\sim$-\textipa{IN}}
 \begin{frame}{Example: -\textipa{In}$\sim$-\textipa{IN}}
 	\begin{exe}
 			\ex John has been \{singing/singin'\}.
@@ -592,15 +600,25 @@ and language external dimensions like
 	\end{exe}
 	\begin{itemize}
 		\item Is the frequency stable over time? Probably, as the variation has its roots in OE morphology (Houston 1985), and both variants were present in Middle English texts \citep{labov1989}.
-		\item Is it specialized for different grammatical contexts? Partially, along a nominal$\leftrightarrow$verbal dimension \citep{labov1989}.
-		\item It it specialized for different speech styles? Partially.
+		\item Is it specialized for different grammatical contexts? Yes, in part, along a nominal$\leftrightarrow$verbal dimension \citep{labov1989}.
+		\item It it specialized for different speech styles? Yes, in part, along a continuous dimension of formality.
 	\end{itemize}
 
 
 \end{frame}
 
+\subsection{Acquisition Simulation}
 \begin{frame}{Example: -\textipa{In}$\sim$-\textipa{IN}}
-	A proof of concept simulation shows that partial specialization of variants along a continuous dimension like style is plausible.
+	A proof of concept simulation shows that plausibly, under minimal acquisition assumptions:
+	\begin{itemize}
+	\item Variants specialize along a continuous dimension like style.
+	\item For a continuous dimension, the process will stabilize at \textbf{partial} specialization. 
+	\item[ ] \begin{itemize}
+		\item[\textbf{Gen 0:}]  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
+		\item[\textbf{Gen 1:}]  \textbf{Gen 1} learns an estimate for the style value of -\textipa{In}, \textipa{IN}, as soon as she hears the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as she gets more data from \textbf{Gen 0}.
+		\item[\textbf{Gen 2:}] \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
+	\end{itemize}
+	\end{itemize}
 \end{frame}
 
 
@@ -614,18 +632,27 @@ and language external dimensions like
 \begin{frame}{Conclusions}
 	\begin{block}{Conclusions}
 		\begin{itemize}
-			\item Within syntax, only one formal account of optionality is available, and it is the same one which accounts for language change: Competing Grammars.
+			\item Within syntax, only one formal account of optionality is available, the same one that accounts for language change: Competing Grammars.
+			\item This results in replacement, specialization, or stable variation (true optionality).
+			\item The latter is (only) the result of mapping categorical variation onto a continuous dimension of specialization.
+			\item An acquisition simulation shows how stable variation can emerge under a minimal Principle of Contrast.
 			\item It is possible and desirable to extend this formal account to other domains of variation, like morphology and phonology.
 		\end{itemize}
 	\end{block}
+
+
+\end{frame}
+
+\begin{frame}{Conclusions}
 	\begin{block}{Further Work}
 		\begin{itemize}
-			\item Figure out what factors influence specialisation vs replacement, and they do not appear to be deterministic.
+			\item Figure out what factors influence specialisation vs replacement, as they do not \textbf{appear} to be deterministic.
 			\item Figure out how to appropriately parameterize phonological variation.
 		\end{itemize}
 	\end{block}
 
 \end{frame}
+
 
 
 \begin{frame}[allowframebreaks]
