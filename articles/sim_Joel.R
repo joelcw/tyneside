@@ -87,7 +87,7 @@ update_speaker <- function(speaker, lambda, iter, token, style){
 
 generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
   # this function generates a tokens from a mature speaker
-  #Choose style to speak, which is an independent choice
+  #Choose style to speak, which is an independent choice from a uniform dist.
   style <- runif(1, min, max)
   
   #Takes their last expectation for the style of each token
