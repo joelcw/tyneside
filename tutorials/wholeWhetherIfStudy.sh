@@ -15,7 +15,7 @@ set ycoe="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/YCOE/*.psd"
 
 set ppcme2="/Users/yoelw/CurrentLx/OldNorse/ppcmeWork/*.ref"
 
-set ppceme="/Users/yoelw/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCEME-RELEASE-1/corpus/psd/*/*.psd"
+set ppceme="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCEME-RELEASE-1/corpus/psd/*/*.psd"
 
 set ppcmbe="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCMBE/*.ref"
 
