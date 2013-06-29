@@ -155,6 +155,10 @@ OR
 
 //The approximate years below are only there in case some texts are not caught by the above years, e.g. 174X.
 
+      \1535:  (*-E1-* inID)
+      \1605:  (*-E2-* inID)
+      \1675:  (*-E3-* inID)
+
 // plain "*" after square brackets doesn't work as intended,
 // so use the more explicit ".*"
     \1725:  (*-17[01234].* inID)

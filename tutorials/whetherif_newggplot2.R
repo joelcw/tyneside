@@ -3,7 +3,7 @@ library(plyr)
 
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("~/CurrentLx/OldNorse/whether/whetherif.ymeb.cod.ooo",header=F,sep=":")
+foo <- read.delim("whetherif.ymeb.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
