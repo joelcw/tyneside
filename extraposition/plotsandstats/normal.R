@@ -1,0 +1,1 @@
+ggplot(data.frame(x = c(0, 100)), aes(x)) + stat_function(fun = dnorm, args = list(mean = 25, sd = 10))+stat_function(fun = dnorm, args = list(mean = 75, sd = 10))
