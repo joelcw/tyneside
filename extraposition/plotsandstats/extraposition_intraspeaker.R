@@ -15,6 +15,7 @@ colnames(foo) <- c("Extraposed","Position","TextOrSpeech","Weight","Year","ASex"
 
 ex.data <- subset(foo,Extraposed != "z" & Position != "z" & Year != "z" & Year != "0" & ASex != "z" & RSex != "z" & Author != "z")
 
+
 library(gdata)
 
 
@@ -31,16 +32,27 @@ ex.data$Extraposed <- as.numeric(as.character(ex.data$WQ))
 
 ####Fit a logistic regression with whether vs. if as a binary outcome, output a summary of the model, and output a model comparison to models without various factors.
 
-whether.fit <- glm(WQ~Disj*Year, family = binomial, data=whether.data)
-summary(whether.fit)
-anova(whether.fit, test = "Chisq")
+ex.fit <- glm(Extraposition~Year*Position*TextOrSpeech*Weight*ASex*RSex*Author, family = binomial, data=ex.data)
+summary(ex.fit)
+anova(ex.fit, test = "Chisq")
+
+####Mixed effects logistic; check with joe about how author affects all this stuff
+
+library(lme4)
+
+ex.fit2 <- lmer(Extraposition ~ Year + Position + TextOrSpeech + Weight + ASex + RSex + Author + (1|Author), data = psm, family = binomial)
 
 
 ####Plot the logistic model of the data with ggplot2, creating a plot object.
 
+###Subsetting Author to only a few with the most data
+
+ex.data <- subset(foo,Author == "z")
+
+
 library(RColorBrewer)
 
-#p <- ggplot(whether.data, aes(Year,WQ,color=Disj)) + scale_y_continuous(name = "Probability of Whether", breaks=seq(0,1,by=0.1), labels=c("If",seq(0.1,0.9,by = 0.1),"Whether") ) + scale_x_continuous(name = "\nTime") + stat_sum(aes(size=..n.., alpha=.5)) + scale_size_area(max_size=12) + stat_smooth(method="glm", family ="binomial",fullrange=F) + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1")
+p <- ggplot(ex.data, aes(Weight,Extraposition,color=Author)) + scale_y_continuous(name = "Probability of Whether", breaks=seq(0,1,by=0.1), labels=c("If",seq(0.1,0.9,by = 0.1),"Whether") ) + scale_x_continuous(name = "\nTime") + stat_sum(aes(size=..n.., alpha=.5)) + scale_size_area(max_size=12) + stat_smooth(method="glm", family ="binomial",fullrange=F) + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1")
 
 ####Save the plot as a pdf file, with dimensions that are pleasing to the eye.
 
