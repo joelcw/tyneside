@@ -2,11 +2,12 @@ CS="java -classpath /Users/yoelw/CurrentLx/OldNorse/CS_2.003.03.jar csearch/Corp
 
 pceec="/Users/yoelw/CurrentLx/OldNorse/hnps/pceec/psd/*.psd"
 
-rm cprelExtraposSimplified.pceec.cod
-$CS cprelExtraposSimplified.pceec.c $pceec
+#rm cprelExtraposSimplified.pceec.cod
+#$CS cprelExtraposSimplified.pceec.c $pceec
 
-rm relevant.out
-$CS relevant.q cprelExtraposSimplified.pceec.cod
+#rm relevant.out
+#$CS relevant.q cprelExtraposSimplified.pceec.cod
+
 
 rm cprelExtrapos.pceec.cod
 $CS cprelExtrapos.pceec.c relevant.out
