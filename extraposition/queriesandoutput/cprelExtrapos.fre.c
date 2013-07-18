@@ -1,11 +1,12 @@
 //Modified query for cprel extraposition in the PCEEC corpus, based on original query by AKIngason
 
-//CAVEAT: Simplified query, to create output for cprelExtrapos.pceec.c and relevant.q. See runstudyPCEEC.sh
+//CAVEAT: this query is long enough that it will take over a day to run. A better way is to first extract a list of tokens relevant to the variation by leaving out the last few parts of the query (which is the query cprelExtraposSimplified.pceec.c), and then use relevant.q, and then run this whole query on the output and recode it that way. See runstudyPCEEC.sh
 
 node: IP*
 define: /Users/yoelw/CurrentLx/OldNorse/verbtopic.def
 coding_query:
 
+/*
 
 // 1: extraposed
 // 0: in situ
@@ -19,14 +20,14 @@ coding_query:
 	z: ELSE
 }
 
-// SBJ vs OBJ; Note that PP should be included ideally, both here and in the 0 1 coding above, but I have commented it out below to simplify the pilot study.
+// SBJ vs OBJ
 2: {	
 	sbj: (IP* idoms NP-SBJ*)
            AND (NP-SBJ* idoms CP-REL*)
 	obj: (IP* idoms NP-OB*)
        	   AND (NP-OB* idoms CP-REL*)
-    //        pp: (IP* idoms PP*)
-    //    AND (PP* idoms NP) AND (NP idoms CP-REL*)
+        pp: (IP* idoms PP*)
+    AND (PP* idoms NP) AND (NP idoms CP-REL*)
         z: ELSE
 }
 
@@ -38,7 +39,8 @@ coding_query:
            AND (NP-SBJ*|NP-OB* idoms CP-REL*)	
 	z: ELSE
 }
-/*Originally intended for definiteness. I'm leaving it out because it's complicated and I'm not sure it works.
+
+Originally intended for definiteness. I'm leaving it out because it's complicated and I'm not sure it works.
 // n: noun NP
 // r: proper name
 // d: determiner
@@ -96,13 +98,15 @@ coding_query:
 //	  (NP-OB1 (NP (Q-A margt-margur)
 //		      (NP-POS (NS-G smáskipa-smáskip)))
 
-*/
+
 
 4: {
-	spch: (IP-*-SPE* idoms NP-SBJ*|NP-OB*)
+	spch: (IP-*-SPE*|IP-*-SPE* idoms NP-SBJ*|NP-OB*)
 	    AND (NP-SBJ*|NP-OB* idoms CP-REL*)	
 	txt: ELSE
 }
+
+
 
 // numwords
 5: {
@@ -207,4 +211,79 @@ coding_query:
 	\99: (CP-REL* domswords 99)
 	\100: (CP-REL* domswords> 99)
 	z: ELSE
+}
+*/
+
+// time period
+6: {
+
+\0980: (*0980* inID)
+\1050: (*10xx* inID)
+\1100: (*1100* inID)
+\1120: (*1120* inID)
+\1150: (*1150* inID)
+\1165: (*116x* inID)
+\1170: (*1170* inID)
+\1190: (*1190* inID)
+\1205: (*1205* inID)
+\1210: (*1210* inID)
+\1212: (*1212* inID)
+\1225: (*1225* inID)
+\1225: (*122x* inID)
+\1255: (*125x* inID)
+\1279: (*1279* inID)
+\1275: (*127x* inID)
+\1309: (*1309* inID)
+\1335: (*133x* inID)
+\1369: (*1369* inID)
+\1370: (*1370* inID)
+\1371: (*1371* inID)
+\1372: (*1372* inID)
+\1374: (*1374* inID)
+\1375: (*1375* inID)
+\1376: (*1376* inID)
+\1377: (*1377* inID)
+\1375: (*137x* inID)
+\1450: (*1450* inID)
+\1455: (*145x* inID)
+\1498: (*1498* inID)
+\1523: (*1523* inID)
+\1527: (*1527* inID)
+\1585: (*158x* inID)
+
+}
+
+// TEXT
+7: {
+     leger_v: (*LEGER* inID)
+     alexi_v: (*ALEXIS* inID)
+     rolan_v: (*ROLAND* inID)
+     brend_r: (*BRENDAN* inID)
+     quatr_p: (*QUATRE* inID)
+     marie_r: (*MARIE* inID)
+     yvain_r: (*YVAIN* inID)
+     boron_r: (*BORON-R* inID)
+     clari_p: (*CLARI* inID)
+     boron_p: (*BORON-P* inID)
+     eustf_r: (*EUSTACE-FISHER-R* inID)
+     quest_p: (*QUESTE* inID)
+     agnes_p: (*AGNES* inID)
+     aucas_p: (*AUCASSIN-*-P* inID)
+     aucas_v: (*AUCASSIN-*-V* inID)
+     eustp_r: (*EUSTACE-PETERSEN-R* inID)
+     turpi_p: (*TURPIN* inID)
+     eustm_p: (*EUSTACE-MURRAY-P* inID)
+     somme_p: (*SOMME* inID)
+     cassi_p: (*CASSIDORUS* inID)
+     joinv_p: (*JOINVILLE* inID)
+     perce_p: (*PERCEFOREST* inID)
+     frois_p: (*FROISSART* inID)
+     prise_r: (*PRISE* inID)
+     xvjoi_p: (*XV-JOIES* inID)
+     cnna__p: (*CNNA* inID)
+     commy_p: (*COMMYNES* inID)
+     newte_p: (*NEW-TEST* inID)
+     bayar_p: (*BAYART* inID)
+     valoi_p: (*VALOIS* inID)
+     z:     ELSE
 }

@@ -9,22 +9,25 @@ coding_query:
 
 // 1: extraposed
 // 0: in situ
+// there is an additional condition to exclude copular clauses because of the diffiuclty of identifying subjects
 1: {
-	\1: (IP* idoms NP-SBJ*|NP-OB*)
-           AND (NP-SBJ*|NP-OB* idoms CP-REL*)
+	\1: (IP* idoms NP-SBJ*|NP-NOM*|object)
+    AND (IP* idoms V*|D*)
+           AND (NP-SBJ*|NP-NOM*|object idoms CP-REL*)
  	   AND (CP-REL* iDomsViaTrace \*ICH* IP-SUB*) 
-	\0: (IP* idoms NP-SBJ*|NP-OB*)
-           AND (NP-SBJ*|NP-OB* idoms CP-REL*)
- 	   AND (CP-REL* idoms IP-SUB*) 
+	\0: (IP* idoms NP-SBJ*|NP-NOM*|object)
+           AND (NP-SBJ*|NP-NOM*|object idoms CP-REL*)
+ 	   AND (CP-REL* idoms IP-SUB*)
+    AND (IP* idoms V*|D*)
 	z: ELSE
 }
 
 // SBJ vs OBJ; Note that PP should be included ideally, both here and in the 0 1 coding above, but I have commented it out below to simplify the pilot study.
 2: {	
-	sbj: (IP* idoms NP-SBJ*)
-           AND (NP-SBJ* idoms CP-REL*)
-	obj: (IP* idoms NP-OB*)
-       	   AND (NP-OB* idoms CP-REL*)
+	sbj: (IP* idoms NP-SBJ*|NP-NOM*)
+           AND (NP-SBJ*|NP-NOM* idoms CP-REL*)
+	obj: (IP* idoms object)
+       	   AND (object idoms CP-REL*)
     //        pp: (IP* idoms PP*)
     //    AND (PP* idoms NP) AND (NP idoms CP-REL*)
         z: ELSE
@@ -32,75 +35,16 @@ coding_query:
 
 // MAT vs SUB
 3: {
-	mat: (IP-MAT* idoms NP-SBJ*|NP-OB*)
-           AND (NP-SBJ*|NP-OB* idoms CP-REL*)	
-	sub: (IP-SUB* idoms NP-SBJ*|NP-OB*)
-           AND (NP-SBJ*|NP-OB* idoms CP-REL*)	
+	mat: (IP-MAT* idoms NP-SBJ*|NP-NOM*|object)
+           AND (NP-SBJ*|NP-NOM*|object idoms CP-REL*)	
+	sub: (IP-SUB* idoms NP-SBJ*|NP-NOM*|object)
+           AND (NP-SBJ*|NP-NOM*|object idoms CP-REL*)	
 	z: ELSE
 }
-/*Originally intended for definiteness. I'm leaving it out because it's complicated and I'm not sure it works.
-// n: noun NP
-// r: proper name
-// d: determiner
-// p: pronoun
-// q: quantifier
-
-4: {	i: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-	   AND (NP-SBJ*|NP-OB* idoms N-*|NS-*|ADJ-*|ADJR-*|ADJS-*|SUCH-*|ADV*) 
-           AND (NP-SBJ*|NP-OB* idoms !D-*)  
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* !D-*|PRO-*|NPR-*|NPRS-*) ) 
-	d: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-           AND (NP-SBJ*|NP-OB* idoms Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-*) 
-    	   AND (Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-* idoms *-allur|*-hver|*-flest*)
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* !D-*|PRO-*|NPR-*|NPRS-*) )
-	d: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)          
-	   AND (NP-SBJ*|NP-OB* idoms NP)
-           AND (NP idoms Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-*)
-    	   AND (Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-* idoms *-allur|*-hver|*-flest*) 
-  	   AND (NP idoms NP-POS*)
-           AND (NP-POS* idoms !D-*|PRO-*|NPR-*|NPRS-*) )  
-	i: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-           AND (NP-SBJ*|NP-OB* idoms Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-*) 
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* !D-*|PRO-*|NPR-*|NPRS-*) )
-	i: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)          
-	   AND (NP-SBJ*|NP-OB* idoms NP)
-           AND (NP idoms Q-*|QR-*|QS-*|NUM-*|ONE-*|OTHER*-*) 
-  	   AND (NP idoms NP-POS*)
-           AND (NP-POS* idoms !D-*|PRO-*|NPR-*|NPRS-*) )  
-	d: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-           AND (NP-SBJ*|NP-OB* idoms D-*|PRO-*|NPR-*|NPRS-*) ) 
-	d: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* D-*|PRO-*|NPR-*|NPRS-*) ) 
-	d: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-	   AND (NP-SBJ*|NP-OB* idomsmod NP N-*|NS-*|ADJ-*|ADJR-*|ADJS-*|SUCH-*|ADV*) 
-           AND (NP-SBJ*|NP-OB* idomsmod NP D-*)  ) 
-	i: ( (IP-MAT*|IP-SUB* idoms NP-SBJ*|NP-OB*)
-  	   AND (NP-SBJ*|NP-OB* idoms CP-REL*)
-           AND (NP-SBJ*|NP-OB* idoms !D-*)  
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* !D-*|PRO-*|NPR-*|NPRS-*) 
-           AND (NP-SBJ*|NP-OB* idomsmod NP-POS* N-*|NS-*|ADJ-*|ADJR-*|ADJS-*|SUCH-*|ADV*) )
-
-	z: ELSE
-}
-
-
-
-//	  (NP-OB1 (NP (Q-A margt-margur)
-//		      (NP-POS (NS-G smáskipa-smáskip)))
-
-*/
 
 4: {
-	spch: (IP-*-SPE* idoms NP-SBJ*|NP-OB*)
-	    AND (NP-SBJ*|NP-OB* idoms CP-REL*)	
+	spch: (IP-*-SPE* idoms NP-SBJ*|NP-NOM*|object)
+	    AND (NP-SBJ*|NP-NOM*|object idoms CP-REL*)	
 	txt: ELSE
 }
 
