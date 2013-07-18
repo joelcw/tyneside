@@ -15,7 +15,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech","Weight","Yea
 
 "Got up to subsetting"
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & ASex != "z" & RSex != "z" & Author != "z" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & ASex != "z" & RSex != "z" & Author != "z" & Weight != "z")
 
 
 library(gdata)
