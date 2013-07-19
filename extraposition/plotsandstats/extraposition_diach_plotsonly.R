@@ -56,12 +56,11 @@ tail(ex.data)
 
 ####Create a new data frame for the percentage plot which averages percentages for each century. Again, this is not useful for real data analysis -- just for making this particular plot.
 
-plot.data <- ddply(ex.data, .(Time2),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
+plot.data <- ddply(ex.data, .(Time2,Position),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
 
 "finished plot.data"
 
-head(plot.data)
-tail(plot.data)
+plot.data
 
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
@@ -79,7 +78,7 @@ foo <- read.delim("../queriesandoutput/cprelExtrapos.ice.cod.ooo",header=F,sep="
 
 ####Give appropriate column names to the columns
 
-colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year")
+colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year","Text","Genre")
 
 
 ####Throw out all the codes that refer to tokens that are irrelevant for the study.
@@ -111,12 +110,29 @@ ex.data$Time2 <- floor(ex.data$Year/50)*50
 
 ####Create a new data frame for the percentage plot which averages percentages for each century. Again, this is not useful for real data analysis -- just for making this particular plot.
 
-plot.data <- ddply(ex.data, .(Time2),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
+plot.data <- ddply(ex.data, .(Time2,Position),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
 
 
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
 ggsave(p, file = "exSbjObjYearBinned50Loess.ice.pdf", width = 8, height = 5)
+
+
+####Icelandic again, using narrative texts only
+
+ex.data <- subset(ex.data,Genre == "nar")
+
+ex.data <- droplevels(ex.data)
+
+####Create a new data frame for the percentage plot which averages percentages for each century. Again, this is not useful for real data analysis -- just for making this particular plot.
+
+plot.data <- ddply(ex.data, .(Time2,Position),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
+
+
+p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
+
+ggsave(p, file = "exSbjObjYearBinned50Loess.icenar.pdf", width = 8, height = 5)
+
 
 
 
@@ -160,8 +176,9 @@ ex.data$Time2 <- floor(ex.data$Year/50)*50
 
 ####Create a new data frame for the percentage plot which averages percentages for each century. Again, this is not useful for real data analysis -- just for making this particular plot.
 
-plot.data <- ddply(ex.data, .(Time2),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
+plot.data <- ddply(ex.data, .(Time2, Position),summarize, whet = mean(Extraposed, na.rm = T), n = sum(!is.na(Extraposed)))
 
+plot.data
 
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
