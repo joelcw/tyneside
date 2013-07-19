@@ -54,7 +54,7 @@ foo <- read.delim("../queriesandoutput/cprelExtrapos.ice.cod.ooo",header=F,sep="
 
 ####Give appropriate column names to the columns
 
-colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year")
+colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year","Text","Genre")
 
 
 ####Throw out all the codes that refer to tokens that are irrelevant for the study.
@@ -82,7 +82,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 
 "Icelandic Model"
 
-ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
+ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight*Genre, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
 
