@@ -17,6 +17,7 @@ ppcmbe="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCM
 
 #Run Study on PPCHE
 
+
 rm cprelExtraposSimplified.ymeb.cod
 $CS cprelExtraposSimplified.diach.c $ycoe $ppcme2 $ppceme $ppcmbe -out cprelExtraposSimplified.ymeb.cod
 
