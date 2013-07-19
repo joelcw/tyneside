@@ -17,7 +17,7 @@ ppcmbe="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCM
 
 #Run Study on PPCHE
 
-: '
+
 rm cprelExtraposSimplified.ymeb.cod
 $CS cprelExtraposSimplified.diach.c $ycoe $ppcme2 $ppceme $ppcmbe -out cprelExtraposSimplified.ymeb.cod
 
@@ -39,14 +39,14 @@ $CS cprelExtraposSimplified.diach.c $icepahc -out cprelExtraposSimplified.ice.co
 rm relevant.ice.out
 $CS relevant.q cprelExtraposSimplified.ice.cod -out relevant.ice.out
 
-'
+
 rm cprelExtrapos.ice.cod
 $CS cprelExtrapos.ice.c relevant.ice.out
 
 rm cprelExtrapos.ice.cod.ooo
 $CS codes.q cprelExtrapos.ice.cod
 
-: '
+
 #Run Study on Middle French Corpus
 
 rm cprelExtraposSimplified.fre.cod
@@ -61,4 +61,3 @@ $CS cprelExtrapos.fre.c relevant.fre.out
 
 rm cprelExtrapos.fre.cod.ooo
 $CS codes.q cprelExtrapos.fre.cod
-'
