@@ -69,6 +69,28 @@ p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(
 ggsave(p, file = "exSbjObjYearBinned50Loess.ymeb.pdf", width = 8, height = 5)
 
 
+####Plotting average weight of ex for subject only
+
+ex.data <- subset(ex.data, Position == "sbj")
+
+ex.data <- droplevels(ex.data)
+
+####Creates data frame with average weight for both extraposed and non extraposed, and n for each time period
+
+plot.data <- ddply(ex.data, .(Time2,Extraposed),summarize, whet = mean(Weight, na.rm = T), n = sum(!is.na(Extraposed)))
+
+"finished plot.data"
+
+plot.data$Extraposed <- as.character(plot.data$Extraposed)
+plot.data
+
+p <- ggplot(plot.data, aes(Time2, whet, color=Extraposed, group=Extraposed)) + labs(y = "Average Weight of Extraposed from Sbj Clauses", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set2")
+
+ggsave(p, file = "exWeightYearBinned50Loess.ymeb.pdf", width = 8, height = 5)
+
+
+
+
 
 ####For Icelandic data.
 ####Read the file of CorpusSearch codes into an R data frame.
@@ -116,6 +138,28 @@ plot.data <- ddply(ex.data, .(Time2,Position),summarize, whet = mean(Extraposed,
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
 ggsave(p, file = "exSbjObjYearBinned50Loess.ice.pdf", width = 8, height = 5)
+
+
+
+####Plotting average weight of ex for subject only
+
+ex.data <- subset(ex.data, Position == "sbj")
+
+ex.data <- droplevels(ex.data)
+
+####Creates data frame with average weight for both extraposed and non extraposed, and n for each time period
+
+plot.data <- ddply(ex.data, .(Time2,Extraposed),summarize, whet = mean(Weight, na.rm = T), n = sum(!is.na(Extraposed)))
+
+"finished plot.data"
+
+plot.data$Extraposed <- as.character(plot.data$Extraposed)
+plot.data
+
+p <- ggplot(plot.data, aes(Time2, whet, color=Extraposed, group=Extraposed)) + labs(y = "Average Weight of Extraposed from Sbj Clauses", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set2")
+
+ggsave(p, file = "exWeightYearBinned50Loess.ice.pdf", width = 8, height = 5)
+
 
 
 ####Icelandic again, using narrative texts only
@@ -183,3 +227,23 @@ plot.data
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
 ggsave(p, file = "exSbjObjYearBinned50Loess.fre.pdf", width = 8, height = 5)
+
+
+####Plotting average weight of ex for subject only
+
+ex.data <- subset(ex.data, Position == "sbj")
+
+ex.data <- droplevels(ex.data)
+
+####Creates data frame with average weight for both extraposed and non extraposed, and n for each time period
+
+plot.data <- ddply(ex.data, .(Time2,Extraposed),summarize, whet = mean(Weight, na.rm = T), n = sum(!is.na(Extraposed)))
+
+"finished plot.data"
+
+plot.data$Extraposed <- as.character(plot.data$Extraposed)
+plot.data
+
+p <- ggplot(plot.data, aes(Time2, whet, color=Extraposed, group=Extraposed)) + labs(y = "Average Weight of Extraposed from Sbj Clauses", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set2")
+
+ggsave(p, file = "exWeightYearBinned50Loess.fre.pdf", width = 8, height = 5)
