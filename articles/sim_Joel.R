@@ -143,23 +143,25 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-pdf("1000iterPerGen.pdf")
+#pdf("1000iterPerGen.pdf")
 
-ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
+p <- ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
   ylim(0,100)
+
+ggsave(p, file = "1000iterPerGenNice.pdf", width = 8, height = 5)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
 #  facet_wrap(~generation)+
 #  ylim(50,100)
 
-ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
-  stat_density(color = "black", position = "fill")+
-  facet_wrap(~generation)
+#ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
+#  stat_density(color = "black", position = "fill")+
+#  facet_wrap(~generation)
 
-dev.off()
+#dev.off()
 
 
 #Reinitializing old speaker for new run. These will be the style values for generation 0.
