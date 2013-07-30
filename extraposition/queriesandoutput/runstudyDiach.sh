@@ -14,6 +14,7 @@ ppceme="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCE
 
 ppcmbe="/Users/yoelw/CurrentLx/OldNorse/historicalsyntaxcourse/PENN-CORPORA/PPCMBE/*.ref"
 
+tychobrahe="/Users/yoelw/CurrentLx/OldNorse/tychobrahe/*psd.txt"
 
 #Run Study on PPCHE
 
@@ -61,3 +62,19 @@ $CS cprelExtrapos.fre.c relevant.fre.out
 
 rm cprelExtrapos.fre.cod.ooo
 $CS codes.q cprelExtrapos.fre.cod
+
+
+#Run Study on Tycho Brahe Portuguese Corpus
+
+rm cprelExtraposSimplified.port.cod
+$CS cprelExtraposSimplified.diach.c $tychobrahe -out cprelExtraposSimplified.port.cod
+
+rm relevant.port.out
+$CS relevant.q cprelExtraposSimplified.port.cod -out relevant.port.out
+
+
+rm cprelExtrapos.port.cod
+$CS cprelExtrapos.port.c relevant.port.out
+
+rm cprelExtrapos.port.cod.ooo
+$CS codes.q cprelExtrapos.port.cod
