@@ -108,6 +108,9 @@ plot.data <- ddply(ex.data, .(Time2, Position),summarize, whet = mean(Extraposed
 
 p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
+"N for PCEEC ="
+plot.data$n
+
 ggsave(p, file = "exSbjObjYearBinned50.pdf", width = 8, height = 5)
 
 ####Trying the same stuff, but using only sbj position
