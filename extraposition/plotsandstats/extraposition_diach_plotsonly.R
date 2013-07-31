@@ -265,7 +265,7 @@ foo <- read.delim("../queriesandoutput/cprelExtrapos.port.cod.ooo",header=F,sep=
 
 ####Give appropriate column names to the columns
 
-colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year","Text")
+colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year")
 
 
 ####Throw out all the codes that refer to tokens that are irrelevant for the study.
@@ -306,7 +306,7 @@ p <- ggplot(plot.data, aes(Time2, whet, color=Position, group=Position)) + labs(
 "N for Portuguese =" 
 sum(plot.data$n)
 
-ggsave(p, file = "exSbjObjYearBinned50Loess.fre.pdf", width = 8, height = 5)
+ggsave(p, file = "exSbjObjYearBinned50Loess.port.pdf", width = 8, height = 5)
 
 
 ####Plotting average weight of ex for subject only
@@ -326,4 +326,4 @@ plot.data
 
 p <- ggplot(plot.data, aes(Time2, whet, color=Extraposed, group=Extraposed)) + labs(y = "Average Weight of Extraposed from Sbj Clauses", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set2")
 
-ggsave(p, file = "exWeightYearBinned50Loess.fre.pdf", width = 8, height = 5)
+ggsave(p, file = "exWeightYearBinned50Loess.port.pdf", width = 8, height = 5)
