@@ -1,5 +1,5 @@
 
-1.1
+(CODE 1.1)
 (NPR孟) (NPR子) (VB見) (NPR梁) (NPR惠) (NPR王)
 (N王) (VB曰) (N叟) (NEG不) (VB遠) (NUM千) (N里)
 (CON而) (VB來)
@@ -25,7 +25,7 @@
 (N王) (ALSO亦) (VB曰) (N仁) (N義) (SP而已) (SP矣)
 (WADV何) (ADV必) (VB曰) (N利)
 
-1.2
+(CODE 1.2)
 (NPR孟) (NPR子) (VB見) (NPR梁) (NPR惠) (NPR王)
 (N王) (VB立) (P於) (N$沼) (N上)
 (VB顧) (N鴻) (N雁) (N麋) (N鹿)
@@ -60,7 +60,7 @@
 (N民) (MD欲) (P與) (PRO之) (ADV皆) (VB亡)
 (P雖) (HV有) (N臺) (N池) (N鳥) (N獸)
 (WADV豈) (MD能) (ADV獨) (VB樂) (SP哉)
-1.3
+(CODE 1.3)
 (NPR梁) (NPR惠) (NPR王) (VB曰) (ADJ寡) (N人) (DEG之) (P於) (N國) (SP也) 
 (VB盡) (N心) (PRO焉) (SP耳) (SP矣)
 (NPR河) (NPR內) (VB凶）
@@ -125,7 +125,7 @@
 (VB兵) (SP也)
 (N王) (NEG無) (VB罪) (N歲)
 (ADV斯) (N天下) (DEG之) (N民) (VB至) (PRO焉)
-1.4
+(CODE 1.4)
 (NPR梁) (NPR惠) (NPR王) (VB曰) (ADJ+N寡人) (MD願) (ADV安) (VB承) (N教) (NPR孟) (NPR子) (VB對) (VB曰) (VB殺) (N人) (P以) (N梃) (CONJ與)(N刃)
 (HV+P有以) (VA異) (SP乎)(VB曰) (NEG+HV無) (P以) (VA異) (SP也)(P以) (N刃) (CONJ與) (N政) (HV+P有以) (VA異) (SP乎)(VB曰) (NEG+HV無) (P以) (N異) (SP也)(VB曰) (N庖) (HV有) (ADJ肥) (N肉)
 (N廄) (HV有) (ADJ肥) (N馬)
@@ -142,7 +142,9 @@
 (P為) (PRO其) (VB象) (N人) 
 (CONJ而) (VB用) (PRO之) (SP也)
 (VB如) (PRO之) (WADV何)
-(ADV其) (VB使) (D斯) (N民) (VA飢) (CONJ而) (VB死) (SP也)1.5(NPR梁) (NPR惠) (NPR王) (VB曰) (NPR晉) (N國) (N$天) (N下) (Q莫)(VA強) (P+PRO焉)
+(ADV其) (VB使) (D斯) (N民) (VA飢) (CONJ而) (VB死) (SP也)
+
+(CODE 1.5) (NPR梁) (NPR惠) (NPR王) (VB曰) (NPR晉) (N國) (N$天) (N下) (Q莫)(VA強) (P+PRO焉)
 (N叟) (DEG之) (PRO所) (VB知) (SP也)
 (P及) (ADJ+N寡人) (DEG之) (N身) (ADV東) (VB敗) (P於) (NPR齊)
 (ADJ長) (N子) (VB死) (P+PRO焉)
@@ -169,4 +171,4 @@
 (N王) (VB往) (CONJ而) (VB征) (PRO之)
 (INTJ夫) (WPRO誰) (CONJ與) (N王) (VB敵)
 (ADV故) (VB曰) (N仁) (ZHE者) (NEG+HV無) (N敵)
-(N王) (ADV請) (NEG勿) (VB疑)
+(N王) (ADV請) (NEG勿) (VB疑)
