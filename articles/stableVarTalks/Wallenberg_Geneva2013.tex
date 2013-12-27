@@ -33,10 +33,10 @@
 %gets rid of navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
-\title{A unified theory of stable variation, syntactic optionality, and syntactic change}
+\title{Change, Stable Variation, and Why They're the Same Thing}
 \author{Joel C. Wallenberg\\Newcastle University\\\texttt{joel.wallenberg@ncl.ac.uk}}
 \institute{}
-\date[]{December 17, 2013 \\ University of Geneva}
+\date[]{December 17, 2013 \\ Seminaire de Récherche \\Université de Genève}
 
 \begin{document}
 
@@ -70,7 +70,7 @@
 		\item True optionality = stable variation, and its difference from language change must be explained by some mechanism of language use, outside of the grammar itself. 
 %		\item The linguistic system (and therefore the variation) interacts with various dimensions of language use, which have their own characteristics. 
 %the (in)stability of a competing grammars situation
-		\item We argue that it depends on the mathematical character of some extragrammatical dimension with which the variation interacts.
+		\item We argue that it depends on the mathematical character of some extragrammatical dimension (or external to the variable's grammar) with which the variation interacts.
 			\begin{itemize} \item Partial specialization of variants along a continuous dimension. \end{itemize}
 %		\item Optionality in grammar must also be parameterized. The implications of this point are greater for stable phonological variation.
 	\end{itemize}
@@ -135,9 +135,9 @@
 			\item Instead of competing for something like food, they are competing for use (time in the mouths/brains of speakers). 
 			\item \textbf{Selection} operates on the number of times a variant is heard (and accurately analyzed) by an acquirer.
 			\end{itemize}
-	\item Either one variant has an advantage, and so replaces the other \citep[following a logistic function;][]{nowak2006}.
+	\item Either one variant has an advantage, and so \textbf{replaces} the other \citep[following a logistic function;][]{nowak2006}.
 	\item Or neither variant has an advantage (or much of one), in which case random walk and drift.
-	\item But in linguistic doublets, random walk cannot persist indefinitely because of the acquisition pressure of the Principle of Contrast.
+	\item But in linguistic doublets, random walk cannot persist indefinitely because of the acquisition pressure of the Principle of Contrast (\textbf{specialization}).
 \end{itemize}
 \end{frame}
 
@@ -600,7 +600,7 @@ IcePaHC \citep{icepahc09}
 \vspace{4mm}
 There are many possible continuous dimensions, including language internal dimensions like
 	\begin{itemize}
-		\item weight (word length)
+		\item weight (word or phrase length, or other prosodic measure)
 		\item prosodic accent (number of aligned prosodic peaks, degree of stress clash between two positions)
 	\end{itemize}
 and language external dimensions like
@@ -661,7 +661,7 @@ and language external dimensions like
 	A proof of concept simulation shows that plausibly, under minimal acquisition assumptions:
 	\begin{itemize}
 	\item Variants specialize along a continuous dimension like style.
-	\item For a continuous dimension, the process will stabilize at \textbf{partial} specialization. 
+	\item For a continuous dimension, the process will stabilize at \textbf{partial} specialization (\textbf{Caveat}). 
 	\item[ ] \begin{itemize}
 		\item[\textbf{Gen 0:}]  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
 		\item[\textbf{Gen 1:}]  \textbf{Gen 1} learns an estimate for the style value of -\textipa{In}, \textipa{IN}, as soon as she hears the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as she gets more data from \textbf{Gen 0}.
@@ -771,7 +771,7 @@ and language external dimensions like
 \begin{itemize}
 	\item \textbf{English:} YCOE \citep{ycoe}, PPCME2 \citep{ppcme2}, PPCEME \citep{ppceme}, PPCMBE \citep{ppcmbe}.
 	\item \textbf{Icelandic:} IcePaHC \citep{icepahc09}.
-	\item \textbf{Old/Middle French:} MCVF Corpus (Martineau, Hirschbühler, Kroch \& Charles Morin, 2010) \nocite{mcvf}
+	\item \textbf{Old/Middle French:} MCVF Corpus (Martineau, Hirschbühler, Kroch, \& Charles Morin, 2010) \nocite{mcvf}
 	\item \textbf{Historical Portuguese:} Tycho Brahe Corpus of Historical Portuguese \citep{tychobrahe}.
 	\end{itemize}
 	\textbf{Hypothesis 1:} the specialization for weight has stabilized, so the effect of weight will be constant over time. \textbf{(Confirmed!)}
@@ -909,12 +909,12 @@ and language external dimensions like
 		\begin{itemize}
 			\item Now that we have questioned stability in \textbf{replacement}, we should question stability in \textbf{specialization} too.
 				\begin{itemize}
-					\item Perhaps both processes continue without every stabilizing, but they bleed each other.
+					\item Perhaps both processes continue without ever stabilizing, but they bleed each other (cf. weight effect in French).
 					\item The actual outcome of the change depends on the relative speeds of replacement and specialization.
 					\item \textbf{Hypothesis:} the rate of specialization is fixed, given the general frequency of the construction.
 				\end{itemize}
 			\item The relative clause result needs to be checked, esp. for restrictive relative clauses.
-			\item The topicalization change needs to be investigated further (ongoing research with A. Kroch).
+			\item The topicalization change needs investigated further (ongoing research with A. Kroch).
 			\item Check drift hypothesis mathematically.
 				\end{itemize}
 	\end{block}
@@ -934,7 +934,7 @@ and language external dimensions like
 
 \begin{frame}{Acknowledgements}
 \begin{center}
-Thank you first to Josef Fruehwald for working out many of these ideas with me, and to Anthony Kroch for much discussion of these issues. Thanks to Anton Karl Ingason for use of his CS queries. Also Aaron Ecay, Caitlin Light, Laurel Mackenzie, Ian Roberts, Wim van der Wurff, and participants at DiGS 15 and the LSA Institute for comments on earlier versions of this work. 
+Thank you first to Josef Fruehwald for working out many of these ideas with me, and to Anthony Kroch for much discussion of these issues. Thanks to Anton Karl Ingason for use of his CS queries. Also Aaron Ecay, Caitlin Light, Laurel Mackenzie, Ian Roberts, Meredith Tamminga, Wim van der Wurff, and participants at DiGS 15 and the LSA Institute for comments on earlier versions of this work. 
 \vspace{5mm}\\
 Simulation: \texttt{github.com/joelcw/tyneside/blob/master/articles/sim\_Joel.R}
 \vspace{1mm}\\
