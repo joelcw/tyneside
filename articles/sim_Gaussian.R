@@ -95,12 +95,20 @@ generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
   Ing_expect <- rev(speaker[["Ing"]])[1]
   
   #eps is epsilon, the smallest value that something can take, as in clustering algorithms
-  In_dist  <- max(eps, abs(style - In_expect))
-  Ing_dist <- max(eps, abs(style - Ing_expect))
+  #In_dist  <- max(eps, abs(style - In_expect))
+  #Ing_dist <- max(eps, abs(style - Ing_expect))
   
-  In_weight  <- 1/(In_dist^2)
-  Ing_weight <- 1/(Ing_dist^2)
+  #In_weight  <- 1/(In_dist^2)
+  #Ing_weight <- 1/(Ing_dist^2)
   
+  ####JCW: I am changing the distributions to Gaussians around the expectations, and the weights to point densities of the expectations drawn from those distributions.
+ ####Since I don't want to add assumptions about how the variance of the Gaussians is estimated, I'm going to assume the sd is 12.5, just cause it looks reasonable on a scale of 0,100.
+
+ In_weight  <- dnorm(style, mean=In_expect, sd=12.5)
+ Ing_weight <- dnorm(style, mean=Ing_expect, sd=12.5)
+  
+
+
   In_prob  <- In_weight /(In_weight+Ing_weight)
   Ing_prob <- Ing_weight/(In_weight+Ing_weight)
   
