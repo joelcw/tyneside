@@ -151,14 +151,14 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-#pdf("1000iterPerGen.pdf")
+#pdf("1000iterPerGen_Gauss.pdf")
 
 p <- ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
   ylim(0,100)
 
-ggsave(p, file = "1000iterPerGenNice.pdf", width = 8, height = 5)
+ggsave(p, file = "1000iterPerGenNice_Gauss.pdf", width = 8, height = 5)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
@@ -208,14 +208,14 @@ generations.df <- rbind.fill(generations)
 
 generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
 
-#pdf("20000iterPerGen.pdf")
+#pdf("20000iterPerGen_Gauss.pdf")
 
 p <- ggplot(subset(generations.df.melt,iter%%10==0), aes(x = iter, y = Estimate, color=variant, group=variant))+
   geom_step()+
   facet_wrap(~generation)+
   ylim(0,100)
 
-ggsave(p, file = "20000iterPerGen.pdf", width = 8, height = 5)
+ggsave(p, file = "20000iterPerGen_Gauss.pdf", width = 8, height = 5)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
