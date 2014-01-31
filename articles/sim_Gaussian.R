@@ -102,10 +102,11 @@ generate_from_speaker <- function(speaker, min = 0, max = 100, eps = 0.001){
   #Ing_weight <- 1/(Ing_dist^2)
   
   ####JCW: I am changing the distributions to Gaussians around the expectations, and the weights to point densities of the expectations drawn from those distributions.
- ####Since I don't want to add assumptions about how the variance of the Gaussians is estimated, I'm going to assume the sd is 12.5, just cause it looks reasonable on a scale of 0,100.
+ ####Since I don't want to add assumptions about how the variance of the Gaussians is estimated, I'm going to assume the sd is 12.5, just cause it looks reasonable on a scale of 0,100. But tried with 20 also.
 
- In_weight  <- dnorm(style, mean=In_expect, sd=12.5)
- Ing_weight <- dnorm(style, mean=Ing_expect, sd=12.5)
+ 
+ In_weight  <- dnorm(style, mean=In_expect, sd=20)
+ Ing_weight <- dnorm(style, mean=Ing_expect, sd=20)
   
 
 
@@ -227,3 +228,51 @@ ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
   facet_wrap(~generation)
 
 #dev.off()
+
+
+#Reinitializing old speaker for new run at 40000 tokens per gen.
+
+old_speaker <- list(In    = 50,
+                    Ing   = 50,
+                    token = NA,
+                    style = NA)
+
+ngenerations <- 20
+niter <- 40000
+lambda <- 0.3
+
+generations <- vector(length = ngenerations, mode = "list")
+
+
+for(gen in 1:ngenerations){
+  new_speaker <- generate_new_speaker(niter = niter, generation=gen, old_speaker = old_speaker)
+  for(iter in 2:niter){
+    obs <- generate_from_speaker(old_speaker)
+    #obs is a token and its associated style    
+    token <- obs[["token"]]
+    style <- obs[["style"]]
+    
+    new_speaker <- update_speaker(new_speaker, lambda=lambda, iter=iter, token=token, style=style)
+  }
+  generations[[gen]] <- as.data.frame(new_speaker)
+  old_speaker <- new_speaker
+}
+
+
+generations.df <- rbind.fill(generations)
+
+#The melting allows us to plot both variants later on
+
+generations.df.melt <- melt(generations.df, value.name = "Estimate", id.vars = c("token", "style", "iter", "generation"), variable.name = "variant", na.rm = TRUE, measure.vars = c("In", "Ing"))
+
+p <- ggplot(subset(generations.df.melt,iter%%10==0), aes(x = iter, y = Estimate, color=variant, group=variant))+
+  geom_step()+
+  facet_wrap(~generation)+
+  ylim(0,100)
+
+ggsave(p, file = "40000iterPerGen_Gauss.pdf", width = 8, height = 5)
+
+ggplot(subset(generations.df, !is.na(style)), aes(style, fill = token))+
+  stat_density(color = "black", position = "fill")+
+  facet_wrap(~generation)
+

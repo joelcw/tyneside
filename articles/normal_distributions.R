@@ -1,11 +1,11 @@
 library(ggplot2)
 
-center1 <- -1
-center2 <-  1
+center1 <- 25
+center2 <-  75
 
-dist1 <- dnorm(seq(-4,4,length = 100), mean= center1)
-dist2 <- dnorm(seq(-4,4,length = 100), mean = center2)
-style <- seq(-4,4, length = 100)
+dist1 <- dnorm(seq(0,100,length = 100), mean= center1, sd=12.5)
+dist2 <- dnorm(seq(0,100,length = 100), mean = center2, sd=12.5)
+style <- seq(0,100, length = 100)
 
 
 dists_df <- data.frame(variant1 = dist1, variant2 = dist2, style = style)
