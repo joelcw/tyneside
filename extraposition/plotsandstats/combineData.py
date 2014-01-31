@@ -17,7 +17,8 @@ lines = infile.readlines()
 for line in lines:
     line = line.replace("\n","")
     fields = line.split(":")
-    outfile.write("%s:%s:%s:%s:%s:Icelandic\n" % (fields[0],fields[1],fields[2],fields[3],fields[4]))
+    if len(fields) >= 6:
+        outfile.write("%s:%s:%s:%s:%s:%s:Icelandic\n" % (fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]))
 
 infile = open("../queriesandoutput/cprelExtrapos.fre.cod.ooo","r")
 
@@ -26,7 +27,8 @@ lines = infile.readlines()
 for line in lines:
     line = line.replace("\n","")
     fields = line.split(":")
-    outfile.write("%s:%s:%s:%s:%s:French\n" % (fields[0],fields[1],fields[2],fields[3],fields[4]))
+    if len(fields) >=6:
+        outfile.write("%s:%s:%s:%s:%s:%s:French\n" % (fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]))
 
 infile = open("../queriesandoutput/cprelExtrapos.port.cod.ooo","r")
 

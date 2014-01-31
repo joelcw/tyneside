@@ -4,7 +4,7 @@ library(plyr)
 ####For English data.
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/allLangsEx.cod.ooo",header=F,sep=":")
+foo <- read.delim("allLangsEx.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
