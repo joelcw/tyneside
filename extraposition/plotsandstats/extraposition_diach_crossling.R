@@ -16,7 +16,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 "Got up to subsetting"
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z" & Language != "")
 
 
 library(gdata)
@@ -62,7 +62,7 @@ plot.data <- ddply(ex.data, .(Time2,Language),summarize, whet = mean(Extraposed,
 
 plot.data
 
-p <- ggplot(plot.data, aes(Time2, whet, color=Language, group=Language)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)+facet_wrap(~Language)
+p <- ggplot(plot.data, aes(Time2, whet, color=Language, group=Language)) + labs(y = "Probability of Extraposition", x = "\nTime Period") + geom_point(aes(size = n)) + scale_size_area(max_size=12) + stat_smooth() + scale_alpha_continuous(guide="none", limits = c(0,.7)) + scale_color_brewer(palette = "Set1") + ylim(0,1)
 
 "finished plot"
 "N for English =" 
