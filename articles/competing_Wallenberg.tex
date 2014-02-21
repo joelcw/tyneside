@@ -230,10 +230,42 @@ However, it is possible for some categorical linguistic processes (or doublets) 
 
 %%%%What about using t-glottaling??? as an example%%%%
 
-\subsubsection{Expanding the Argument to Phonology}
-It is worth noting that two of our case studies are morphophonological processes: {\sl -in}/{\sl -ing} Variation and {\sl t}/{\sl d} Deletion.
-Approaches to explaining variation within phonology, either stably optional or changing, have largely differed from approaches within syntax.
-The tendency has largely been to incorporate probabilities into the grammatical statements of the variable processes.
+\subsection{Expanding the Argument to Phonology}
+
+It may not be immediately obvious how an argument based on competing flavors of functional heads in a Minimalist grammar can be carried over into phonology, but this may have more to do with prevailing theoretical trends obscuring the empirical similarities across these domains.
+\citet*{fruehwaldgresswallenberg2013} identified a major point of similarity between syntactic and phonological change: that they exhibit the same quantitative profile, the Constant Rate Effect \citep{kroch1989}.
+There was no {\it a priori} reason that both syntactic and phonological change should exhibit the Constant Rate Effect, but in fact, they do.
+In the interest of pursuing the question of how far these similarities go, and of developing a general formal theory of optionality, we will be extending the same arguments from syntactic optionality to phonological optionality.
+
+
+
+However, we will not be able to be as similarly explicit in the formulation of of the phonological model as we have been in the syntactic model, largely because, as we just said, prevailing theoretical trends do not easily submit to a Competing Grammars analysis of phonological variation.
+There are at least three trends which make a Competing Grammars analysis of phonological variation non-trivial.
+\begin{exe}
+	\ex \label{ot-tend}
+		 The popularity of free-generate-and-filter phonological grammars, like Optimality Theory, its descendants and predecessors.
+	\ex \label{gram-tend}
+		The tendency to account for the conditioning factors in variation by additional grammatical principles in the narrow grammar.
+	\ex \label{prob-tend}
+		The tendency to incorporate probabilities into the narrow grammar.
+\end{exe}
+
+Free-generate-and-filter grammars make it difficult to localize optionality in the way necessary formulate a competing grammars analysis because it isn't possible to parameterize the grammar in a simple way.
+For example, \citet{Coetzee2012} propose the following constraint set to a Noisy Harmonic Grammar to account for contextual conditioning on English {\it t/d} Deletion.
+%% How do we align tables to the top of the example number?
+\begin{exe}
+	\ex \label{noisy.hg}\  \\
+\begin{tabular}{lp{3in}}
+	*{\sc Ct}]_{Word}& Assign one violation mark for every word that ends in the sequence [-Ct] or [-Cd]\\
+	{\sc Max} & Assign one violation mark for every input segment lacking an output correspondent (no deletion).\\
+	{\sc Max-Pre-V} & Assign one violation mark for each segment that appears in pre-vocalic context in the input, and that does not have a correspondent in the output (no deletion before a vowel).\\
+	{\sc Max-Pre-Pause} &Assign one violation mark for each segment that ap- pears in pre-pausal context in the input, and that does not have a correspondent in the output (no deletion be- fore a pause).
+\end{tabular}
+\end{exe}
+In classic Optimality Theory, these constraints lead to a set of 7 different crucial rankings
+
+
+
 
 Take, for example, the finely articulated specification of a variable rule from \citet{3288} for {\sl t}/{\sl d} Deletion in African American English.
 \begin{exe}
