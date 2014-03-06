@@ -505,14 +505,18 @@ Obviously, if no selective pressure exists driving one member of a doublet to re
 However, it may be rare for there to be \textsl{no} selective pressure at all in a given case.
 Therefore, in cases where selection operates, both pressures are exerted on the situation of competing grammars simultaneously, and they each bleed each other: specialization prevents selection, and selection can prevent specialization.
 
-This can easily be seen if we consider, for the sake of argument, a simplified model of acquisition along the lines of \citet{yang2000,yang2002}, where a child is presented with one piece of data at a time, each of which may contain one of the two variants in the doublet, variant A or variant B.
-If a given pieve of data contains variant A, there is some probability $p$ that the child will not hear the variant and treat it as noise.
-This gives variant B a selectional advantage of $1-p$ over A.
-Now imagine that the child will assign either A or B to an appropriate context (specializing them) with probability q.
+This can easily be seen if we consider, for the sake of argument, a simplified model of acquisition along the lines of \citet{yang2000,yang2002}: a child is presented with one piece of data at a time, each of which may contain one of the two variants in the doublet, variant A or variant B, and the child attempts to update estimates online for the abundance of A and B in the input.
+If a given pieve of data contains variant A, there is some probability $p$ that the child will not be able to process the variant and treat it as noise.\footnote{The advantage could actually be due to any cause, not just processing, but I use processing as an example of a possible issue that might lead to a selectional pressure.}
+(This gives variant B a selectional advantage of $1-p$ over A.)
+Now imagine that the child will assign either A or B to an appropriate context (specializing them) with probability $q$.
+If the child hears a token of B, she will assign B to a specific context or function with probability $q$.
+However, if the child hears a token of A, she will fail to hear it $p$ amount of the time, and so will only specialize A for a context with probability $(1-p)q$.
+Clearly, as the selectional advantage increases, the rate of specialization will slow, as the probability for specializing any given token will decrease.
 
 
-However, if the selective advantage of one variant over another is small enough that the speed of selection is slower than the speed of specialization, specialization should eventually win out and ultimately remove the selective process (asssuming a case where specialization can go to completion).
-Indeed, we can add something to our theory: while selective advantage can be of various sizes, since the Principle of Contrast is a fundamental property of the cognitive system responsible for acquisition, it should really be constant across individuals (modulo expected variation in brain structure).
+However, if the selectional advantage of one variant over another is small enough that the speed of selection is slower than the speed of specialization, specialization should eventually win out and ultimately remove the selective process (asssuming a case where specialization can go to completion).
+This is because the competition between the variants can only occur when they mean the same thing and can occur in the same context; as they specialize, they are no longer competing for the same resources, for the same context in the speaker's use.
+In fact, we can add something to our theory of this race between selection and specialization: while selective advantage can be of various sizes, since the Principle of Contrast is a fundamental property of the cognitive system responsible for acquisition, it should really be constant across individuals (modulo expected variation in brain structure).
 Hopefully, by investigating the cases where specialization is able to go to completion and comparing them to those where selection goes to completion, we may eventually be able to calculate the constant rate of specialization.
 
 (For more specific details about these historical developments, see the full analysis in \noteme{cite to appear paper}).
