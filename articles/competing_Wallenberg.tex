@@ -517,12 +517,20 @@ Over time, this will lead to the child systematically overestimating the frequen
 (This gives variant B a selectional advantage of $1-p$ over A.)
 
 The Principle of Contrast comes into the acquisition process in this way. Again, encountering a piece of A or B data in context $C$, the child can decide that whichever variant she heard is actually specifically associated with $C$ (or, she can simply ignore the context and just count the occurrence of A or be as usual).
-Suppose she assigns/associates any token of either A or B, whichever she happens to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$.
-If the child hears a token of B, she will assign B to a specific context or function with probability $q$.
-At the same time, since the Principle of Contrast is about \textsl{contrasting} variants, if the child assigns B to context $C$, then she simultaneously assigns A to context $not C$.
-We will refer to this process as \textbf{assignment}, and specialization of variants for different contexts is the result of iterative \textbf{assignment} during acquisition.
-However, if the child hears a token of A, she will fail to hear it $p$ amount of the time, and so will only successfully specialize A for a context with probability $(1-p)q$.
-Clearly, as the selectional advantage increases, the rate of specialization will slow, as the probability for specializing any given token will decrease.
+Suppose the Principle of Contrast causes the child to assign/associate a token of either A or B, whichever she happens to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$ in the absence of any interfering selective pressure.
+Note that since the Principle of Contrast is about \textsl{contrasting} variants, if the child is presented with a token of B, for example, and assigns the token of B to context $C$, then we assume she simultaneously assigns a (hypothetical) token of A to context $not C$.
+We will refer to this process as \textbf{assignment}, and the diachronic specialization of variants for different contexts is the result of iterative \textbf{assignment} during acquisition, and during generations of acquisition.
+Note also that assignment does not mean that the entire category of B is assigned to context $C$ just because a single token has been assigned; assignment of B to $C$ means that the child keeps an online estimate of their confidence that category B is specialized for $C$, and the child updates this measure of confidence a little at a time.
+This is also why, if the child assigns a token of B, it is possible for her to simultaneously assign a ``token'' of A, even though she hasn't encountered a real token of A on that round of acquisition; we simply mean that the measures of confidence for both B and A are updated simultaneously.
+
+At this point, we can see how the effect of the Principle of Contrast interacts with selection.
+Continuing our hypothetical situation above, in which B does have a selectional advantage over A, if the child hears a token of B, she will assign B to a specific context with probability $q$; the probability of assignment for B is just the overall probability of assignment, since B is not disadvantaged in any way.
+However, if the child hears a token of A, she will fail to hear it $p$ amount of the time, and so if A is presented to the child, she will only successfully assign A (and B) to a context with probability $(1-p)q$.
+Clearly, as the selectional advantage increases, the rate of specialization will slow, as the probability for assignment any given token will decrease.
+The overall probability of assignment in context $C$ will then be a function of the probabilities above, and the actual abundances of variants A and B for context $C$ in the input.
+If variants A and B occur $a$ and $b$ proportions of the time in context $C$ (i.e. occur with probabilities $a$ and $b$), then the overall probability of assignment of some arbitrary variant, given that context will be: $(1-p)aq + bq$
+
+(Of course, any progress on specializing the variants in a given generation will affect the abundances of the two variants in each context for the next generation.)
 
 
 However, if the selectional advantage of one variant over another is small enough that the speed of selection is slower than the speed of specialization, specialization should eventually win out and ultimately remove the selective process (asssuming a case where specialization can go to completion).
