@@ -488,14 +488,14 @@ In English, on the other hand, polar questions with \textsl{whether} have specia
 The diachronic trend in English is shown below in Figure (\ref{whetherfig}).
 
 \begin{figure}
+    \label{figwhether}
     \begin{center}
     \includegraphics[scale=.7]{whetherifEngLoess.pdf}
     \caption{Specialization in English of \textsl{if} and \textsl{whether} in embedded polar questions. N = 1929 clauses; corpora: IcePaHC. Texts binner by century, and loess curve shown (due to the considerable noise in parts of the sample).}
     \end{center}
-    \label{whetherfig}
 \end{figure}
 
-Figure (\ref{whetherfig}) shows the two variants slowly diverging in their favoring contexts, so that \textsl{whether} is favored more and more over time by the disjunction context, while the simple context comes to increasingly favor the \textsl{if} variant.
+Figure (\ref{figwhether}) shows the two variants slowly diverging in their favoring contexts, so that \textsl{whether} is favored more and more over time by the disjunction context, while the simple context comes to increasingly favor the \textsl{if} variant.
 Though the data is admittedly noisy, no doubt due to imperfect dating and sampling of dialect and genre during the Old and Middle English periods, a statistical model confirms that the diachronic trend is indeed one of specialization. \noteme{should be a mixed model...oh dear}
 This effect is what our theory predicts for competing grammars in the absence of a selective pressure in favor of one of the variants, or in the case where the selective pressure is smaller than the effect of the Principle of Contrast.
 
@@ -503,13 +503,24 @@ This last point requires some elaboration.
 Since the Principle of Contrast is a fundamental part of every child's acquisition strategy (as suggested in the acquisition literature), it must be present as a factor in every case of change.
 Obviously, if no selective pressure exists driving one member of a doublet to replace the other, then the Principle of Contrast will assert itself.
 However, it may be rare for there to be \textsl{no} selective pressure at all in a given case.
-Therefore, in cases where selection operates, both pressures are exerted on the situation of competing grammars simultaneously, and they each bleed each other: specialization prevents selection, and selection can prevent specialization.
+Therefore, in cases where selection operates, both selection and the Principle of Contrast affect the situation of competing grammars simultaneously, and they each bleed each other: specialization prevents selection, and selection can prevent specialization.
 
-This can easily be seen if we consider, for the sake of argument, a simplified model of acquisition along the lines of \citet{yang2000,yang2002}: a child is presented with one piece of data at a time, each of which may contain one of the two variants in the doublet, variant A or variant B, and the child attempts to update estimates online for the abundance of A and B in the input.
-If a given piece of data contains variant A, there is some probability $p$ that the child will not be able to process the variant and treat it as noise.\footnote{The advantage could actually be due to any cause, not just processing, but I use processing as an example of a possible issue that might lead to a selectional pressure.}
+This can easily be seen if we consider, for the sake of argument, a simplified model of acquisition along the lines of \citet{yang2000,yang2002}: a child is presented with one piece of data at a time, each of which may contain one of the two variants in the doublet, variant A or variant B, and the child attempts to keep track of the abundance of each variant in the speech community.
+She does this by updating, online, frequency estimates for A and B every time she receives a token of one or the other.
+At this point, we introduce a selective proessure, and then the Principle of Contrast, into the acquisition model.
+
+Let's say the next piece of data the child encounters occurs in Context $C$.\footnote{For the purposes of the illustration, this could be a semantic, grammatical, or sociolinguistic context; it is any context for which children can theoretically specialize linguistic variants.}
+$C$ must be some context in which the child can reasonably expect to hear either = A or B variants. (Note that every context has this property immediately after a doublet is innovated, since no specialization has occurred yet.)
+We will assume there is a selective pressure in favor of variant B, of the following type.
+If a given piece of data contains variant A, there is some probability $p$ that the child will not be able to process the variant and will therefore merely treat it as noise; it does not ``count'' for the child's memory of how many times she's heard the variant.\footnote{The advantage could actually be due to any cause, not just processing, but I use processing as a fairly simple example of a possible issue that might lead to a selectional pressure.}
+Over time, this will lead to the child systematically overestimating the frequency of B in the input.
 (This gives variant B a selectional advantage of $1-p$ over A.)
-Now imagine that the child will assign either A or B to an appropriate context (specializing them) with probability $q$.
+
+The Principle of Contrast comes into the acquisition process in this way. Again, encountering a piece of A or B data in context $C$, the child can decide that whichever variant she heard is actually specifically associated with $C$ (or, she can simply ignore the context and just count the occurrence of A or be as usual).
+Suppose she assigns/associates any token of either A or B, whichever she happens to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$.
 If the child hears a token of B, she will assign B to a specific context or function with probability $q$.
+At the same time, since the Principle of Contrast is about \textsl{contrasting} variants, if the child assigns B to context $C$, then she simultaneously assigns A to context $not C$.
+We will refer to this process as \textbf{assignment}, and specialization of variants for different contexts is the result of iterative \textbf{assignment} during acquisition.
 However, if the child hears a token of A, she will fail to hear it $p$ amount of the time, and so will only successfully specialize A for a context with probability $(1-p)q$.
 Clearly, as the selectional advantage increases, the rate of specialization will slow, as the probability for specializing any given token will decrease.
 
