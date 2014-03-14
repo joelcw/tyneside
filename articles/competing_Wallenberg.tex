@@ -397,6 +397,7 @@ Though as we will see later with other domains of specialization, since age is a
 
 \section{Solution}
 \label{solution}
+
  \subsection{How variants specialize}
  \label{options}
 %First, we assume that in cases of stable variation, there is no selective pressure, in the sense of Darwinian selection. If there were some selective pressure in favor of a certain variant, then one variant would replace the other and the problem of the doublet would resolve in that way.
@@ -425,11 +426,11 @@ Thus, our theory of variation predicts that every observed case of synchronic op
 \begin{enumerate}
 			\item A replacement change in progress (outright competition going to completion).
 			\item A specialization change in progress (specialization for different functions going to completion).
-			\item ``Stable'' variation, or optionality: variants have partially specialized along a continuous (or ordinal) dimension, e.g. style, prosodic weight, slowing the change in progress to a snail's pace. 
 		\end{enumerate}
 
 
-\subsection{Whether/If in Historical English and Icelandic}
+\subsection{Example: Whether/If in Historical English and Icelandic}
+\label{whetherifsect}
 
 A quantitative study of embedded polar questions in English and Icelandic shows that the same doublet can resolve by \textbf{specialization} in one language or speech community, but by \textbf{replacement} in another. Bailey, Wallenberg, \& van der Wurff (2012) and \noteme{add recent ref} compared the use of \textsl{whether} vs. \textsl{if} in the history of English, and their cognates \textsl{hvort} and \textsl{ef} in the history of Icelandic, and found that the same Proto-Northwest Germanic doublet situation (two syntactic forms with overlapping functions) led to specialization in English and to replacement in Icelandic, thus illustrating the two possible outcomes of competing grammars that our theory of variation predicts.
 
@@ -476,7 +477,7 @@ In Icelandic, the change is one of replacement, and the effect of the disjunctiv
 However, the CRE is a reasonable interpretation, as it is a well-established and replicated effect in a number of independent replacement changes from other languages.}
 In this way, disjunction favours the use of \textsl{hvort} (``whether'') in every time period except the last, but this constant effect of the disjunctive context never results in specialization.
 Instead, the probability of \textsl{hvort} use in the simple context ultimately catches up over time with the probability of \textsl{hvort} use in the disjunctive context, because \textsl{hvort} replaces \textsl{ef} (``if'') completely in embedded polar questions in Icelandic.
-This is shown in Figure (\ref{hvort}), with data plotted at 100 year intervals from the Icelandic Parsed Historical Corpus \citep[IcePaHC][]{icepahc09}.
+This is shown in Figure \ref{hvort}, with data plotted at 100 year intervals from the Icelandic Parsed Historical Corpus \citep[IcePaHC][]{icepahc09}.
 Presumably, there is a selectional pressure in the Icelandic case which is strong enough to do this.
 (For more specific details about these historical developments, and what the selectional pressure might be, see the full analysis in \noteme{cite to appear paper}).
 
@@ -485,24 +486,26 @@ Presumably, there is a selectional pressure in the Icelandic case which is stron
     \begin{center}
     \includegraphics[scale=.7]{whetherifIce.pdf}
     \caption{Replacement in Icelandic of \textsl{ef} (``if'') by \textsl{hvort} (``whether'') in embedded polar questions. N = 397 clauses, IcePaHC. Texts binned by century.}
+       \label{hvort}
     \end{center}
-    \label{hvort}
 \end{figure}
 
 In English, on the other hand, polar questions with \textsl{whether} have specialized slowly over time for the disjunctive context, while \textsl{if} has slowly specialized for polar questions without disjunctions.
-The diachronic trend in English is shown below in Figure (\ref{whetherfig}).
+The diachronic trend in English is shown in Figure \ref{whetherfig}.
 
 \begin{figure}
-    \label{figwhether}
     \begin{center}
     \includegraphics[scale=.7]{whetherifEngLoess.pdf}
     \caption{Specialization in English of \textsl{if} and \textsl{whether} in embedded polar questions. N = 1929 clauses; corpora: IcePaHC. Texts binner by century, and loess curve shown (due to the considerable noise in parts of the sample).}
+    \label{whetherfig}
     \end{center}
 \end{figure}
 
-Figure (\ref{figwhether}) shows the two variants slowly diverging in their favoring contexts, so that \textsl{whether} is favored more and more over time by the disjunction context, while the simple context comes to increasingly favor the \textsl{if} variant.
+Figure \ref{whetherfig} shows the two variants slowly diverging in their favoring contexts, so that \textsl{whether} is favored more and more over time by the disjunction context, while the simple context comes to increasingly favor the \textsl{if} variant.
 Though the data is admittedly noisy, no doubt due to imperfect dating and sampling of dialect and genre during the Old and Middle English periods, a statistical model confirms that the diachronic trend is indeed one of specialization. \noteme{should be a mixed model...oh dear}
 This effect is what our theory predicts for competing grammars in the absence of a selective pressure in favor of one of the variants, or in the case where the selective pressure is smaller than the effect of the Principle of Contrast.
+
+\subsection{Sketch: A Model For Specialization along a Categorical Dimension}
 
 This last point requires some elaboration.
 Since the Principle of Contrast is a fundamental part of every child's acquisition strategy (as suggested in the acquisition literature), it must be present as a factor in every case of change.
@@ -511,29 +514,29 @@ However, it may be rare for there to be \textsl{no} selective pressure at all in
 Therefore, in cases where selection operates, both selection and the Principle of Contrast affect the situation of competing grammars simultaneously, and they each bleed each other: specialization prevents selection, and selection can prevent specialization.
 
 This can easily be seen if we consider, for the sake of argument, a simplified model of acquisition along the lines of \citet{yang2000,yang2002}: a child is presented with one piece of data at a time, each of which may contain one of the two variants in the doublet, variant A or variant B, and the child attempts to keep track of the abundance of each variant in the speech community.
-She does this by updating, online, frequency estimates for A and B every time she receives a token of one or the other.
+They do this by updating, online, frequency estimates for A and B every time they receive a token of one or the other.
 At this point, we introduce a selective proessure, and then the Principle of Contrast, into the acquisition model.
 
 Let's say the next piece of data the child encounters occurs in Context $C$.\footnote{For the purposes of the illustration, this could be a semantic, grammatical, or sociolinguistic context; it is any context for which children can theoretically specialize linguistic variants.}
 $C$ must be some context in which the child can reasonably expect to hear either A or B variants. (Note that every context has this property immediately after a doublet is innovated, since no specialization has occurred yet.)
 We will assume there is a selective pressure in favor of variant B, of the following type.
-If a given piece of data contains variant A, there is some probability $p$ that the child will not be able to process the variant and will therefore merely treat it as noise; it does not ``count'' for the child's memory of how many times she's heard the variant.\footnote{The advantage could actually be due to any cause, not just processing, but I use processing as a fairly simple example of a possible issue that might lead to a selectional pressure.}
+If a given piece of data contains variant A, there is some probability $p$ that the child will not be able to process the variant and will therefore merely treat it as noise; it does not ``count'' for the child's memory of how many times they've heard the variant.\footnote{The advantage could actually be due to any cause, not just processing, but I use processing as a fairly simple example of a possible issue that might lead to a selectional pressure.}
 Over time, this will lead to the child systematically overestimating the frequency of B in the input.
 (This gives variant B a selectional advantage of $1-p$ over A.)
 
-The Principle of Contrast comes into the acquisition process in this way. Again, encountering a piece of A or B data in context $C$, the child can decide that whichever variant she heard is actually specifically associated with $C$ (or, she can simply ignore the context and just count the occurrence of A or be as usual).
-Suppose the Principle of Contrast causes the child to assign/associate a token of either A or B, whichever she happens to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$ in the absence of any interfering selective pressure.
-Note that since the Principle of Contrast is about \textsl{contrasting} variants, if the child is presented with a token of B, for example, and assigns the token of B to context $C$, then we assume she simultaneously assigns a (hypothetical) token of A to context $not C$.
+The Principle of Contrast comes into the acquisition process in this way. Again, encountering a piece of A or B data in context $C$, the child can decide that whichever variant they heard is actually specifically associated with $C$ (or, they can simply ignore the context and just count the occurrence of A or be as usual).
+Suppose the Principle of Contrast causes the child to assign/associate a token of either A or B, whichever they happen to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$ in the absence of any interfering selective pressure.
+Note that since the Principle of Contrast is about \textsl{contrasting} variants, if the child is presented with a token of B, for example, and assigns the token of B to context $C$, then we assume they simultaneously assign a (hypothetical) token of A to context $not C$.
 We will refer to this process as \textbf{assignment}, and the diachronic specialization of variants for different contexts is the result of iterative \textbf{assignment} during acquisition, and during generations of acquisition.
 Note also that assignment does not mean that the entire category of B is assigned to context $C$ just because a single token has been assigned; assignment of B to $C$ means that the child keeps an online estimate of their confidence that category B is specialized for $C$, and the child updates this measure of confidence a little at a time.
-This is also why, if the child assigns a token of B, it is possible for her to simultaneously assign a ``token'' of A, even though she hasn't encountered a real token of A on that round of acquisition; we simply mean that the measures of confidence for both B and A are updated simultaneously.
+This is also why, if the child assigns a token of B, it is possible for her to simultaneously assign a ``token'' of A, even though they haven't encountered a real token of A on that round of acquisition; we simply mean that the measures of confidence for both B and A are updated simultaneously.
 
 At this point, we can see how the effect of the Principle of Contrast interacts with selection.
-Continuing our hypothetical situation above, in which B does have a selectional advantage over A, if the child hears a token of B, she will assign B to a specific context with probability $q$; the probability of assignment for B is just the overall probability of assignment, since B is not disadvantaged in any way.
-However, if the child hears a token of A, she will fail to hear it $p$ amount of the time, and so if A is presented to the child, she will only successfully assign A (and B) to a context with probability $(1-p)q$.
+Continuing our hypothetical situation above, in which B does have a selectional advantage over A, if the child hears a token of B, they will assign B to a specific context with probability $q$; the probability of assignment for B is just the overall probability of assignment, since B is not disadvantaged in any way.
+However, if the child hears a token of A, they will fail to hear it $p$ amount of the time, and so if A is presented to the child, they will only successfully assign A (and B) to the current context (and B to its complement) with probability $(1-p)q$.
 Clearly, as the selectional advantage increases, the rate of specialization will slow, as the probability for assignment any given token will decrease.
 The overall probability of assignment in context $C$ will then be a function of the probabilities above, and the actual abundances of variants A and B for context $C$ in the input.
-If variants A and B occur $a$ and $b$ proportions of the time in context $C$ (i.e. occur with probabilities $a$ and $b$), then the overall probability of assignment of some arbitrary variant, given that context will be: $(1-p)aq + bq$
+If variants A and B occur $a$ and $b$ proportions of the time in context $C$ (i.e. occur with probabilities $a$ and $b$ in that context), then the overall probability of assignment of some arbitrary variant, given that context will be: $(1-p)aq + bq$
 
 (Of course, any progress on specializing the variants in a given generation will affect the abundances of the two variants in each context for the next generation.)
 
@@ -545,6 +548,13 @@ Hopefully, by investigating the cases where specialization is able to go to comp
 
 
 \subsection{A model of specialization along a continuous dimension}
+
+So far in this section, we have illustrated the first two scenarios (from the end of section \ref{options}) for the diachronic evolution of doublets, and provided the beginnings of a formal model for them: replacement changes and specialization along a categorical dimension.
+Both of these changes have the potential to go entirely to completion given enough time, where ``completion'' means that the probabilistic variation between two (or more) forms ultimately ceases to exist.
+As we've said above, the probabilistic variation can either cease to exist because one form disappears completely (i.e. replacement has gone to completion) or because the two forms end up in totally complementary distribution (i.e. specialization has gone to completion along a categorical dimension).
+At this point, we must consider the third scenario from section \ref{options}: specialization of categorical variation along a continuous dimension.
+This type of specialization simply cannot go to completion, in the sense above.
+
 
 In order to test these ideas, we built a computational model of the acquisition and generational transmission of sociolinguistic variation which encodes only the simplest and most empirically motivated assumptions of how acquisition proceeds. The results of the simulation below show that categorical variation can indeed specialize along a continuous dimension in a way that results in diachronic stability, even when %state what assumptions are not there
 
