@@ -159,7 +159,7 @@ p <- ggplot(generations.df.melt, aes(x = iter, y = Estimate, color=variant, grou
   facet_wrap(~generation)+
   ylim(0,100)
 
-ggsave(p, file = "1000iterPerGenNice_Gauss.pdf", width = 8, height = 5)
+ggsave(p, file = "1000iterPerGen_Gauss.pdf", width = 8, height = 5)
 
 #ggplot(generations.df, aes(iter, Ing))+
 #  geom_step()+
