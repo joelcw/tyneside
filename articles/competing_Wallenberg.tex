@@ -61,7 +61,8 @@ grestore
 \usepackage{color}
 \usepackage{calc}
 \usepackage{float}
-\usepackage[caption = false]{subfig}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
 \bibpunct{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
@@ -116,6 +117,37 @@ In fact, the Minimalist research program demands that such a reduction be attemp
 
 We also show that even though grammatical optionality is really the same phenomenon as a language change in progress, the competing grammars situation can become \textsl{almost} diachronically stable under a very specific (and perhaps rare) set of circumstances: when categorical variants have \textbf{partially} specialized along a continuous dimension of use with no clear endpoints (e.g. style, phonological heaviness). In this rare case, the interaction between categorical variation and a continuous dimension of use will not allow the construction to fully specialize, though it does allow the potential change in progress to slow to down until it is barely possible to detect. In fact, even then, the specialization does not completely halt the change in progress.
 Thus, we are led to the hypothesis that truly diachronically stable variation does not exist.
+
+Figure \ref{competition_figure_first} diagrammatically illustrates the three scenarios of competition between linguistic forms A and B we will investigate, provided here to frame the discussion. These scenarios will be discussed in fuller detail below.
+
+
+\begin{figure}[h!tbp]
+ \centering
+ \begin{minipage}[b]{0.3\linewidth}
+ 	\centering
+ 	\def\svgscale{0.6}
+	\import{figures/}{replacement.pdf_tex}
+	\subcaption{Replacement}
+	\label{replacement_first}
+ \end{minipage}
+ \begin{minipage}[b]{0.3\linewidth}
+ 	\centering
+	\def\svgscale{0.6}
+	\import{figures/}{specialization.pdf_tex}
+	\subcaption{Specialization}
+	\label{specialization_first}
+ \end{minipage}
+ \begin{minipage}[b]{0.3\linewidth}
+ 	\centering
+	\def\svgscale{0.6}
+	\import{figures/}{partial_specialization.pdf_tex}
+	\subcaption{Partial Specialization}
+	\label{partial_specialization_first}
+ \end{minipage} 
+ \caption{The possible outcomes of competition. Outcome (c), partial specialization, represents apparent stable variation.}
+ \label{competition_figure_first}
+\end{figure}
+
 
   
 In the first section below, we introduce the problem of stable variation in the sociolinguistic and phonological literature, and show how it relates to syntactic optionality.
@@ -697,21 +729,6 @@ According to our theory, it is also possible for these same cases of variation t
 Figure \ref{competition_figure} sums up the possible outcomes of competing forms A and B that we propose. 
 At the onset, a new linguistic form, B, is introduced to the linguistic inventory.
 How and why such an event occurs is well outside the scope of this paper, and attempts in the field to resolve this Actuation Problem are active.
-
-
-
-\begin{figure}
- \centering
- \subfloat[Replacement]{\def\svgscale{0.6}\import{figures/}{replacement.pdf_tex}}
-  \qquad
- \subfloat[Specialization]{\def\svgscale{0.6}\import{figures/}{specialization.pdf_tex}}
-  \qquad
- \subfloat[Partial Specialization]{\def\svgscale{0.6}\import{figures/}{partial_specialization.pdf_tex}}
- \caption{The possible outcomes of competition. Outcome (c), partial specialization, represents apparent stable variation.}
- \label{competition_figure}
-\end{figure}
-
-
 
 
 
