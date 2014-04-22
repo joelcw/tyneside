@@ -591,7 +591,7 @@ Over time, this will lead to the child systematically overestimating the frequen
 
 The Principle of Contrast comes into the acquisition process in this way. Again, encountering a piece of A or B data in context $C$, the child can decide that whichever variant they heard is actually specifically associated with $C$ (or, they can simply ignore the context and just count the occurrence of A or be as usual).
 Suppose the Principle of Contrast causes the child to assign/associate a token of either A or B, whichever they happen to hear, to context $C$ (i.e. beginning to specialize it for that context) with probability $q$ in the absence of any interfering selective pressure.
-Note that since the Principle of Contrast is about \textsl{contrasting} variants, if the child is presented with a token of B, for example, and assigns the token of B to context $C$, then we assume they simultaneously assign a (hypothetical) token of A to context $not C$.
+Note that since the Principle of Contrast is about \textsl{contrasting} variants, if the child is presented with a token of B, for example, and assigns the token of B to context $C$, then we assume they simultaneously assign a (hypothetical) token of A to context $not-C$.
 We will refer to this process as \textbf{assignment}, and the diachronic specialization of variants for different contexts is the result of iterative \textbf{assignment} during acquisition, and during generations of acquisition.
 Note also that assignment does not mean that the entire category of B is assigned to context $C$ just because a single token has been assigned; assignment of B to $C$ means that the child keeps an online estimate of their confidence that category B is specialized for $C$, and the child updates this measure of confidence a little at a time.
 This is also why, if the child assigns a token of B, it is possible for her to simultaneously assign a ``token'' of A, even though they haven't encountered a real token of A on that round of acquisition; we simply mean that the measures of confidence for both B and A are updated simultaneously.
@@ -618,14 +618,27 @@ So far in this section, we have illustrated the first two scenarios (from the en
 Both of these changes have the potential to go entirely to completion given enough time, where ``completion'' means that the probabilistic variation between two (or more) forms ultimately ceases to exist.
 As we've said above, the probabilistic variation can either cease to exist because one form disappears completely (i.e. replacement has gone to completion) or because the two forms end up in totally complementary distribution (i.e. specialization has gone to completion along a categorical dimension).
 At this point, we must consider the third scenario from section \ref{options}: specialization of categorical variation along a continuous dimension.
-This type of specialization simply cannot go to completion, in the sense above.
+This type of specialization simply cannot go to completion, in the sense above, but significant partial specialization can take place.
 
 
-In order to test these ideas, we built a computational model of the acquisition and generational transmission of sociolinguistic variation which encodes only the simplest and most empirically motivated assumptions about how acquisition proceeds.
+As a proof of concept for this idea, we built a computational model of the acquisition and generational transmission of sociolinguistic variation which encodes only the simplest and most empirically motivated assumptions about how assignment might proceed in acquisition.
 The results of the simulation below show that categorical variation can indeed specialize along a continuous dimension in a way that results in diachronic stability (or near stability), even when no direct pressure to specialize is encoded in the model.
-The model allows the hypothetical learner to specialize the variants, by allowing them to take different values along the continuous dimension, but it does not enforce specialization. 
+The model allows the hypothetical learner to assign (i.e. specialize) the variants, by allowing them to take different values along the continuous dimension, but it does not enforce specialization.
 
 Consider the case in which a child specializes \textsl{-in}/\textsl{-ing} along the continuous dimension of style.
+Unlike the specialization along a categorical dimention above, the context $C$, to which a learner can assign one of the two variants, can be any value along a continuous scale of style.
+For the purposes of this illustration, possible values of $C$ (i.e. possible speech style contexts) will be all real numbers from 0 to 100, where 0 is most colloquial and 100 is most formal.
+\footnote{Of course, in reality there may not be endpoints to a style scale; it could easily be the case that style-shifting can take arbitrarily formal or colloquial values, depending only on the structure of the society in which the speaker lives.}
+%%%%%%%%%%%%%%
+
+The simulation proceeds as follows:
+
+\begin{itemize}
+		\item[\textbf{Gen 0:}]  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
+		\item[\textbf{Gen 1:}]  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.
+		\item[\textbf{Gen 2:}] \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
+\end{itemize}
+
  %state what assumptions are not there
 
 %This actually implies that speakers could theoretically map continuous linguistic variants on to continuous social dimensions, possibly
