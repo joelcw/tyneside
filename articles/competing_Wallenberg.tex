@@ -571,6 +571,7 @@ Though the data is admittedly noisy, no doubt due to imperfect dating and sampli
 This effect is what our theory predicts for competing grammars in the absence of a selective pressure in favor of one of the variants, or in the case where the selective pressure is smaller than the effect of the Principle of Contrast.
 
 \subsection{Sketch: A Model For Specialization along a Categorical Dimension}
+\label{catspec}
 
 This last point requires some elaboration.
 Since the Principle of Contrast is a fundamental part of every child's acquisition strategy (as suggested in the acquisition literature), it must be present as a factor in every case of change.
@@ -629,7 +630,8 @@ Consider the case in which a child specializes \textsl{-in}/\textsl{-ing} along 
 Unlike the specialization along a categorical dimention above, the context $C$, to which a learner can assign one of the two variants, can be any value along a continuous scale of style.
 For the purposes of this illustration, possible values of $C$ (i.e. possible speech style contexts) will be all real numbers from 0 to 100, where 0 is most colloquial and 100 is most formal.
 \footnote{Of course, in reality there may not be endpoints to a style scale; it could easily be the case that style-shifting can take arbitrarily formal or colloquial values, depending only on the structure of the society in which the speaker lives.}
-%%%%%%%%%%%%%%
+The learner in the simulation listens to a speaker speaking in a particular style, a particular numerical value of $C$, and the value of $C$ is assumed to be shared information between the speaker and learner (e.g. we assume the child has learned the relevant social cues, which must happen very early, as shown in e.g. \citealt{smithetal2007}).
+As the learner hears the speaker use one of the variants in style $C$, they try to use $C$ to determine a mean style value for when the variant should be used.
 
 The simulation proceeds as follows:
 
@@ -638,6 +640,9 @@ The simulation proceeds as follows:
 		\item[\textbf{Gen 1:}]  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.
 		\item[\textbf{Gen 2:}] \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
 \end{itemize}
+
+Another way in which this model for specialization along a continuous dimension is different from the case of categorical specialization in section (\ref{catspec}) is the following: the assignment of a mean style value to one variant does not also result in the assignment of a ``$not-C$'' mean style to the other variant.
+
 
  %state what assumptions are not there
 
