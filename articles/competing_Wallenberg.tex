@@ -60,9 +60,7 @@ grestore
 \usepackage{import}
 \usepackage{color}
 \usepackage{calc}
-\usepackage{float}
-\usepackage{subcaption}
-\captionsetup{compatibility=false}
+\usepackage{subfig}
 \bibpunct{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
@@ -122,28 +120,24 @@ Figure \ref{competition_figure_first} diagrammatically illustrates the three sce
 
 
 \begin{figure}[h!tbp]
- \centering
- \begin{minipage}[b]{0.3\linewidth}
- 	\centering
- 	\def\svgscale{0.6}
-	\import{figures/}{replacement.pdf_tex}
-	\subcaption{Replacement}
-	\label{replacement_first}
- \end{minipage}
- \begin{minipage}[b]{0.3\linewidth}
- 	\centering
-	\def\svgscale{0.6}
-	\import{figures/}{specialization.pdf_tex}
-	\subcaption{Specialization}
-	\label{specialization_first}
- \end{minipage}
- \begin{minipage}[b]{0.3\linewidth}
- 	\centering
-	\def\svgscale{0.6}
-	\import{figures/}{partial_specialization.pdf_tex}
-	\subcaption{Partial Specialization}
-	\label{partial_specialization_first}
- \end{minipage} 
+	\centering
+	\subfloat[][Replacement]{
+	 	\def\svgscale{0.6}
+		\import{figures/}{replacement.pdf_tex}
+		\label{replacement_first}
+	}
+	\qquad
+	\subfloat[][Specialization]{
+		\def\svgscale{0.6}
+		\import{figures/}{specialization.pdf_tex}
+		\label{specialization_first}
+	}
+	\qquad
+	\subfloat[][Partial Specialization]{
+		\def\svgscale{0.6}
+		\import{figures/}{partial_specialization.pdf_tex}
+		\label{partial_specialization_first}
+	}
  \caption{The possible outcomes of competition. Outcome (c), partial specialization, represents apparent stable variation.}
  \label{competition_figure_first}
 \end{figure}
@@ -155,6 +149,11 @@ In particular, we show how optionality in syntax can only be described in a Mini
 In section (\ref{solution}), we show that stable variation can persist just in case the variants become specialized in use along a particular type of continuous dimension.
 Section (\ref{cases}) presents our case studies, and shows how they are all situations in which variants have become semi-specialized along a continuous dimension of use, which is the only circumstance that could allow such variation to persist indefinitely.
 Lastly, we conclude and offer some predictions that this approach makes for future research.
+
+Before continuing, we should be clear that there are some well defined problems in the study of language change, chief among them being the Actuation Problem, originally framed by \citet{wlh1968} as the following question:
+	\begin{quote}
+		Why do changes in a structural feature take place in a particular language at a given time, but not in other languages with the same feature, or in the same language at other times? This \textsl{actuation problem} can be regarded as the very heart of the matter.
+	\end{quote}
 
 
 \section{The Problem of Stable Variation}
@@ -192,7 +191,7 @@ In (\ref{princetop2_first}), the DP ``five semesters'' was fronted to Spec, C du
 We might call this flavor C$^{Top}$.
 In (\ref{princeuntop2}), ``five semesters'' remained \textsl{in situ} because a different flavor of C (we might call it C$^{plain}$) was selected, which did not trigger the raising of the DP.
 
-There is no \emph{formal} distinction between the optional flavors of C which produced (non)topicalization in (\ref{princetop2_first}) and (\ref{princeuntop2}) and the competing flavors of $v$ which were involved in a OV to VO word order change.
+There is no \emph{formal} distinction between the optional flavors of C which produced (non)topicalization in (\ref{princetop2_first}) and (\ref{princeuntop2}) and the competing flavors of $v$ which were involved in an OV to VO word order change.
 The only difference is that in the former case, both flavors of C remain in use by speakers for an extended period of time, while in the latter, one flavor of $v$ replaced the other in use entirely.
 We believe this difference is due to processes of sociolinguistic history which we will try to elucidate throughout the rest of this paper, not due to processes in the narrow grammar.
 Therefore, we are advocating a reimagining of optional linguistic processes: all ``optional'' syntactic operations must also be instances of competing grammars (i.e. morphosyntactic doublets), and vice-versa.
@@ -358,7 +357,7 @@ They are assigned in order of the magnitude of the effect ($\alpha$: whether or 
 Rather, it is just more likely to occur in coda clusters.
 This raises an interesting question as to which elements ought to be included in the categorical vs.\ probabilistic components of variable descriptions.},
 $\beta$: whether or not the following segment is a vowel), and are attached to features of segmental phonology (including those of the target) and to morphological boundaries (the $\gamma$ and $\delta$ effects).
-\citet{Coetzee2011} offer a nice summary of more recent approaches to incorporating variation into grammars within different flavors of Optimality Theory, including Partially Ordered Constraints (essentially a form of underspecification), Stochastic OT, Noisy Harmonic Grammars, and Maximum Entropy Grammars.
+\citet{Coetzee2011} offer a nice summary of more recent approaches to incorporating variation into grammars within different flavors of Optimality Theory, including Partially Ordered Constraints (essentially a form of underspecification, similar to the approach by \citet{adger2006} to morphosyntactic variation), Stochastic OT, Noisy Harmonic Grammars, and Maximum Entropy Grammars.
 These formalisms differ in their evaluation, and in the probability distributions they produce, but one qualitative similarity between them is that they all encode the conditioning of variation \emph{within the grammar}, thus explicitly conflating stochastic patterns of \textsl{language use} with the generative apparatus that is responsible for phonological derivations.
 For example, looking back at the constraints from \citet{Coetzee2012}, {\sc Max-Pre-V} and {\sc Max-Pre-Pause} are additional grammatical principles introduced in order to account for the lower rate of {\sl t}/{\sl d}-deletion before vowels and pauses.
 The fact that {\sl t}/{\sl d}-deletion occurs less often in these contexts is an observed pattern in language use, but the question we're putting forward is whether this should be also treated as a \emph{grammatical} fact.
@@ -382,17 +381,17 @@ Grammar 1 (\ref{ot.grammar1}) produces {\sl t}/{\sl d} deletion, and Grammar 2 (
 
 The selection of Grammar 1 or Grammar 2 is probabilistic, and driven by perhaps the same kind of cognitive system that selects different flavors of functional heads in syntactic variation.
 It has been richly established that Topicalization and Heavy NP Shift are sensitive to syntactic and pragmatic factors, as well as prosodic factors, such as the phonological weight of the XP to be moved \citep[e.g.][]{arnoldetal2000, speyer2008, speyer2010, wallenberg2012}. %% Citation Please
-Likewise {\sl t}/{\sl d} deletion is sensitive the featural properties of the preceding and following segments, morphological boundaries, frequency of the target word, and as recently demonstrated by \citet{MacKenzie.Tamminga2012}, whether or not {\sl t}/{\sl d} deletion applied at its most recent opportunity.
-It has also been richly demonstrated that speakers utilize all kinds of non-linguistic information in the process of speech production, including perceived age and social class of the speaker \citep{Hay2006}, and the speaker's race \citep{StaumCasasanto2010}, all properties which would probably be best left out of the narrow grammar by a reasonably conservative theory.
+Likewise {\sl t}/{\sl d} deletion is sensitive the featural properties of the preceding and following segments, morphological boundaries, frequency of the target word, and as recently demonstrated by \citet{MacKenzie.Tamminga2012}, whether or not {\sl t}/{\sl d} deletion applied at its most recent opportunity. \noteme{Double check with Meredith about these results.}
+It has also been richly demonstrated that speakers utilize all kinds of non-linguistic information in the process of speech perception, including perceived age and social class of the speaker \citep{Hay2006}, and the speaker's race \citep{StaumCasasanto2010}, all properties which would probably be best left out of the narrow grammar by a reasonably conservative theory.
 The proposal of the Competing Grammars hypothesis is that all of these influencing factors exist outside of the grammar proper.
 
 It is worth noting explicitly that while we feel it valuable to move most of these influencing factors out of the narrow grammar, that does \emph{not} mean that we want to move them out of the study of linguistics. Just because conditioning factors might not be part of the narrow grammar does not mean that speakers don't have systematic knowledge of them, nor is it the case that linguistic theory ought to be synonymous with the study of narrow grammar.
  
 Is it worthwhile to try to reframe phonological variation in terms of Grammar Competition?
 Obviously, our answer is yes.
-First, from a purely conceptual perspective, it is desirable to reduce the number of proposed entities and phenomena.
+First, from a purely conceptual perspective, it is desirable to reduce the number of entities and phenomena proposed by a theory.
 By recasting phonological variation in terms of Competing Grammars, we are bringing the phenomena of syntactic and phonological variation under the same explanatory principles, and therefore subject to the same analytical tools.
-Note that it is not necessary that we posit the same or even similar formal systems for the syntactic and phonological grammars themselves; just that there is a single, unitary mechanism for linguistic variation: the cognitive systems which govern language use can make a selection from among syntactic grammars and phonological grammars in a similar way.
+Note that it is not necessary that we posit the same or even similar formal systems for the syntactic and phonological grammars themselves; just that there is a unitary mechanism for linguistic variation: the cognitive systems which govern language use can make a selection from among syntactic grammars and phonological grammars in a similar way.
 %% To write
 %%% - Empirical basis: CRE in phonological change
 %%% - Conditioning factors that are not otherwise in grammars (frequency, MacKenzie & Tamminga)
@@ -406,7 +405,8 @@ Note that it is not necessary that we posit the same or even similar formal syst
 
 \subsection{Principle of Contrast: Why does specialization occur?}
 
-Beginning with \citet{clark1987} (and subsequent work; e.g. \citealt{clark1990}), we see a plausible explanation for the existence of the Blocking Effect: it is the result of a strategy used by children during first language acquisition, the ``Principle of Contrast''.
+Beginning with \citet{clark1987} (and subsequent work; e.g. \citealt{clark1990}), we see a plausible explanation for the existence of the Blocking Effect which Kroch used to explain the instability of morphological doublets.
+It is the result of a strategy used by children during first language acquisition, the ``Principle of Contrast''.
 Clark proposes that children during acquisition assume, wherever possible, that contrasting word forms have contrasting meanings.
 Of course, it is possible for children to acquire synonyms, but Clark provides evidence that this is never the first hypothesis when a child is acquiring two phonologically distinct word forms.
 If we extend the Principle of Contrast beyond simple words to functional heads, then we can derive the morphosyntactic Blocking Effect of \citet{kroch1994} from an independently motivated constraint on acquisition.
