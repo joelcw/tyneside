@@ -1,0 +1,345 @@
+( (IP-MAT (CODE 1.1) (NPR 孟) (NPR 子) (VB 見) (NPR 梁) (NPR 惠) (NPR 王)))
+
+( (IP-MAT (N 王) (VB 曰) (N 叟) (NEG 不) (VB 遠) (NUM 千) (N 里)))
+
+( (IP-MAT (CONJ 而) (VB 來)))
+
+( (IP-MAT (ALSO 亦) (ADV 將) (HV 有) (P 以) (VB 利) (PRO$ 吾) (N 國) (SP 乎)))
+
+( (IP-MAT (NPR 孟) (NPR 子) (VB 對) (VB 曰) (N 王) (WADV 何) (ADV 必) (VB 曰) (N 利)))
+
+( (IP-MAT (ALSO 亦) (HV 有) (N 仁) (N 義) (SP 而已) (SP 矣)))
+
+( (IP-MAT (N 王) (VB 曰) (WPRO 何) (P 以) (VB 利) (PRO$ 吾) (N 國)))
+
+( (IP-MAT (N 大夫) (VB 曰) (WPRO 何) (P 以) (VB 利) (PRO$ 吾) (N 家)))
+
+( (IP-MAT (N 士) (ADJ 庶) (N 人) (VB 曰) (WPRO 何) (P 以) (VB 利) (PRO$ 吾) (N 身)))
+
+( (IP-MAT (N 上) (N 下) (ADV 交) (VB 征) (N 利)))
+
+( (IP-MAT (CONJ 而) (N 國) (VA 危) (SP 矣)))
+
+( (IP-MAT (NUM 萬) (N 乘) (DEG 之) (N 國) (VB 弑) (PRO$ 其) (N 君) (ZHE 者) (ADV 必) (NUM 千) (N 乘) (DEG 之) (N 家)))
+
+( (IP-MAT (NUM 千) (N 乘) (DEG 之) (N 國) (VB 弑) (PRO$ 其) (N 君) (ZHE 者) (ADV 必) (NUM 百) (N 乘) (DEG 之) (N 家)))
+
+( (IP-MAT (NUM 萬) (VB 取) (NUM 千) (PRO 焉)))
+
+( (IP-MAT (NUM 千) (VB 取) (NUM 百) (PRO 焉)))
+
+( (IP-MAT (NEG 不) (VB 為) (NEG 不) (VA 多) (SP 矣)))
+
+( (IP-MAT (C 苟) (VB 為) (VB 後) (N 義)))
+
+( (IP-MAT (CONJ 而) (VB 先) (N 利)))
+
+( (IP-MAT (NEG 不) (VB 奪)))
+
+( (IP-MAT (NEG 不) (VB 饜)))
+
+( (IP-MAT (NEG 未) (HV 有) (VA 仁) (CONJ 而) (VB 遺) (PRO$ 其) (N 親) (ZHE 者) (SP 也)))
+
+( (IP-MAT (NEG 未) (HV 有) (VB 義) (CONJ 而) (VB 後) (PRO$ 其) (N 君) (ZHE 者) (SP 也)))
+
+( (IP-MAT (N 王) (ALSO 亦) (VB 曰) (N 仁) (N 義) (SP 而已) (SP 矣)))
+
+( (IP-MAT (WADV 何) (ADV 必) (VB 曰) (N 利)))
+
+( (IP-MAT (CODE 1.2) (NPR 孟) (NPR 子) (VB 見) (NPR 梁) (NPR 惠) (NPR 王)))
+
+( (IP-MAT (N 王) (VB 立) (P 於) (N$ 沼) (N 上)))
+
+( (IP-MAT (VB 顧) (N 鴻) (N 雁) (N 麋) (N 鹿)))
+
+( (IP-MAT (VB 曰) (VA 賢) (ZHE 者) (ALSO 亦) (VB 樂) (D 此) (SP 乎)))
+
+( (IP-MAT (NPR 孟) (NPR 子) (VB 對) (VB 曰) (VA 賢) (ZHE 者) (CONJ 而) (ADV 後) (VB 樂) (D 此)))
+
+( (IP-MAT (NEG 不) (VA 賢) (ZHE 者) (P 雖) (HV 有) (D 此)))
+
+( (IP-MAT (NEG 不) (VB 樂) (SP 也)))
+
+( (IP-MAT (NPR 詩) (VB 云) (VB 經) (ADV 始) (NPR 靈) (NPR 臺)))
+
+( (IP-MAT (VB 經) (PRO 之)))
+
+( (IP-MAT (VB 營) (PRO 之)))
+
+( (IP-MAT (ADJ 庶) (N 民) (VB 攻) (PRO 之)，))
+
+( (IP-MAT (NEG 不) (ADV 日) (VB 成) (PRO 之)))
+
+( (IP-MAT (VB 經) (ADV 始) (NEG 勿) (VA 亟)))
+
+( (IP-MAT (ADJ 庶) (N 民) (ADV 子) (VB 來)))
+
+( (IP-MAT (N 王) (VB 在) (NPR 靈) (NPR 囿)))
+
+( (IP-MAT (N$ 麀) (N 鹿) (PRO 攸) (VB 伏)))
+
+( (IP-MAT (N$ 麀) (N 鹿) (VA 濯濯)))
+
+( (IP-MAT (ADJ 白) (N 鳥) (VA 鶴鶴)))
+
+( (IP-MAT (N 王) (VB 在) (NPR 靈) (NPR 沼)))
+
+( (IP-MAT (INTJ 於) (VA 牣) (N 魚) (VB 躍)))
+
+( (IP-MAT (NPR 文) (NPR 王) (P 以) (N$ 民) (N 力) (VB 為) (N 臺) (VB 為) (N 沼)))
+
+( (IP-MAT (CONJ 而) (N 民) (VB 歡) (VB 樂) (PRO 之)))
+
+( (IP-MAT (VB 謂) (PRO$ 其) (N 臺)))
+
+( (IP-MAT (VB 曰) (NPR 靈) (NPR 臺)))
+
+( (IP-MAT (VB 謂) (PRO$ 其) (N 沼)))
+
+( (IP-MAT (VB 曰) (NPR 靈) (NPR 沼)))
+
+( (IP-MAT (VB 樂) (PRO 其) (HV 有) (N 麋) (N 鹿) (N 魚) (N 鱉)))
+
+( (IP-MAT (N 古) (DEG 之) (N 人) (P 與) (N 民) (ADV 偕) (VB 樂)))
+
+( (IP-MAT (C 故) (MD 能) (VB 樂) (SP 也)))
+
+( (IP-MAT (NPR 湯) (NPR 誓) (VB 曰) (D 時) (NPR 日) (WADV 害) (VB 喪)))
+
+( (IP-MAT (PRO 予) (CONJ 及) (PRO 女) (ADV 偕) (VB 亡)))
+
+( (IP-MAT (N 民) (MD 欲) (P 與) (PRO 之) (ADV 皆) (VB 亡)))
+
+( (IP-MAT (P 雖) (HV 有) (N 臺) (N 池) (N 鳥) (N 獸)))
+
+( (IP-MAT (WADV 豈) (MD 能) (ADV 獨) (VB 樂) (SP 哉)))
+
+( (IP-MAT (CODE 1.3) (NPR 梁) (NPR 惠) (NPR 王) (VB 曰) (ADJ 寡) (N 人) (DEG 之) (P 於) (N 國) (SP 也) ))
+
+( (IP-MAT (VB 盡) (N 心) (PRO 焉) (SP 耳) (SP 矣)))
+
+( (IP-MAT (NPR 河) (NPR 內) (VB 凶）))
+
+( (IP-MAT (ADV 則) (VB 移) (PRO$ 其) (N 民) (P 於) (NPR 河) (NPR 東)))
+
+( (IP-MAT (VB 移) (PRO$ 其) (N 粟) (P 於) (NPR 河) (NPR 內)))
+
+( (IP-MAT (NPR 河) (NPR 東) (VB 凶) (ALSO 亦) (VA 然)))
+
+( (IP-MAT (VB 察) (N$ 鄰) (N 國) (DEG 之) (N 政)))
+
+( (IP-MAT (NEG+HV 無) (VB 如) (N 寡人) (DEG 之) (VB 用) (N 心) (ZHE 者)))
+
+( (IP-MAT (N$ 鄰) (N 國) (DEG 之) (N 民) (NEG 不) (VB 加) (VA 少)))
+
+( (IP-MAT (ADJ 寡) (N 人) (DEG 之) (N 民) (NEG 不) (VB 加) (VA 多)))
+
+( (IP-MAT (WADV 何) (SP 也)))
+
+( (IP-MAT (NPR 孟) (NPR 子) (VB 對) (VB 曰) (N 王) (VB 好) (N 戰)))
+
+( (IP-MAT (ADV 請) (P 以) (N 戰) (VB 喻)))
+
+( (IP-MAT (ON 填) (RAN 然) (VB 鼓) (PRO 之)))
+
+( (IP-MAT (N$ 兵) (N 刃) (ADV 既) (VB 接)))
+
+( (IP-MAT (VB 棄) (N 甲) (VB 曳) (N 兵) ))
+
+( (IP-MAT (CONJ 而) (VB 走)))
+
+( (IP-MAT (Q 或) (NUM 百) (N 步)))
+
+( (IP-MAT (CONJ 而) (ADV 後) (VB 止)))
+
+( (IP-MAT (Q 或) (NUM 五) (NUM 十) (N 步) ))
+
+( (IP-MAT (CONJ 而) (ADV 後) (VB 止)))
+
+( (IP-MAT (P 以) (NUM 五) (NUM 十) (N 步) (VB 笑) (NUM 百) (N 步)))
+
+( (IP-MAT (ADV 則) (WPRO 何) (VB 如)))
+
+( (IP-MAT (VB 曰) (NEG 不) (MD 可)))
+
+( (IP-MAT (FP 直) (NEG 不) (NUM 百) (N 步) (SP 耳)))
+
+( (IP-MAT (PRO 是) (ALSO 亦) (VB 走) (SP 也)))
+
+( (IP-MAT (VB 曰) (N 王) (P 如) (VB 知) (D 此)))
+
+( (IP-MAT (ADV 則) (NEG 無) (VB 望) (N 民) (DEG 之) (VA 多) (P 於) (N$ 鄰) (N 國) (SP 也)))
+
+( (IP-MAT (NEG 不) (VB 違) (N$ 農) (N 時)))
+
+( (IP-MAT (N 穀) (NEG 不) (MD 可) (VB 勝) (VB 食) (SP 也)))
+
+( (IP-MAT (ADJ 數) (N 罟) (NEG 不) (VB 入) (ADJ 洿) (N 池)))
+
+( (IP-MAT (N 魚) (N 鱉) (NEG 不) (MD 可) (VB 勝) (VB 食) (SP 也)))
+
+( (IP-MAT (N 斧) (N 斤) (P 以) (N 時) (VB 入) (N 山) (N 林)))
+
+( (IP-MAT (N 材) (N 木) (NEG 不) (MD 可) (VB 勝) (VB 用) (SP 也)))
+
+( (IP-MAT (N 穀) (CONJ 與) (N 魚) (N 鱉) (NEG 不) (MD 可) (VB 勝) (VB 食)))
+
+( (IP-MAT (N 材) (N 木) (NEG 不) (MD 可) (VB 勝) (VB 用)))
+
+( (IP-MAT (PRO 是) (VB 使) (N 民) (VB 養) (VB 生) (VB 喪) (VB 死) (NEG+HV 無) (N 憾) (SP 也)))
+
+( (IP-MAT (VB 養) (VB 生) (VB 喪) (VB 死) (NEG+HV 無) (N 憾)))
+
+( (IP-MAT (N$ 王) (N 道) (DEG 之) (N 始) (SP 也)))
+
+( (IP-MAT (NUM 五) (N 畝) (DEG 之) (N 宅) (VB 樹) (PRO 之) (P 以) (N 桑)))
+
+( (IP-MAT (NUM 五) (NUM 十) (ZHE 者) (MD 可以) (VB 衣) (N 帛) (SP 矣)))
+
+( (IP-MAT (N 雞) (N 豚) (N 狗) (N 彘) (PRO 之) (VB 畜) (NEG 無) (VB 失) (PRO$ 其) (N 時)))
+
+( (IP-MAT (NUM 七) (NUM 十) (ZHE 者) (MD 可以) (VB 食) (N 肉) (SP 矣)))
+
+( (IP-MAT (NUM 百) (N 畝) (DEG 之) (N 田) (NEG 勿) (VB 奪) (PRO$ 其) (N 時)))
+
+( (IP-MAT (NUM 數) (N 口) (DEG 之) (N 家) (MD 可以) (NEG+HV 無) (N 饑) (SP 矣)))
+
+( (IP-MAT (VB 謹) (N 庠) (N 序) (DEG 之) (N 教)))
+
+( (IP-MAT (VB 申) (PRO 之) (P 以) (N 孝) (N 悌) (DEG 之) (N 義)))
+
+( (IP-MAT (ADJ 頒) (ADJ 白) (ZHE 者) (NEG 不) (VB 負) (VB 戴) (P 於) (N 道) (N 路) (SP 矣)))
+
+( (IP-MAT (NUM 七) (NUM 十) (ZHE 者) (VB 衣) (N 帛) (VB 食) (N 肉)))
+
+( (IP-MAT (ADJ 黎) (N 民) (NEG 不) (VA 饑)))
+
+( (IP-MAT (NEG 不) (VA 寒)))
+
+( (IP-MAT (VA 然) (CONJ 而) (NEG 不) (VB 王) (ZHE 者) (NEG 未) (PRO 之) (VB 有) (SP 也)))
+
+( (IP-MAT (N 狗) (N 彘) (VB 食) (N$ 人) (N 食)))
+
+( (IP-MAT (CONJ 而) (NEG 不) (VB 知) (VB 檢)))
+
+( (IP-MAT (N 途) (HV 有) (ADJ 餓) (N 莩) ))
+
+( (IP-MAT (CONJ 而) (NEG 不) (VB 知) (VB 發)))
+
+( (IP-MAT (MAN 人) (VB 死)))
+
+( (IP-MAT (ADV 則) (VB 曰) (NEG+BE 非) (PRO 我) (SP 也) ))
+
+( (IP-MAT (VB 歲) (SP 也)))
+
+( (IP-MAT (PRO 是) (WADV 何) (ADJ 異) (P 於) (VB 刺) (N 人) (CONJ 而) (VB 殺) (PRO 之)))
+
+( (IP-MAT (VB 曰) (NEG+BE 非) (PRO 我) (SP 也)))
+
+( (IP-MAT (VB 兵) (SP 也)))
+
+( (IP-MAT (N 王) (NEG 無) (VB 罪) (N 歲)))
+
+( (IP-MAT (ADV 斯) (N 天下) (DEG 之) (N 民) (VB 至) (PRO 焉)))
+
+( (IP-MAT (CODE 1.4) (NPR 梁) (NPR 惠) (NPR 王) (VB 曰) (ADJ+N 寡人) (MD 願) (ADV 安) (VB 承) (N 教) ))
+
+( (IP-MAT (NPR 孟) (NPR 子) (VB 對) (VB 曰) (VB 殺) (N 人) (P 以) (N 梃) (CONJ 與)(N 刃)))
+
+( (IP-MAT (HV+P 有以) (VA 異) (SP 乎)))
+
+( (IP-MAT (VB 曰) (NEG+HV 無) (P 以) (VA 異) (SP 也)))
+
+( (IP-MAT (P 以) (N 刃) (CONJ 與) (N 政) (HV+P 有以) (VA 異) (SP 乎)))
+
+( (IP-MAT (VB 曰) (NEG+HV 無) (P 以) (N 異) (SP 也)))
+
+( (IP-MAT (VB 曰) (N 庖) (HV 有) (ADJ 肥) (N 肉)))
+
+( (IP-MAT (N 廄) (HV 有) (ADJ 肥) (N 馬)))
+
+( (IP-MAT (N 民) (HV 有) (ADJ 飢) (N 色)))
+
+( (IP-MAT (N 野) (HV 有) (ADJ 餓) (N 莩)))
+
+( (IP-MAT (D 此) (VB 率) (N 獸) (CONJ 而) (VB 食) (N 人) (SP 也)))
+
+( (IP-MAT (N 獸) (PRO 相) (VB 食)))
+
+( (IP-MAT (CONJ 且) (MAN 人) (VB 惡) (PRO 之)))
+
+( (IP-MAT (VB 為) (N$ 民) (N 父) (N 母)))
+
+( (IP-MAT (VB 行) (N 政)))
+
+( (IP-MAT (NEG 不) (VB 免) (P 於) (VB 率) (N 獸) (CONJ 而) (VB 食) (N 人)))
+
+( (IP-MAT (WPRO 惡) (VB 在) (PRO 其) (VB 為) (N$ 民) (N 父) (N 母) (SP 也)))
+
+( (IP-MAT (NPR 仲) (NPR 尼) (VB 曰) (ADV 始) (VB 作) (N 俑) (ZHE 者) (MADV 其) (NEG+HV 無) (N 後) (SP 乎)))
+
+( (IP-MAT (P 為) (PRO 其) (VB 象) (N 人) ))
+
+( (IP-MAT (CONJ 而) (VB 用) (PRO 之) (SP 也)))
+
+( (IP-MAT (VB 如) (PRO 之) (WADV 何)))
+
+( (IP-MAT (ADV 其) (VB 使) (D 斯) (N 民) (VA 飢) (CONJ 而) (VB 死) (SP 也)))
+
+( (IP-MAT (CODE 1.5) (NPR 梁) (NPR 惠) (NPR 王) (VB 曰) (NPR 晉) (N 國) (N$ 天) (N 下) (Q 莫)(VA 強) (P+PRO 焉)))
+
+( (IP-MAT (N 叟) (DEG 之) (PRO 所) (VB 知) (SP 也)))
+
+( (IP-MAT (P 及) (ADJ+N 寡人) (DEG 之) (N 身) (ADV 東) (VB 敗) (P 於) (NPR 齊)))
+
+( (IP-MAT (ADJ 長) (N 子) (VB 死) (P+PRO 焉)))
+
+( (IP-MAT (ADV 西) (VB 喪) (N 地) (P 於) (NPR 秦) (NUM 七) (NUM 百) (N 里)))
+
+( (IP-MAT (ADV 南) (VB 辱) (P 於) (NPR 楚)))
+
+( (IP-MAT (ADJ+N 寡人) (VB 恥) (PRO 之)))
+
+( (IP-MAT (MD 願) (VB 比) (VB 死) (ZHE 者) (ADV 壹) (VB 洒) (PRO 之)))
+
+( (IP-MAT (VB 如) (PRO 之) (WADV 何)))
+
+( (IP-MAT (ADV 則) (MD 可) ))
+
+( (IP-MAT (NPR 孟) (NPR 子) (VB 對) (VB 曰) (N 地) (VB 方) (NUM 百) (N 里) (CONJ 而) (MD+P 可以) (VB 王)))
+
+( (IP-MAT (N 王) (P 如) (VB 施) (N$ 仁) (N 政) (P 於) (N 民)))
+
+( (IP-MAT (VB 省) (N 刑) (N 罰)))
+
+( (IP-MAT (VB 薄) (N 稅) (N 斂)))
+
+( (IP-MAT (ADV 深) (VB 耕)))
+
+( (IP-MAT (ADV 易) (VB 耨)))
+
+( (IP-MAT (ADJ 壯) (ZHE 者) (P 以) (N$ 暇) (N 日) (VB 修) (PRO$ 其) (N 孝) (N 悌) (N 忠) (N 信)))
+
+( (IP-MAT (VB 入) (P 以) (VB 事) (PRO$ 其) (N 父) (N 兄)))
+
+( (IP-MAT (VB 出) (P 以) (VB 事) (PRO$ 其) (N 長) (N 上)))
+
+( (IP-MAT (MD 可) (VB 使) (VB 制) (N 梃) (CONJ 以) (VB 撻) (NPR 秦) (NPR 楚) (DEG 之)(ADJ 堅) (N 甲) (ADJ 利) (N 兵) (SP 矣)))
+
+( (IP-MAT (PRO 彼) (VB 奪) (PRO$ 其) (N 民) (N 時)))
+
+( (IP-MAT (VB 使) (NEG 不) (MD 得) (VB 耕) (VB 耨) (CONJ 以) (VB 養) (PRO$ 其) (N 父)(N 母)))
+
+( (IP-MAT (N 父) (N 母) (VA 凍) (VA 餓)))
+
+( (IP-MAT (N 兄) (N 弟) (N 妻) (N 子) (VB 離) (VB 散)))
+
+( (IP-MAT (PRO 彼) (VB 陷) (VB 溺) (PRO$ 其) (N 民)))
+
+( (IP-MAT (N 王) (VB 往) (CONJ 而) (VB 征) (PRO 之)))
+
+( (IP-MAT (INTJ 夫) (WPRO 誰) (CONJ 與) (N 王) (VB 敵)))
+
+( (IP-MAT (ADV 故) (VB 曰) (N 仁) (ZHE 者) (NEG+HV 無) (N 敵)))
+
+( (IP-MAT (N 王) (ADV 請) (NEG 勿) (VB 疑)))
