@@ -215,7 +215,7 @@ The only way to state an optional movement in such a syntactic system, without a
 The speaker can then choose to form a numeration with one version of H or the other.
 This is a morphosyntactic doublet, by definition, of the same type discussed in Kroch (1994): two formal variants with no difference in narrow meaning and overlapping discourse environment.
 This is simply the definition of ``competing grammars'' \citep{kroch1994}, as the variants are inherently in competition for use in a particular discourse context.
-One could certainly imagine adding new mechanics to the syntax to encode optionality directly, fundamentally rejecting the basic proposals of a Bare Phrase Structure \citep{chomsky1995} and most Minimalist syntax, and the literature is full of proposals such as: getting around the idea that no movement is a default, adding some kind of stochasticity to the features on heads themselves, or adding a whole post-processing system consisting of probabilistic trans-derivational filters \noteme{maybe cite someone for these}.
+One could certainly imagine adding new mechanics to the syntax to encode optionality directly (thus fundamentally rejecting the basic proposals of a Bare Phrase Structure \citep{chomsky1995} and most Minimalist syntax), and the literature is full of proposals such as: getting around the idea that no movement is a default, adding some kind of stochasticity to the features on heads themselves, or adding a whole post-processing system consisting of probabilistic trans-derivational filters \noteme{maybe cite someone for these}.
 However, the simple Minimalist system is interesting precisely because it restricts our analytical possibilities and makes certain predictions as a result, so perhaps we should pursue this particular consequence of the system before complicating it.
 
 %%Todo: possibly rewrite top part bc of repeated top examples
@@ -642,12 +642,16 @@ As the learner hears the speaker use one of the variants in style $C$, they try 
 The simulation proceeds as follows:
 
 \begin{itemize}
-		\item[\textbf{Gen 0:}]  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
-		\item[\textbf{Gen 1:}]  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.
-		\item[\textbf{Gen 2:}] \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
+		\item[ ]\textbf{Generation 0:}\\  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
+		\item[ ]\textbf{Generation 1:}\\  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.
+		\item[ ]\textbf{Generation 2:}\\ \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
+		\item[ ]\textbf{Repeat...}
 \end{itemize}
 
 Another way in which this model for specialization along a continuous dimension is different from the case of categorical specialization in section (\ref{catspec}) is the following: the assignment of a mean style value to one variant does not also result in the assignment of a ``$not-C$'' mean style to the other variant.
+As the dimension is continuous, which means each variant has a probability distribution over contexts with a certain mean, ``$not-C$'' is not really a definable context.
+For now, we assume this means that the child does the maximally simple task: update the mean style estimate for the given variant, and do nothing to the mean style estimate for the other variant.
+
 
 
  %state what assumptions are not there
@@ -727,14 +731,22 @@ But even if the combination of continuous and categorical domains of specializat
 %Ricardo's work
 
 
-\subsection{Dative Shift}
+
 
 \section{A Related Case: Phonetic Implementation of Phonological Categories}
 
 
 \section{Predictions of the Theory (or an Invitation to Falsification)}
+
 %talk about how the specialization should happen in detail along the continuous dimension
 %Actually, one prediction is that the Principle of Contrast and Darwinian selection should operate simultaneously: the variants should begin to specialise even as one is taking over the other's function...the question is whether they can specialize fast enough to beat the selection. Of course, if there is no selective pressure at all (or a sufficiently weak one), then the specialization can proceed at whatever leisurely pace it wants (this seems to be the case for English ``whether''). So for changes that go to completion, there should still be evidence of some earlier specialization.
+
+
+\subsection{Dative Shift}
+
+\subsection{Particle Shift}
+%Dehé
+
 
 According to our theory, it is also possible for these same cases of variation to result in specialization in some speech communities, but for one variant to replace the other in other speech communities.
 %t/d in AAVE (get refs)
