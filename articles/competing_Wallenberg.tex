@@ -642,23 +642,29 @@ As the learner hears the speaker use one of the variants in style $C$, they try 
 The simulation proceeds as follows:
 
 \begin{itemize}
-		\item[ ]\textbf{Generation 0:}\\  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in, and produces a variant, repeats. 
-		\item[ ]\textbf{Generation 1:}\\  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.
-		\item[ ]\textbf{Generation 2:}\\ \textbf{Gen 1} picks a style, produces one of the variants with a probability weighted by how far her style estimates are from the current style, repeats. \textbf{Gen 2} learns style estimates for variants as above.
+		\item[ ]\textbf{Generation 0:}\\  -\textipa{In}$\sim$-\textipa{IN} doublet is innovated, with no stylistic conditioning. \textbf{Gen 0} picks a style to speak in (by pure chance), and produces a variant, repeats. 
+		\item[ ]\textbf{Generation 1:}\\  \textbf{Gen 1} learns an estimate for the (mean) style value of -\textipa{In}, \textipa{IN}, as soon as they hear the first tokens of each from \textbf{Gen 0}. She adjusts this estimate as they get more data from \textbf{Gen 0}.\footnote{The size of the adjustment, and hence the posterior value for the current variable's mean style estimate, is a function of the prior estimate, and the distance between the current style and the prior style. For details, see the simulation script in \texttt{github.com/joelcw/tyneside/blob/master/articles/sim\_Gauss.R}}
+		\item[ ]\textbf{Generation 2:}\\ \textbf{Gen 1} picks a style, chooses one of the variants to produce with a probability weighted by how far their style estimates are from the current style,\footnote{The probabilities are derived from assuming that each variant has a Gaussian probability density function over styles, with the mean of the distribution being the speaker's current mean style value estimate for the variant. Again, for details, see script in \texttt{github.com/joelcw/tyneside/blob/master/articles/sim\_Gauss.R}} and repeats. \textbf{Gen 2} learns style estimates for variants as above.
 		\item[ ]\textbf{Repeat...}
 \end{itemize}
 
+%todo: the next few sentences will have to be revised if we change the def of assignment above to exclude "not-C"
+Note that the algorithm above is a very simple model of the acquisition process.
+First, the learner does not store every token; they just keep one estimate for each variant of the mean style that the variant should be associated with, so only one number for each variant is carried forward as the algorithm iterates.
 Another way in which this model for specialization along a continuous dimension is different from the case of categorical specialization in section (\ref{catspec}) is the following: the assignment of a mean style value to one variant does not also result in the assignment of a ``$not-C$'' mean style to the other variant.
 As the dimension is continuous, which means each variant has a probability distribution over contexts with a certain mean, ``$not-C$'' is not really a definable context.
 For now, we assume this means that the child does the maximally simple task: update the mean style estimate for the given variant, and do nothing to the mean style estimate for the other variant.
+This is an important point: the Principle of Contrast in not hard-coded in the algorithm at all; the learner has the possibility of keeping the estimated mean style values distinct for the two variants, but no requirement that they be distinct.
+As you will see below, the Principle of Contrast simply emerges by iterating the algorithm over generations.
+
+Running this model over 20 generations produces the chart below.
+
 
 
 
  %state what assumptions are not there
 
 %This actually implies that speakers could theoretically map continuous linguistic variants on to continuous social dimensions, possibly
-
-\noteme{Describe algorithm here, and two big benefits: 1 that we only keep a single expectation in working memory, not the value of eery token, and 2 that we get the prin of contrast without hard-coding it}
 
 %3 Important take-away points from the simulation:
 
