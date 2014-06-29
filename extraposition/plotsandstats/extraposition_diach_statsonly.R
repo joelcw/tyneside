@@ -171,3 +171,51 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
+
+#See if slope is same across langs
+
+"All Languages"
+
+library(ggplot2)
+library(plyr)
+
+
+####Read the file of CorpusSearch codes into an R data frame.
+
+foo <- read.delim("~/tyneside/extraposition/plotsandstats/allLangsEx.cod.ooo",header=F,sep=":")
+
+
+####Give appropriate column names to the columns
+
+colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Year","Language")
+
+
+####Throw out all the codes that refer to tokens that are irrelevant for the study.
+
+"Got up to subsetting"
+
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Year != "z" & Year != "0" & Year != "" & Position == "sbj" & Weight != "z" & Language != "" & Language != "Portuguese" & Language != "French")
+
+
+library(gdata)
+
+
+####Make sure R factor groups don't include factors for the irrelevant codes.
+
+ex.data <- droplevels(ex.data)
+
+"finished droplevels"
+
+####Make sure dates abd 0/1 codes are stored as numbers, and weights
+
+ex.data$Year <- as.numeric(as.character(ex.data$Year))
+ex.data$Extraposed <- as.numeric(as.character(ex.data$Extraposed))
+ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
+
+"finished converting to numeric"
+
+nrow(ex.data)
+#Note that I only consider subject position below
+ex.crossLing.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight*Language, family = binomial, data=ex.data)
+summary(ex.crossLing.fit)
+anova(ex.crossLing.fit, test = "Chisq")
