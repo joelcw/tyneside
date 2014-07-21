@@ -126,9 +126,18 @@ Finally, section \ref{pie} builds on \ref{kiparsky1995} and presents the possibi
 \section{Decline in Relative Clause Extraposition}
 \label{relclause}
 
-The data below show a remarkably slow decline in the frequency of relative clause extraposition from subject DPs in four languages: English, Icelandic, French, and Portuguese. It is worth noting that this type of data is entirely unobtainable without diachronic parsed corpora (i.e. treebanks), which have been annotated at a very high level of accuracy (i.e. they have been hand-corrected by expert syntacticians, not only automatically parsed). For this study, the following parsed diachronic corpora were used:
+The data in \ref{results} below show a remarkably slow decline in the frequency of relative clause extraposition from subject DPs in four languages: English, Icelandic, French, and Portuguese. I originally collected this data to test the hypothesis that the frequency of relative clause extraposition was stable over time in a number of languages; as you will see below, though the change is slow enough to be unobservable without data from over a period of many hundreds of years, that hypothesis can be soundly rejected.
 
-The decline in extraposition is so slow, in fact, that it would also not have been observable if the corpora of English (collectively) and Icelandic were not at sufficient time-depth; any time-window of only a few hundred years would likely be too small to detect such a change at all.
+\subsection{Methods}
+
+It is worth noting that the type of data presented below is entirely unobtainable without diachronic parsed corpora (i.e. treebanks), which have been annotated at a very high level of accuracy (i.e. they have been hand-corrected by expert syntacticians, not only automatically parsed). For this study, the following parsed diachronic corpora were used: for English, the \textsl{York-Toronto-Helsinki Corpus of Old English Prose (YCOE)} \citep{ycoe}, the \textsl{Penn-Helsinki Parsed Corpus of Middle English 2 (PPCME2)} \citep{ppcme2}, the \textsl{Penn-Helsinki Parsed Corpus of Early Modern English (PPCEME)} \citep{ppceme}, and the \textsl{Penn Parsed Corpus of Modern British English (PPCMBE)} \citep{ppcmbe}; for Icelandic, the \textsl{Icelandic Parsed Historical Corpus (IcePaHC)} \citep{icepahc09}; for Old and Middle French, the \textsl{MCVF Corpus} \citep{mcvf}; and for historical Portuguese, the \textsl{Tycho Brahe Corpus of Historical Portuguese} \citep{tychobrahe}.
+
+Finite clauses containing a relative clause modifying a subject or object were extracted from the corpora using CorpusSearch coding queries \citep{randall}, and coded for the following variables: the response variable of whether or not the relative clause was extraposed, whether it modified a subject or object DP, its weight in number of words, whether the clause occurred in reported speech or not, and the date of the text the clause appeared in.\footnote{If no precise date of composition was available, as was the case for many Old English and Old Icelandic texts, we used an estimated date of composition wherever possible, or a manuscript date in cases where there is no clear consensus on the date of composition. In all cases, we follow the dates provided by the documentation of the diachronic corpora, following the philological sources they cite.} These variables were controlled for in all subsequent statistical analysis.
+
+All coding queries and the extracted datasets are available at in the following public \textsl{git} directory: github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput.
+%were coded so that the effects of these variables could be controlled for in statistical analysis.
+
+
 
 %agnostic as the rightward/leftward-movement question
 %Cite Anton about phonological weight being continuous, not discrete !!!
@@ -136,6 +145,10 @@ The decline in extraposition is so slow, in fact, that it would also not have be
 
 %extraposition in modern Dutch and German, which has specialized along a grammatical, categorical dimension
 
+\subsection{Results}
+\label{results}
+
+For four languages, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have). As can be seen from Figures and , the decline in extraposition is so slow that it would likely not have been observable if the corpora of English (collectively) and Icelandic were not at sufficient time-depth (over 1000 years of data for each); any time-window of only a few hundred years would likely be too small to detect such a change at all.
 
 \section{Extraposition As Competing Grammars}
 
