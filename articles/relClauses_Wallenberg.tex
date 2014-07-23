@@ -56,6 +56,7 @@ grestore
 \usepackage{gb4e}
 \usepackage[T1]{fontenc}
 \usepackage{ tipa }
+\usepackage{hyperref}
 \bibpunct{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
@@ -132,9 +133,11 @@ The data in \ref{results} below show a remarkably slow decline in the frequency 
 
 It is worth noting that the type of data presented below is entirely unobtainable without diachronic parsed corpora (i.e. treebanks), which have been annotated at a very high level of accuracy (i.e. they have been hand-corrected by expert syntacticians, not only automatically parsed). For this study, the following parsed diachronic corpora were used: for English, the \textsl{York-Toronto-Helsinki Corpus of Old English Prose (YCOE)} \citep{ycoe}, the \textsl{Penn-Helsinki Parsed Corpus of Middle English 2 (PPCME2)} \citep{ppcme2}, the \textsl{Penn-Helsinki Parsed Corpus of Early Modern English (PPCEME)} \citep{ppceme}, and the \textsl{Penn Parsed Corpus of Modern British English (PPCMBE)} \citep{ppcmbe}; for Icelandic, the \textsl{Icelandic Parsed Historical Corpus (IcePaHC)} \citep{icepahc09}; for Old and Middle French, the \textsl{MCVF Corpus} \citep{mcvf}; and for historical Portuguese, the \textsl{Tycho Brahe Corpus of Historical Portuguese} \citep{tychobrahe}.
 
-Finite clauses containing a relative clause modifying a subject or object were extracted from the corpora using CorpusSearch coding queries \citep{randall}, and coded for the following variables: the response variable of whether or not the relative clause was extraposed, whether it modified a subject or object DP, its weight in number of words, whether the clause occurred in reported speech or not, and the date of the text the clause appeared in.\footnote{If no precise date of composition was available, as was the case for many Old English and Old Icelandic texts, we used an estimated date of composition wherever possible, or a manuscript date in cases where there is no clear consensus on the date of composition. In all cases, we follow the dates provided by the documentation of the diachronic corpora, following the philological sources they cite.} These variables were controlled for in all subsequent statistical analysis.
+Finite clauses containing a relative clause modifying a subject or object were extracted from the corpora using CorpusSearch coding queries \citep{corpussearch}, and coded for the following variables: the response variable of whether or not the relative clause was extraposed, whether it modified a subject or object DP, its weight in number of words, whether the clause occurred in reported speech or not, and the date of the text the clause appeared in.\footnote{If no precise date of composition was available, as was the case for many Old English and Old Icelandic texts, we used an estimated date of composition wherever possible, or a manuscript date in cases where there is no clear consensus on the date of composition. In all cases, we follow the dates provided by the documentation of the diachronic corpora, following the philological sources they cite.} These variables were controlled for in all subsequent statistical analysis.
 
-All coding queries and the extracted datasets are available at in the following public \textsl{git} directory: github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput.
+%åFor English, Icelandic, and Portuguese, only prose texts are 
+
+All coding queries and the extracted datasets are available at in the following public \textsl{git} directory: \url{github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput}.
 %were coded so that the effects of these variables could be controlled for in statistical analysis.
 
 
@@ -148,7 +151,49 @@ All coding queries and the extracted datasets are available at in the following 
 \subsection{Results}
 \label{results}
 
-For four languages, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have). As can be seen from Figures and , the decline in extraposition is so slow that it would likely not have been observable if the corpora of English (collectively) and Icelandic were not at sufficient time-depth (over 1000 years of data for each); any time-window of only a few hundred years would likely be too small to detect such a change at all.
+For the four languages I investigated, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have), compared to the use of \textsl{in situ} relative clauses. This is shown in Figures \ref{engfig}-\ref{portfig}. (Raw numbers by century are provided in the Appendix; for full data sets, please see the github directory linked above.) \noteme{Do I need this last?}
+
+\begin{figure}
+
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessymeb.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}), from early Old English prose through modern English. N = 18530 relative clauses.}
+\label{engfig}       % Give a unique label
+\end{figure}
+
+\begin{figure}
+
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessice.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from Subject and Object positions, early Old Icelandic prose through modern Icelandic. N = 3486 relative clauses.}
+\label{icefig}       
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessfre.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from Subject and Object positions, Old and Middle French. N = 8207 relative clauses.}
+\label{frefig}       
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessport.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from Subject and Object positions, 15th-19th c. Portuguese. N = 2398 relative clauses.}
+\label{frefig}       
+\end{figure}
+
+
+
+As can be seen especially in the Figures for English (Figure \ref{engfig}) and Icelandic (Figure \ref{icefig}), the decline in extraposition is so slow that it could have been easily missed if the corpora of English (collectively) and Icelandic were not at sufficient time-depth (over 1000 years of data for each); any time-window of only a few hundred years would likely be too small to detect such a change at all.
+
+For comparison, I conducted the same study on the Parsed Corpus of Early English Correspondence \citep[PCEEC][]{pceec}, which covers a period from the 15th through 17th centuries. The results of that study make the frequency of extraposition appear to be stable over time, shown in Figure \ref{pceecfig}.
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from Subject and Object positions, Parsed Corpus of Early English Correspondence. N = 8073 relative clauses.}
+\label{pceecfig}       
+\end{figure}
+
+\noindent The results in Figure \ref{pceecfig} match the results from the larger English corpora for the same time period (compare Figure \ref{engfig}), but miss the change entirely; simply by accident, the 250-year time-slice of the PCEEC happens to not reflect the change, which then becomes visible once we observe a larger diachronic window.
+
+
 
 \section{Extraposition As Competing Grammars}
 
@@ -166,15 +211,6 @@ For four languages, English, Icelandic, French, and Portuguese, there is a slow 
 
 \section{Conclusions}
 
-%The information structural criteria are categorical, but probably not the phonological conditioning 
-
-%Cite Anton about phonological weight being continuous, not discrete !!! Also, Laurel on subject-length
-
-%Cite Laurel's thesis about model of use, and subject length
-
-%Cite Japanese Honorific variation -- thank Caroline -- Anna Strycharz
-
-%t/d in style-shifting -- Jen Smith paper and refs
 
 
 
@@ -184,15 +220,8 @@ For four languages, English, Icelandic, French, and Portuguese, there is a slow 
 
 
 
-% For one-column wide figures use
-%\begin{figure}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-%  \includegraphics{example.eps}
-% figure caption is below the figure
-%\caption{Please write your figure caption here}
-%\label{fig:1}       % Give a unique label
-%\end{figure}
+
+
 %
 % For two-column wide figures use
 %\begin{figure*}

@@ -5,7 +5,7 @@ import sys,string,re
 #all = open("test.psd","r").read()
 #utfile = open("twocolumns2.txt","w")
 all = sys.stdin.read()
-words = re.findall("\([A-Z-\.\,]+? [^\(\*]+?[\)-]",all)
+words = re.findall("\([A-Z-\.\,\$]+? [^\(\*]+?[\)-]",all)
 
 for l in words:
     l = l.replace(" -)"," <dash/>)")
