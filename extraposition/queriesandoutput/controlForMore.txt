@@ -1,0 +1,5 @@
+#List of things to control for in the next version of the study
+
+V2
+restrictive vs nonrestrictive
+add in other ip clause types
