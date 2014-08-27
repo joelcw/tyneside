@@ -56,6 +56,7 @@ grestore
 \usepackage{gb4e}
 \usepackage[T1]{fontenc}
 \usepackage{ tipa }
+\usepackage{hyperref}
 \bibpunct{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
@@ -100,7 +101,17 @@ stuff
 This squib presents presents important preliminary results demonstrating the existence of a syntactic change which is many times slower than any other that has previously been reported: the syntactic process of relative clause extraposition is being lost in both Germanic and Romance languages.
 %Depending on what is driving the change, it may also be a new class of syntactic change. 
 As the results are still preliminary and much of their analysis is still unclear, the main goal of this article is to carefully describe a type of syntactic change which presents problems for both synchronic syntactic theory and the theory of language change, but not to present a comprehensive analysis of every aspect of this change at the present time.
-Furthermore, this decline in extraposition has been underway for over a thousand years, and while it is nearing completion in modern Portuguese, the change appears to still be ongoing at the present time.
+Furthermore, this decline in extraposition has been underway for over a thousand years, and while it is nearing completion in modern Portuguese, the change appears to still be ongoing at the present time. That is to say, the construction in (\ref{construct2}) is currently in decline, and likely on its way to extinction:
+
+\begin{exe}
+    \ex %English (constructed):
+    \begin{xlist}
+         \ex \label{construct1} Someone who you like is coming to the party.
+         \ex \label{construct2} Someone is coming to the party who you like.
+        \end{xlist}
+\end{exe}
+
+
 This clear result has the following consequence: any analysis of relative clauses (and extraposition) must take into account the fact that the extraposed and \textsl{in situ} variants are, in some sense, ``competing grammars'' \citep[in the sense of][inter alia]{kroch1989, kroch1994}; they must be in competition in language use, as one variant is in the process of replacing the other.
 The fact that such slow changes exist, and that their effects on synchronic language use can be demonstrated, should cause all researchers in synchronic syntax to question whether all purported cases of ``optional'' movements are in fact changes in progress.
 Perhaps ``optional'' has no coherent meaning in grammar, outside of the meaning of change in progress.
@@ -109,44 +120,127 @@ The paper is organised as follows.
 First, I report quantative data that relative clause extraposition is being lost in the following languages: English, Icelandic, French, and Portuguese, using seven different parsed diachronic corpora (i.e. treebanks).
 Next, I discuss the idea that the extraposed and \textsl{in situ} variants are ``competing grammars'', syntactic variants which are mutually exclusive and competing in language use, and suggest some consequences this has for the analysis of relative clauses.
 In section \ref{slow}, I discuss the fact that the extraposed variant is specialized for particularly heavy relative clauses, which is the factor that slows the change down to a degree that it is only observable over a period of a thousand years.
-Finally, section \ref{pie} builds on \ref{kiparsky1995} and presents the possibility that this change began far back in pre-history, at a time when true relative clauses were first innovated in Romance and Germanic, and has been underway ever since that time.
+Finally, section \ref{pie} builds on \ref{kiparsky1995} and presents the possibility that this change began back in pre-history, at a time when true relative clauses were first innovated in Romance and Germanic, and has been underway ever since that time.
 
 
 
 \section{Decline in Relative Clause Extraposition}
 \label{relclause}
+
+The data in \ref{results} below show a remarkably slow decline in the frequency of relative clause extraposition from subject DPs in four languages: English, Icelandic, French, and Portuguese. I originally collected this data to test the hypothesis that the frequency of relative clause extraposition was stable over time in a number of languages; as you will see below, though the change is slow enough to be unobservable without data from over a period of many hundreds of years, that hypothesis can be soundly rejected.
+
+\subsection{Methods}
+
+It is worth noting that the type of data presented below is entirely unobtainable without diachronic parsed corpora (i.e. treebanks), which have been annotated at a very high level of accuracy (i.e. they have been hand-corrected by expert syntacticians, not only automatically parsed). For this study, the following parsed diachronic corpora were used: for English, the \textsl{York-Toronto-Helsinki Corpus of Old English Prose (YCOE)} \citep{ycoe}, the \textsl{Penn-Helsinki Parsed Corpus of Middle English 2 (PPCME2)} \citep{ppcme2}, the \textsl{Penn-Helsinki Parsed Corpus of Early Modern English (PPCEME)} \citep{ppceme}, and the \textsl{Penn Parsed Corpus of Modern British English (PPCMBE)} \citep{ppcmbe}; for Icelandic, the \textsl{Icelandic Parsed Historical Corpus (IcePaHC)} \citep{icepahc09}; for Old and Middle French, the \textsl{MCVF Corpus} \citep{mcvf}; and for historical Portuguese, the \textsl{Tycho Brahe Corpus of Historical Portuguese} \citep{tychobrahe}.
+
+Finite clauses containing a relative clause modifying a subject or object were extracted from the corpora using CorpusSearch coding queries \citep{corpussearch}, and coded for the following variables: the response variable of whether or not the relative clause was extraposed, whether it modified a subject or object DP, its weight in number of words, whether the clause occurred in reported speech or not, and the date of the text the clause appeared in.\footnote{If no precise date of composition was available, as was the case for many Old English and Old Icelandic texts, we used an estimated date of composition wherever possible, or a manuscript date in cases where there is no clear consensus on the date of composition. In all cases, we follow the dates provided by the documentation of the diachronic corpora, following the philological sources they cite.} These variables were controlled for in all subsequent statistical analysis.
+
+%åFor English, Icelandic, and Portuguese, only prose texts are 
+
+All coding queries and the extracted datasets are available at in the following public \textsl{git} directory: \url{github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput}.
+%were coded so that the effects of these variables could be controlled for in statistical analysis.
+
+
+
 %agnostic as the rightward/leftward-movement question
 %Cite Anton about phonological weight being continuous, not discrete !!!
 
 
 %extraposition in modern Dutch and German, which has specialized along a grammatical, categorical dimension
 
+\subsection{Results}
+\label{results}
 
-\section{Extraposition As Competing Grammars}
+For the four languages I investigated, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have), compared to the use of \textsl{in situ} relative clauses. This is shown in Figures \ref{engfig}-\ref{portfig}. (Raw numbers by century are provided in the Appendix; for extracted data sets in the form of lists of codes, please see files ending in ``.ooo'' in the github directory linked above, i.e. \url{github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput/*.ooo}.) \noteme{Do I need this last?}
 
-\section{Why So Slow?}
+\begin{figure}
+
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessymeb.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}), from early Old English prose through modern English. N = 18530 relative clauses.}
+\label{engfig}       % Give a unique label
+\end{figure}
+
+\begin{figure}
+
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessice.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from subject and object positions, early Old Icelandic prose through modern Icelandic. N = 3486 relative clauses.}
+\label{icefig}       
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessfre.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from subject and object positions, Old and Middle French. N = 8207 relative clauses.}
+\label{frefig}       
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50Loessport.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from subject and object positions, 15th-19th c. Portuguese. N = 2398 relative clauses.}
+\label{frefig}       
+\end{figure}
+
+
+
+As can be seen in the Figures for English (Figure \ref{engfig}) and Icelandic (Figure \ref{icefig}), the decline in extraposition is so slow that it could have been easily missed if the corpora of English (collectively) and Icelandic were not at sufficient time-depth (over 1000 years of data for each); any time-window of only a few hundred years would likely be too small to detect such a change at all.
+
+For comparison, I conducted the same study on the Parsed Corpus of Early English Correspondence \citep[PCEEC][]{pceec}, which covers a period from the 15th through 17th centuries. The results of that study make the frequency of extraposition appear to be stable over time, shown in Figure \ref{pceecfig}.
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{stableVarTalks/exSbjObjYearBinned50.pdf}
+\caption{Declining proportion of relative clause extraposition (vs. \textsl{in situ}) from subject and object positions, Parsed Corpus of Early English Correspondence. N = 8073 relative clauses.}
+\label{pceecfig}       
+\end{figure}
+
+\noindent The results in Figure \ref{pceecfig} match the results from the larger English corpora for the same time period (compare Figure \ref{engfig}), but miss the change entirely; simply by accident, the 250-year time-slice of the PCEEC happens to not reflect the change, which then becomes visible once we observe a larger diachronic window.
+
+Nevertheless, fitting a logistic regression model shows that the decline in extraposition is statistically significant in each of the languages; an interaction between text year and extraposition significantly improves model fit (p < 0.00001 for all languages), controlling for all other interactions involving: matrix/subordinate clause-type, simple text vs. reported speech, subject vs. object position, and weight of the subordinate clause (i.e. length measured in number of words).
+
+Interestingly, a model constrained to have the same slope parameter for the decline in both Icelandic and English (controlling for the same factors above) fits well, and not significantly better than a model which allows different slope terms for the two languages (p $\approx$ 0.45). This is reminiscent of the Constant Rate Effect \citep[][among others]{kroch1989, pintzuk1991, santorini1993a}, which states the different surface realizations of the same underlying linguistic object will change with the same slope as each other as that underlying linguistic object changes. Though the situation here is not one of comparing different linguistic contexts, but rather different populations of speakers (i.e. Icelandic and English), perhaps the same basic logic applies: the same trajectory of change could indicate that the same forces are underlying the change in both populations, both in terms of what is driving the change, and in terms of which basic linguistic object is undergoing change. 
+
+However, any model with includes the French and Portuguese data fits significantly worse when it assumes the same slope for the change over time. This is true if French and Portuguese are modelled together, separately from Icelandic and English, or if any combination of languages including either French or Portuguese are modelled together (p $\leq$ 0.01 in all cases). This either means that these languages show a similar-looking, but ultimately different change (at least at the time points we are observing), or that some other feature of those data sets is obscuring what should be the same slope as in Icelandic and English. Since the text-sampling methods were designed to control for genre effects over time in the Icelandic and English corpora, but this was not done in the same way for the Tycho Brahe and MCVF corpora (and the latter is the only corpus which contains significant amounts of poetry as well as prose), we cannot rule out the possibility that the estimated slopes for French and Portuguese have been obscured by factors that are extraneous to the issue under investigation.
+
+%, and genre (for IcePaHC only\footnote{Genre is easier to code for in the IcePaHC annotation. }
+
+
+\section{Discussion}
+\subsection{Extraposition As Competing Grammars}
+
+One consequence of the study above is that extraposition, which is usually described as an optional movement process producing multiple output options within a single grammar, is in fact behaving diachronically more like two co-existing linguistic objects, one replacing another over time just as in the classic cases of ``competing grammars'' \citep[][etc.]{kroch1989, kroch1994, santorini1992}. As \citet{kroch1994} discusses at length with respect to the ``Blocking Effect'' \citep[an expanded understanding of the principle first proposed in ]{aronoff1976}, situations of competing grammars are inherently diachronically unstable for general, cognitive reasons. In all four languages (with the possible exception of modern Portuguese), even though the loss of extraposition began at least a thousand years ago, the change is still in progress at the present time. Thus, the seeming optionality between extraposed and non-extraposed relative clauses is really most simply described as the code-switching that is characteristic of a change in progress (the definition of ``competing grammars'').
+
+Thus, once two structures (or two versions of a functional head, following the Borer-Chomsky conjecture; \citealt{borer1984, kroch1994}, so named in \citealt{baker2008}) are both available to a speaker with the same meaning or function, that is a situation of competition for language use: one of two possible forms is chosen by the speaker for use in a given utterance. At this point, nothing more needs to be said in terms of grammatical apparatus in order to explain diachronic instability. Competition in use between functionally equivalent linguistic forms will be unstable diachronically by virtue of the fact that human brains prefer not to store synonomous forms, whenever possible; indeed, this is probably an acquisition strategy, reducible to the independently observed ``Principle of Contrast'' \citep[][inter alia]{clark1987, clark1990}. In other words, competing syntactic forms is an unstable situation because they are subject to the same cognitive ``Blocking Effect'' as morphological doublets such as Middle English \textsl{lough, laughed} (laugh-\textsc{pst}; \citealt{taylor1994}), in the way suggested by \citet{kroch1994}.  \noteme{CITE paper with Joe}
+
+But this is only true under a simple, restrictive model of grammar: if the grammar is not specifically engineered to stably produce and maintain optionality as one of its design-features, then it won't. The grammar simply produces derivations by putting atomic pieces together, and if the brain needs to choose between two pieces for the same function at some point in the derivation, that creates apparent optionality on the surface, and also diachronic instability. If, on the other hand, a grammar is specifically designed to accommodate optional or stochastic processes as part of the derivation, such as Stochastic OT \citep{boersmahayes2001} or Noisy Harmonic Grammar \citep[][and much subsequent work]{boersmapater2008, pater2008}, the something additional needs to be said in order to explain the fact that even cases as close to diachronic stability as extraposition, are in fact changes in progress where one structure replaces another.
+
+This basic generalization stands regardless of the specific analysis one proposes for relative clause extraposition, and must be accommodated in any reasonable analysis: the diachronic instability means that somewhere in the derivation, the speaker makes a (probably unconscious) choice between two syntactic formatives that are functionally equivalent in many environments. (Note that I do not say they are entirely functionally equivalent: I returnt to this point in section \ref{slow}.) The following is one possible syntactic analysis which is consistent with the competing grammars interpretation of the data above, but others are certainly possible.
+
+Suppose we assume the standard analysis of relative clauses prior to \citet{kayne1994} \noteme{check this}, that relative clauses are derived by null operator movement from the gap site to a specifier in the CP domain of the subordinate clause, and then the resulting CP adjoins to NP or DP. \citet{culicoverrochemont1990} propose that the extraposed version of the relative clause in (\ref{crex}) is not derived by movement, but rather represents an alternative adjunction site for the clause higher up the in structure.
+
+\begin{exe}
+    \ex \begin{xlist}
+         \ex \label{crinsitu} A man that no one knew came into the room.
+         \ex \label{crex} A man came into the roomm that no one knew.
+         \end{xlist}
+         \citep[][23]{culicoverrochemont1990}
+\end{exe}
+
+\noindent \citet{culicoverrochement1990} then propose that a rule of semantic interpretation (the ``Complement Principle''\footnote{The name is historical: their proposal does not apply only to complements.}) constrains the possible entities with respect to which the relative clause can be interpreted; this is their analysis of the ``Right Roof Constraint'' on the locality of extraposition.
+
+Under this analysis, relative clauses can be adjoined at a number of levels, provided they are hierarchically close enough to their antecedent DP to be interpreted with it. (In fact, the generalization may be that the relative clause can be adjoined either inside the DP, or within the $v$P phase. If this is correct, then {culicoverrochemont1990} should be recast in terms of phase theory such that the ``Complement Principle'' can be reduced to a requirement that the relative clause be sent to LF for interpretation on the same phase as its modified DP. But the details of such a proposal is beyond the scope of the present article.)
+
+\subsection{Why So Slow?}
 \label{slow}
 
-\section{Origin of Relative Clauses}
+%Cite other paper with Joe
+
+\subsection{Origin of Relative Clauses}
 \label{pie}
 
 %continued presence of CP-CARs, compare to Vedic in Kiparsky
 
 
 
-%Cite other paper with Joe
-
 \section{Conclusions}
 
-%The information structural criteria are categorical, but probably not the phonological conditioning 
-
-%Cite Anton about phonological weight being continuous, not discrete !!! Also, Laurel on subject-length
-
-%Cite Laurel's thesis about model of use, and subject length
-
-%Cite Japanese Honorific variation -- thank Caroline -- Anna Strycharz
-
-%t/d in style-shifting -- Jen Smith paper and refs
 
 
 
@@ -156,15 +250,8 @@ Finally, section \ref{pie} builds on \ref{kiparsky1995} and presents the possibi
 
 
 
-% For one-column wide figures use
-%\begin{figure}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-%  \includegraphics{example.eps}
-% figure caption is below the figure
-%\caption{Please write your figure caption here}
-%\label{fig:1}       % Give a unique label
-%\end{figure}
+
+
 %
 % For two-column wide figures use
 %\begin{figure*}
@@ -203,6 +290,8 @@ Finally, section \ref{pie} builds on \ref{kiparsky1995} and presents the possibi
 %\bibliographystyle{spphys}       % APS-like style for physics
 \bibliographystyle{linquiry2} %use spbasic for journal of comparative gmc linguistics, etc.
 \bibliography{joelrefs}   % name your BibTeX data base
+
+\section*{Appendix}
 
 \end{document}
 % end of file template.tex
