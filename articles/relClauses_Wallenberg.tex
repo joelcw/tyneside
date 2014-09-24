@@ -57,7 +57,7 @@ grestore
 \usepackage[T1]{fontenc}
 \usepackage{ tipa }
 \usepackage{hyperref}
-\bibpunct{(}{)}{,}{a}{}{,}
+\bibpunct[: ]{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
 
@@ -67,7 +67,7 @@ grestore
 \begin{document}
 
 \title{Extraposition is Disapppearing
-\thanks{digs, geneva, ucl}}
+\thanks{I'd like to thank Josef Fruehwald, Anthony Kroch, Caitlin Light for very helpful discussion on this and related topics, as well as audiences at the Diachronic Generative Syntax Conferences in 2013 and 2014, and at seminar series' at University College London and the University of Geneva for comments on earlier versions of some of this material.}}
 %\subtitle{Do you have a subtitle?\\ If so, write it here}
 
 %\titlerunning{Short form of title}        % if too long for running head
@@ -101,13 +101,15 @@ This study describes a change in which relative clause extraposition is in the p
 This squib presents presents important preliminary results demonstrating the existence of a syntactic change which is many times slower than any other that has previously been reported: the syntactic process of relative clause extraposition is being lost in both Germanic and Romance languages.
 %Depending on what is driving the change, it may also be a new class of syntactic change. 
 As the results are still preliminary and much of their analysis is still unclear, the main goal of this article is to carefully describe a type of syntactic change which presents problems for both synchronic syntactic theory and the theory of language change, but not to present a comprehensive analysis of every aspect of this change at the present time.
-Furthermore, this decline in extraposition has been underway for over a thousand years, and while it is nearing completion in modern Portuguese, the change appears to still be ongoing at the present time. That is to say, the construction in (\ref{construct2}) is currently in decline, and likely on its slow but relentless way to extinction:
+Furthermore, this decline in extraposition has been underway for over a thousand years, and while it is nearing completion in modern Portuguese, the change appears to still be ongoing at the present time. That is to say, the construction in (\ref{construct1}) is currently in decline, and likely on its slow but relentless way to extinction:
 
 \begin{exe}
     \ex %English (constructed):
     \begin{xlist}
-         \ex \label{construct1} Someone who you like is coming to the party.
-         \ex \label{construct2} Someone is coming to the party who you like.
+         \ex \label{construct1} Another method...may be employed which is less open to the above objection.\\
+         (John Strutt's Scientific Papers, date: 1890; STRUTT-1890,3,356.396 in \textsl{Penn Parsed Corpus of Modern British English}, \citealt{ppcmbe})\\
+         \ex \label{construct2} Another method which is less open to the above objection may be employed\\
+         (Constructed)
         \end{xlist}
 \end{exe}
 
@@ -151,7 +153,7 @@ All coding queries and the extracted datasets are available at in the following 
 \subsection{Results}
 \label{results}
 
-For the four languages I investigated, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have), compared to the use of \textsl{in situ} relative clauses. This is shown in Figures \ref{engfig}-\ref{portfig}. (For data sets in the form of lists of codes extracted from the corpus, please see files ending in ``.ooo'' in the github directory linked above, i.e. \url{github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput/*.ooo}. The code lists are easily importable into R, and same directory contains queries, ending in ``.q'', which produced the codes and say how to interpret them.)
+For the four languages I investigated, English, Icelandic, French, and Portuguese, there is a slow but steady decline in the rate of relative clause extraposition over the course of each language's written history (given the corpora we currently have), compared to the use of \textsl{in situ} relative clauses. This is shown in Figures \ref{engfig}-\ref{portfig}. (For data sets in the form of lists of codes extracted from the corpus, please see files ending in ``.ooo'' in the github directory linked above, i.e. \url{github.com/joelcw/tyneside/tree/master/extraposition/queriesandoutput/*.ooo}. The code lists are easily importable into R, and same directory contains queries, ending in ``.c'', which produced the codes and say how to interpret them.)
 
 %Raw numbers by century are provided in the Appendix; f\noteme{Do I need this last?}
 
@@ -199,7 +201,7 @@ Nevertheless, fitting a logistic regression model shows that the decline in extr
 
 Interestingly, a model constrained to have the same slope parameter for the decline in both Icelandic and English (controlling for the same factors above) fits well, and not significantly better than a model which allows different slope terms for the two languages (p $\approx$ 0.45). This is reminiscent of the Constant Rate Effect \citep[][among others]{kroch1989, pintzuk1991, santorini1993a}, which states the different surface realizations of the same underlying linguistic object will change with the same slope as each other as that underlying linguistic object changes. Though the situation here is not one of comparing different linguistic contexts, but rather different populations of speakers (i.e. Icelandic and English), perhaps the same basic logic applies: the same trajectory of change could indicate that the same forces are underlying the change in both populations, both in terms of what is driving the change, and in terms of which basic linguistic object is undergoing change. 
 
-However, any model with includes the French and Portuguese data fits significantly worse when it assumes the same slope for the change over time. This is true if French and Portuguese are modelled together, separately from Icelandic and English, or if any combination of languages including either French or Portuguese are modelled together (p $\leq$ 0.01 in all cases). This either means that these languages show a similar-looking, but ultimately different change (at least at the time points we are observing), or that some other feature of those data sets is obscuring what should be the same slope as in Icelandic and English. Since the text-sampling methods were designed to control for genre effects over time in the Icelandic and English corpora, but this was not done in the same way for the Tycho Brahe and MCVF corpora (and the latter is the only corpus which contains significant amounts of poetry as well as prose), we cannot rule out the possibility that the estimated slopes for French and Portuguese have been obscured by factors that are extraneous to the issue under investigation.
+However, any model which includes the French and Portuguese data fits significantly worse when it assumes the same slope for the change over time. This is true if French and Portuguese are modelled together, separately from Icelandic and English, or if any combination of languages including either French or Portuguese are modelled together (p $\leq$ 0.01 in all cases). This either means that these languages show a similar-looking, but ultimately different change (at least at the time points we are observing), or that some other feature of those data sets is obscuring what should be the same slope as in Icelandic and English. Since the text-sampling methods were designed to control for genre effects over time in the Icelandic and English corpora, but this was not done in the same way for the Tycho Brahe and MCVF corpora (and the latter is the only corpus which contains significant amounts of poetry as well as prose), we cannot rule out the possibility that the estimated slopes for French and Portuguese have been obscured by factors that are extraneous to the issue under investigation.
 
 %, and genre (for IcePaHC only\footnote{Genre is easier to code for in the IcePaHC annotation. }
 
@@ -216,19 +218,19 @@ But this is only true under a simple, restrictive model of grammar: if the gramm
 
 This basic generalization stands regardless of the specific analysis one proposes for relative clause extraposition, and must be accommodated in any reasonable analysis: the diachronic instability means that somewhere in the derivation, the speaker makes a (probably unconscious) choice between two syntactic formatives that are functionally equivalent in many environments. (Note that I do not say they are entirely functionally equivalent: I returnt to this point in section \ref{slow}.) The following is one possible syntactic analysis which is consistent with the competing grammars interpretation of the data above, but others are certainly possible.
 
-Suppose we assume the standard analysis of relative clauses prior to \citet{kayne1994} \noteme{check this}, that relative clauses are derived by null operator movement from the gap site to a specifier in the CP domain of the subordinate clause, and then the resulting CP adjoins to NP or DP. \citet{culicoverrochemont1990} propose that the extraposed version of the relative clause in (\ref{crex}) is not derived by movement, but rather represents an alternative adjunction site for the clause higher up the in structure.
+Suppose we assume the standard analysis of relative clauses prior to \citet{kayne1994}, that relative clauses are derived by null operator movement from the gap site to a specifier in the CP domain of the subordinate clause, and then the resulting CP adjoins to NP or DP. \citet{culicoverrochemont1990} propose that the extraposed version of the relative clause in (\ref{crex}) is not derived by movement, but rather represents an alternative adjunction site for the clause higher up the in structure.
 
 \begin{exe}
     \ex \begin{xlist}
          \ex \label{crinsitu} A man that no one knew came into the room.
-         \ex \label{crex} A man came into the roomm that no one knew.
+         \ex \label{crex} A man came into the room that no one knew.
          \end{xlist}
          \citep[][23]{culicoverrochemont1990}
 \end{exe}
 
-\noindent \citet{culicoverrochement1990} then propose that a rule of semantic interpretation (the ``Complement Principle''\footnote{The name is historical: their proposal does not apply only to complements.}) constrains the possible entities with respect to which the relative clause can be interpreted; this is their analysis of the ``Right Roof Constraint'' on the locality of extraposition.
+\noindent Culicover and Rochemont then propose that a rule of semantic interpretation (the ``Complement Principle''\footnote{The name is historical: their proposal does not apply only to complements.}) constrains the possible entities with respect to which the relative clause can be interpreted; this is their analysis of the ``Right Roof Constraint'' on the locality of extraposition.
 
-Under this analysis, relative clauses can be adjoined at a number of levels, provided they are hierarchically close enough to their antecedent DP to be interpreted with it. (In fact, the generalization may be that the relative clause can be adjoined either inside the DP, or within the $v$P phase. If this is correct, then {culicoverrochemont1990} should be recast in terms of phase theory such that the ``Complement Principle'' can be reduced to a requirement that the relative clause be sent to LF for interpretation on the same phase as its modified DP. But the details of such a proposal is beyond the scope of the present article.) If that analysis is on the right track, then relative clauses are CPs which can adjoin in at least two positions in the phrase structure, without interpretive difference. This creates a situation of competing grammars: 
+Under this analysis, relative clauses can be adjoined at a number of levels, provided they are hierarchically close enough to their antecedent DP to be interpreted with it. In fact, the generalization may be that the relative clause can be adjoined either inside the DP, or within the $v$P phase. If this is correct, then \citet{culicoverrochemont1990} should be recast in terms of phase theory such that the ``Complement Principle'' can be reduced to a requirement that the relative clause be sent to LF for interpretation on the same phase as its modified DP. But the details of such a proposal are beyond the scope of the present article. But if the analysis is generally on the right track, then relative clauses are CPs which can adjoin in at least two positions in the phrase structure, without interpretive difference. This creates a situation of competing grammars.
 
 \subsection{Why So Slow?}
 \label{slow}
@@ -254,11 +256,11 @@ To summarize, because the extraposed and \textsl{in situ} relative clause varian
 
 The next portion of this article is by far the most speculative, as suggestions regarding the actuation of a particular linguistic change often are. Nevertheless, it may be interesting to explore some implications of the very slow rate of change shown in the data above. The change is slow enough that it may well have been in progress for some thousands of years, and so quite possibly predates the differentiation of some of the languages under investigation into mutually unintelligible varieties. In particular, it may be the case that the change in extraposition relates to the origins of Indo-European relative clauses, and that the change actually began when relative clause embedding was first innovated in Indo-European.
 
-If we follow the non-movement adjunction analysis of relative clause extraposition in \citet{culicoverrochemont1990}, then the ``extraposed'' version of a relative clause is actually the historical form of all Indo-European relative clauses, and the ``\textsl{in situ}'' version is a later innovation. \citet{kiparsky1995} proposes that relative clauses in Proto-Indo-European (PIE) only existed as clausal adjuncts; they were not truly embedded within the matrix clause, modifying a constituent within it like its subject, but were rather adjoined to the matrix clause and associated with some correlative element within it. This is either the only attested system or the dominant system found in various Old Indo-European languages, such as Sanskrit, Hittite, Old Latin (\citealt[][155]{kiparsky1995}, and references cited therein). According to Kiparsky, the low-adjoined relative clause (again, following an adjunction analysis), the \textsl{in situ} variant which appears within a DP, is a later innovation, and comes to be the dominant form in Germanic, as that family differentiates from the rest of PIE (presumably this would apply to Romance as well).
+If we follow the non-movement adjunction analysis of relative clause extraposition in \citet{culicoverrochemont1990}, then the ``extraposed'' version of a relative clause is actually the historical form of all Indo-European relative clauses, and the ``\textsl{in situ}'' version is a later innovation. \citet{kiparsky1995} proposes that relative clauses in Proto-Indo-European (PIE) only existed as clausal adjuncts; they were not truly embedded within the matrix clause, modifying a constituent within it like its subject, but rather were adjoined to the matrix clause and associated with some correlative element within it. I will assume that the high, ``clause-adjoined'' relatives that Kiparsky describes could represent TP- or CP-adjunction, or they could easily be $v$P-adjoined; these are the possible adjunction positions for ``extraposition'' I mentioned above in section \ref{compete} with regard to Culicover and Rochemont's analysis.   These high-adjoined relatives represent either the only attested system or the dominant system found in various Old Indo-European languages, such as Sanskrit, Hittite, Old Latin (\citealt[][155]{kiparsky1995}, and references cited therein). According to Kiparsky, the low-adjoined relative clause (again, following an adjunction analysis), the \textsl{in situ} variant which appears within a DP, is a later innovation, and comes to be the dominant form in Germanic, as that family differentiates from the rest of PIE (presumably this would apply to Romance as well).
 
-Although Kiparsky only discusses the earlist and latest stages of the change, not the detail of how the change progressed in the interim, it is straightforward to apply our understanding of syntactic change in progress to this case from other changes that have been studied in quantitative detail (going back to \citealt{kroch1989}, \citealt{santorini1989}). Starting from a Sanskrit-like system of clause-adjoined relative clauses, as Kiparsky suggests, once a new, DP-embedded type of relative clause is innovated, it will come into competition for use with the old clause-adjoined system. This would create the kind of variation we have observed in all four languages, if we accept that ``extraposition'' is actually just the remnant of the old clause-adjoined relative system. Then, in order for the DP-embedded system to become dominant, as Kiparsky suggests it has in Germanic, the DP-embedded (``\textsl{in situ}'') variant would have to spread at the expense of the clause-adjoined (``extraposed'') variant over a number of generations. This is exactly the historical progression I have shown above (with the addition that the change was slowed by specialization for prosodic weight, as I have already discussed).
+Although Kiparsky only discusses the earliest and latest stages of the change, not the detail of how the change progressed in the interim, it is straightforward to apply our understanding of syntactic change in progress to this case from other changes that have been studied in quantitative detail (going back to \citealt{kroch1989}, \citealt{santorini1989}). Starting from a Sanskrit-like system of clause-adjoined ($v$P-adjoined) relative clauses, as Kiparsky suggests, once a new, DP-embedded type of relative clause is innovated, it will come into competition for use with the old clause-adjoined system. This would create the kind of variation we have observed in all four languages, if we accept that ``extraposition'' is actually just the remnant of the old clause-adjoined relative system. Then, in order for the DP-embedded system to become dominant, as Kiparsky suggests it has in Proto-Germanic, the DP-embedded (``\textsl{in situ}'') variant would have to spread at the expense of the clause-adjoined (``extraposed'') variant over a number of generations. This is exactly the historical progression I have shown above (with the addition that the change was slowed by specialization for prosodic weight, as I have already discussed).
 
-The idea that the clause-adjoined relative system has never really left Germanic and Romance, but is really simply the ``extraposed'' variants (following \citealt{culicoverrochemont1990}), which continue to be in competition with the DP-embedded variants, is supported by the fact that clearly clause-adjoined relatives are still possible in languages like modern English and modern Icelandic. Kiparsky argues that in cases such as the Vedic Sanskrit sentence in (\ref{vedicrel}), where the ``head'' of the relative is contained inside the relative clause and the main clause contains a different ``head'' to which the relative refers, the only possible analysis is the clause-adjoined one.
+The idea that the high/clause-adjoined relative system has never really left Germanic and Romance, but is really simply the ``extraposed'' variants (following \citealt{culicoverrochemont1990}) is supported by the fact that clearly clause-adjoined relatives are still possible in languages like modern English and modern Icelandic. Kiparsky argues that in cases such as the Vedic Sanskrit sentence in (\ref{vediccar1}), where the ``head'' of the relative is contained inside the relative clause and the main clause contains a different ``head'' to which the relative refers, the only possible analysis is the clause-adjoined one.
 
 \begin{exe}
 
@@ -281,7 +283,7 @@ perceptions of the operator.\\
         (\textsl{Commercial gardening...}, date: 1913;ID WEATHERS-1913,1,9.217 in \\PPCMBE)
 \end{exe}
 
-\noindent Similarly, the high clause-adjoined system is also evidenced by cases where the relative clause refers to the entire proposition, and is, in the words of \citet[][157]{kiparsky1995}, ``unlinked to any argument/modifier position'' in the main clause, as in the modern Icelandic and English examples in (\ref{icecar2}) and (\ref{engcar2}) respectively, or the Middle French one in (\ref{frecar}):
+\noindent Similarly, the high-adjoined system is also evidenced by cases where the relative clause refers to the entire proposition, and is, in the words of \citet[][157]{kiparsky1995}, ``unlinked to any argument/modifier position'' in the main clause, as in the modern Icelandic and English examples in (\ref{icecar2}) and (\ref{engcar2}) respectively, or the Middle French one in (\ref{frecar}):
 
 \begin{exe}
          \ex \label{icecar2} \gll hann hafði enn hvorki boðið mér vott né þurrt, sem var óvenjulegt á þeim bænum\\
@@ -291,14 +293,14 @@ perceptions of the operator.\\
          \ex \label{engcar2} [if a man] sees a certain amount of his colleagues socially --  which is absolutely essential to general harmony...\\
          (\textsl{The schoolmaster...} ,date: 1908; ID BENSON-1908,73.313 in PPCMBE)
          \ex \label{frecar} \gll Ma Sibile, je vous ai escrit il n i a que deux jours, qui m anpaichera de vous inportuner de long discours \\
-         My Sibile, I you-\sc{dat} have written there \sc{neg} it-\sc{dat} have but two days, which me prevents from you bother of long discussion
+         My Sibile, I you-\sc{dat} have written there \sc{neg} it-\sc{dat} have but two days, which me prevents from you bother of long discussion\\
          \quad ``My Sibile, I wrote to you only two days ago, which prevents me from bothering you with a long discussion''\\
          (letter by Marguerite de Valois, date: 1573-1596; \\ID 158X-VALOIS-AUTOGRAPH-P,124.838 in MCVF corpus)
 
 \end{exe}
 
 
-Thus, this study has been able to build on Kiparsky's argument that the older, PIE system, consisted of clause-adjoined relatives, but I see no reason to conclude that they have disappeared from modern Germanic or Romance, nor that extraposed relative clauses are a separate phenomenon from the clause-adjoined system. Rather, accepting \citet{culicoverrochemont1990}'s analysis of extraposition as adjunction suggests a natural historical continuity: extraposition is simply the remnant of the older relative clause system, which has been in competition with the new, clause-internal relative clause system for well over a thousand years. But just as Kiparsky suggested, the quantitative study above does show that the old system is dying out, albeit very slowly.
+Thus, this study has been able to build on Kiparsky's argument that the older, PIE system, consisted of high/clause-adjoined relatives, but I see no reason to conclude that they have disappeared from modern Germanic or Romance, nor that extraposed relative clauses are a separate phenomenon from the high/clause-adjoined system. Rather, accepting \citet{culicoverrochemont1990}'s analysis of extraposition as adjunction suggests a natural historical continuity: extraposition is simply the remnant of the older relative clause system (clause-adjoined or $v$P-adjoined), which has been in competition with the new, DP-internal relative clause system for well over a thousand years. But just as Kiparsky suggested, the quantitative study above does show that the old system is dying out, albeit very slowly.
 
 
 \section{Conclusions}
