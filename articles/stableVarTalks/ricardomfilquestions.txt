@@ -1,0 +1,6 @@
+0) can the child divide the variation into contexts for sub-selection by chance?
+1) could the principle of contrast *just* be the bias towards separating the variation into contexts
+2) when the child divides the variation into contexts, does the rest happen by chance?
+3) Or does the principle of contrast actually make one win in one context and the other in the other? plus dividing contexts
+4) how does the dividing contexts apply to continuous dimensions?
+5) Predictions: if 3 is right, then: specialization has to happen in *every* case, and it has to happen at the same speed per instance of variation, so thats the more restrictive HYPOTHESIS!
