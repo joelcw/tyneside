@@ -51,7 +51,7 @@ grestore
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{qtree}
+\usepackage{xyling}
 \usepackage[utf8]{inputenc}
 \usepackage{gb4e}
 \noautomath
@@ -62,7 +62,8 @@ grestore
 \usepackage{calc}
 \usepackage{subfig}
 \bibpunct{(}{)}{,}{a}{}{,}
-\newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
+\newcommand{\notejoel}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
+\newcommand{\notejoe}[1]{\noindent \textbf{[[JTF:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
 
 % Insert the name of "your journal" with
@@ -106,19 +107,60 @@ stuff
 \label{intro}
 
 This is a strictly Minimalist proposal, in the sense of \citet{chomsky1993, chomsky1995, chomsky1998,chomsky2001}.
-It takes an issue which has frequently been brute-force encoded in the grammar with little explanatory content, namely optionality, and shows how it can be fully explained as an effect of the interface between the narrow grammar, understood as a maximally simple combinatoric system, and general properties of the linguistic, cognitive, and social systems in which the derivation is produced.
-Our proposal is also not to postulate a set of \textsl{ad hoc} interface constraints; the phenomenon which appears to be optionality in the phonology and syntax is an interface \textsl{effect}, a by product of how the derivation must relate to independently motivated linguistic and extralinguistic structures.
+It takes an issue which has frequently been brute-force encoded in the grammar with little explanatory content, namely optionality, and shows how it can be fully explained as an effect of the interface between the narrow grammar (understood here as a maximally simple combinatoric system) and general properties of the linguistic, cognitive, and social systems in which the derivation is produced.
+\{Our proposal is also not to postulate a set of \textsl{ad hoc} interface constraints; the phenomenon which appears to be optionality in the phonology and syntax is an interface \textsl{effect}, a by product of how the derivation must relate to independently motivated linguistic and extralinguistic structures.\notejoe{What does this mean?}\}
+
+In this paper, we consider X CASESTUDIES
+%six case studies, three syntactic and three (morpho-)phonological, which have been described either as diachronically stable variation or as optional operations: \textsl{-in}/\textsl{-ing} variation, relative clause extraposition, [t]/[d]-deletion, \textsl{h}-dropping, \textsl{whether/if} variation in embedded questions \citep{baileywallenbergwurff2012}, and English topicalization (object DP fronting).
+Each case involves a probabilistic (i.e. ``optional'') alternation between surface variants which presumably have the same input to the grammar.
+For example, in English TD Deletion, the input to the phonological grammar are words with a final coda cluster, including a coronal stop, and the output is variably simplified.
+\begin{exe}
+	\ex TD Deletion\\
+		\Tree{
+		&\K{\it mist}\AR{dl}_{p}\AR{dr}^{(1-p)}\\
+		\K{\it mis'} && \K{\it mist}
+		}
+\end{exe}
+In English and Icelandic {\it whether}/{\it if} variation, the input to the grammar is an embedded question, and {\it if} and {\it whether} are variably selected as exponents of C.\notejoe{In case this is wrong, see alternative below}
+\begin{exe}
+\ex {\it if}/{\it whether} in embedded questions\\
+	 \Tree{
+	&\K{C}\AR{dl}_{p}\AR{dr}^{(1-p)}\\
+	\K{\it if} && \K{\it whether}
+	}
+\end{exe}
+
+In English and Icelandic {\it whether}/{\it if} variation, the input to the grammar is the right periphery of an embedded question, and {\it if} and {\it whether} are variably pronounced.\notejoe{I'm making up words}
+\begin{exe}
+\ex {\it if}/{\it whether} in embedded questions\\
+	\Treek[3]{3}{
+		&\K{\includegraphics[width = 0.3\textwidth]{figures/whetherif_in.pdf}}\AR[-4]{dl}_{p}\AR[-4]{dr}^{(1-p)}\\
+		\K{\textit{whether}$\rightarrow\emptyset$}
+		\Below{\textit{if}$\rightarrow$\textit{if}}&&
+		\K{\textit{whether}$\rightarrow$\textit{whether}}
+		\Below{\textit{if}$\rightarrow\emptyset$}
+	}
+\end{exe}
 
 
-In this paper, we consider six case studies, three syntactic and three (morpho-)phonological, which have been described either as diachronically stable variation or as optional operations: \textsl{-in}/\textsl{-ing} variation, relative clause extraposition, [t]/[d]-deletion, \textsl{h}-dropping, \textsl{whether/if} variation in embedded questions \citep{baileywallenbergwurff2012}, and English topicalization (object DP fronting).
-Each case involves a probabilistic (i.e. ``optional'') alternation between surface variants, and we show that they are all best understood as instances of an independently attested phenomenon, the alternation between linguistic variants which is observed during a language change in progress.
-This is the change-related alternation which is usually called ``competing grammars'' \citep[][]{kroch1989}, which can be defined as the occurrence of alternative atomic units/rules of grammar in a single speaker's inventory, and is usually diachronically unstable.
-In fact, the Minimalist research program demands that such a reduction be attempted, and the state of the art in the current  theory of functional heads and movement already predicts that syntactic optionality is the same as competing grammars (i.e. morphosyntactic doublets), though few researchers to date have noticed this \citep[with the exception of][]{kroch1994}.
+We will argue that these and the rest of our examples are best understood as special cases of ``Competing Grammars'' \citep[][]{kroch1989}.
+When a single speaker's inventory of grammatical rules contains multiple rules which have the same structural definition for use, but are mutually incompatible, they could be said to be in competition for use, \textsl{i.e.} to be Competing Grammars.
+Grammar competition is typically a diachronically unstable situation, so one rule usually replaces the other.
+While Competing Grammars is most often used to explain the dynamics of language change \citep{yang2000,yang2002}, the Minimalist research program demands that we attempt to reduce the explanatory mechanisms for language change and stable variation to just one system.
+Our attempt is made easier by the fact that the state of the art in the current  theory of functional heads and movement already predicts that syntactic optionality is the same as competing grammars (i.e. morphosyntactic doublets), though few researchers to date have noticed this \citep[with the exception of][]{kroch1994}.
 
-We also show that even though grammatical optionality is really the same phenomenon as a language change in progress, the competing grammars situation can become \textsl{almost} diachronically stable under a very specific (and perhaps rare) set of circumstances: when categorical variants have \textbf{partially} specialized along a continuous dimension of use with no clear endpoints (e.g. style, phonological heaviness). In this rare case, the interaction between categorical variation and a continuous dimension of use will not allow the construction to fully specialize, though it does allow the potential change in progress to slow to down until it is barely possible to detect. In fact, even then, the specialization does not completely halt the change in progress.
+We argue that stable variation is a special case of Competing Grammars, but the circumstances that give rise to these special cases are not, themselves, grammatical.
+Intrinsically unstable grammar competition can become \textsl{almost} diachronically stable under a very specific (and perhaps rare) set of circumstances: when categorical variants have \textbf{partially} specialized along a continuous dimension of use with no clear endpoints (e.g. style, phonological heaviness). 
+In this rare case, the interaction between categorical variation and a continuous dimension of use will not allow the construction to fully specialize, though it does allow the potential change in progress to slow to down until it is barely possible to detect. In fact, even then, the specialization does not completely halt the change in progress.
 Thus, we are led to the hypothesis that truly diachronically stable variation does not exist.
 
-Figure \ref{competition_figure_first} diagrammatically illustrates the three scenarios of competition between linguistic forms A and B we will investigate, provided here to frame the discussion. These scenarios will be discussed in fuller detail below.
+Figure \ref{competition_figure_first} diagrammatically illustrates the three scenarios of competition between linguistic forms A and B we will investigate, provided here to frame the discussion. 
+The first, and most common scenario, involves the introduction of a new variant B into speakers' grammatical ruleset.
+Speakers may variably use both A and B for a period of time, but eventually use of B becomes categorical and A is eliminated.
+The second possible scenario is that variant B enters speakers' grammatical ruleset, and again, speakers may variably use both A and B for a period of time.
+In this scenario, however, A and B fully specialize for use in different contexts, and no longer compete for use within these contexts.
+For example, A could take on a more specialized meaning, like {\it luncheon} did after the introduction into usage of the truncated form {\it lunch}.
+The final scenario, the primary subject of our discussion, is the {\it partial} specialization of A and B along a continuous dimension, like sociolinguistic style.
 
 
 \begin{figure}[h!tbp]
@@ -147,10 +189,12 @@ Figure \ref{competition_figure_first} diagrammatically illustrates the three sce
 
   
 In the first section below, we introduce the problem of stable variation in the sociolinguistic and phonological literature, and show how it relates to syntactic optionality.
-In particular, we show how optionality in syntax can only be described in a Minimalist framework as doublets of functional heads, which is really the same as competing grammars, and that this poses a problem for language acquisition.
-In section (\ref{solution}), we show that stable variation can persist just in case the variants become specialized in use along a particular type of continuous dimension.
-Section (\ref{cases}) presents our case studies, and shows how they are all situations in which variants have become semi-specialized along a continuous dimension of use, which is the only circumstance that could allow such variation to persist indefinitely.
+In particular, we show how optionality in syntax can only be described in a Minimalist framework as doublets of functional heads, which is really the same as Competing Grammars.
+%, and that this poses a problem for language acquisition. \notejoe{acquisition all of a sudden}
+In section \S\ref{solution}, we show that stable variation can persist just in case the variants become specialized in use along a particular type of continuous dimension.
+Section \S\ref{cases} presents our case studies, and shows how they are all situations in which variants have become semi-specialized along a continuous dimension of use, which is the only circumstance that could allow such variation to persist indefinitely.
 Lastly, we conclude and offer some predictions that this approach makes for future research.
+
 
 Before continuing, we should be clear that there are some well defined problems in the study of language change, chief among them being the Actuation Problem, originally framed by \citet{wlh1968} as the following question:
 	\begin{quote}
@@ -159,7 +203,7 @@ Before continuing, we should be clear that there are some well defined problems 
 Since 1968, the Actuation Problem has remained both a problem and close to the very heart of the matter of language variation and change.
 Addressing the Actuation Problem is well beyond what we will be able to do in this paper.
 So, for example, the means by which a variant B in Figure \ref{competition_figure_first} is introduced is completely unspecified.
-However, we don't believe that lacking even an adequate model of actuation poses a problem for the theory and models we outline here, since they mostly involve dynamics of the language system well after the actuation of changes.
+However, we don't believe that lacking even an adequate theory of actuation poses a problem for the models we outline here, since they mostly involve dynamics of the language system well after the actuation of changes.
 
 \section{The Problem of Stable Variation}
 \subsection{Optionality in Minimalism}
@@ -209,15 +253,15 @@ A Minimalist syntax does not allow for any construction-specific transformationa
 When a head, H, has projected once (H'), it can combine with a specifier and project again either by Merge (external) or Move.
 What determines whether Merge or Move is used, or indeed, whether the head projects again at all, is whether the head has a feature which must be checked against a particular type of XP in a spec-head configuration.
 So far so good, for obligatory movements.
-If H has a certain feature, F, then the movement occurs; otherwise, the movement does not.
+If a certain feature $F$ motivates movement, and H has that feature (H$^F$), then the movement occurs; otherwise (H$^\emptyset$), the movement does not.
 Because the default in a maximally simple (i.e. Minimalist) system is no movement at all, there is simply no way to encode optional movement with a feature.
 (Note that ``Merge...preempts Move'' requires no movement to be a default in the system, as initially pointed out in \citealt{chomsky2000}.)
 
-The only way to state an optional movement in such a syntactic system, without adding new theoretical machinery, is by allowing the speaker's inventory of functional heads to include two flavors of the same functional head H, one with the movement-triggering feature F and one without F.
-The speaker can then choose to form a numeration with one version of H or the other.
+The only way to state an optional movement in such a syntactic system, without adding new theoretical machinery, is by allowing the speaker's inventory of functional heads to include two flavors of the same functional head H, one with the movement-triggering feature: H$^F$ and one without H$^\emptyset$.
+The speaker can then choose to form a numeration with either H$^F$ or H$^\emptyset$.
 This is a morphosyntactic doublet, by definition, of the same type discussed in Kroch (1994): two formal variants with no difference in narrow meaning and overlapping discourse environment.
 This is simply the definition of ``competing grammars'' \citep{kroch1994}, as the variants are inherently in competition for use in a particular discourse context.
-One could certainly imagine adding new mechanics to the syntax to encode optionality directly (thus fundamentally rejecting the basic proposals of a Bare Phrase Structure \citep{chomsky1995} and most Minimalist syntax), and the literature is full of proposals such as: getting around the idea that no movement is a default, adding some kind of stochasticity to the features on heads themselves, or adding a whole post-processing system consisting of probabilistic trans-derivational filters \noteme{maybe cite someone for these}.
+One could certainly imagine adding new mechanics to the syntax to encode optionality directly (thus fundamentally rejecting the basic proposals of a Bare Phrase Structure \citep{chomsky1995} and most Minimalist syntax), and the literature is full of proposals such as: getting around the idea that no movement is a default, adding some kind of stochasticity to the features on heads themselves (H$^{[pF]}$ where $p$ is some probabilty)\notejoe{Joel, look at this parenthetical}, or adding a whole post-processing system consisting of probabilistic trans-derivational filters \notejoel{maybe cite someone for these}.
 However, the simple Minimalist system is interesting precisely because it restricts our analytical possibilities and makes certain predictions as a result, so perhaps we should pursue this particular consequence of the system before complicating it.
 
 %%Todo: possibly rewrite top part bc of repeated top examples
@@ -277,9 +321,9 @@ Thus, the fronting is truly optional.
 Keeping the syntactic system as simple as possible, the movement to Spec, C must be triggered by some feature on C which attracts an XP to value its feature.
 For simplicity's sake, I will follow \citet{caitldiss} and assume that some notion of contrast (though a subtle one) defines the set of XPs which could be fronted in the English topicalization construction, and these XPs bear a feature like [constrast].
 When the fronting occurs, it is because there is a version of C in the phrase structure which probes for an XP bearing the feature [contrast].
-In that case, it must attract the XP to its specifier.
+In that case, C$^{[u~\text{contrast}]}$ must attract the XP to its specifier.
 In the situation where the fronting does not occur, this is only possible if a different version of C is used which is not a Probe for [contrast].
-Thus, there are two versions of C in the speaker's inventory of functional heads, and the construction is the result of the speaker choosing a particular version to include in the numeration.
+Thus, there are two versions of C in the speaker's inventory of functional heads: \{C$^{[u~\text{contrast}]}$, C$^\emptyset$\}, and the construction is the result of the speaker choosing a particular version to include in the numeration.
 This is by definition a morphosyntactic doublet: two heads which differ only in formal syntactic features, and which overlap in use (both in their position in the structure and in this particular information-structural context).\footnote{Note that my basic argument is unaffected if one assumes that topicalization is the result of an ``edge feature'' (EF) on C, as suggested in \citet[][151]{chomsky2008}.
 There would still have to be two versions of C, one with the EF, and one without the EF (or equivalent).
 Though \citet{chomsky2008} does not deal with this explicitly, if topicalization were due to an EF, there would still need to be some mechanism for specifying the version of C that is used when no type of fronting to Spec, C takes place at all.}
@@ -289,8 +333,10 @@ The rest of this article addresses the various factors that determine this outco
 We will return to the specific case of topicalization briefly in section \ref{topsect}.
 
 \subsubsection{Summing up optionality and competing grammars}
-If syntactic change involves functional-head variants competing for use in a given utterance (i.e. competing grammars, doublets), in fact a kind of partial bidialectalism (at least, at the level of the speaker's inventory of functional heads), and optional syntactic processes can only be described as functional-head variants competing for use, then all optional syntactic processes are actually a form of partial bidialectalism.
-Why do we find this idea so difficult to swallow? Probably only because it offends our naive intuitions about our own linguistic competence.
+Let's assume that syntactic change involves functional-head variants competing for use in a given utterance.
+These competing grammars, or morphological doublets, are a kind of partial bidialectalism, at least at the level of the speaker's inventory of functional heads.
+If optional syntactic processes can only be described as functional-head variants competing for use, then all optional syntactic processes would also be a form of partial bidialectalism.
+This may seem like a difficult idea to swallow, probably only because it offends our naive intuitions about our own linguistic competence.
 But since intuiting how the brain works is notoriously unreliable for any brain-process that has been studied, and our idea is certainly no more counterintuitive than the rather baroque organization of the mammalian visual system (both in the eye and in the brain), we suggest that it is worthwhile to suspend disbelief and see if the competing grammars analysis of optionality makes any interesting predictions.
 Theoretically, it is certainly a nice result, since we no longer need different machinery to account for change over time and synchronic optionality.
 
@@ -314,6 +360,8 @@ In the interest of pursuing the question of how far these similarities go, and o
 
 
 
+
+
 However, we will not be able to be as similarly explicit in the formulation of of the phonological model as we have been in the syntactic model, largely because, as we just said, prevailing theoretical trends do not easily submit to a Competing Grammars analysis of phonological variation.
 There are at least three trends which make a Competing Grammars analysis of phonological variation non-trivial.
 \begin{exe}
@@ -324,6 +372,7 @@ There are at least three trends which make a Competing Grammars analysis of phon
 	\ex \label{prob-tend}
 		The tendency to incorporate probabilities into the narrow grammar.
 \end{exe}
+
 
 Free-generate-and-filter grammars make it difficult to localize optionality in the way necessary formulate a competing grammars analysis because it isn't possible localize variation to a single to parameter of the grammar in a simple way.
 For example, \citet{Coetzee2012} propose the following constraint set to a Noisy Harmonic Grammar to account for contextual conditioning on English {\it t/d} Deletion.
@@ -364,6 +413,7 @@ Take, for example, the finely articulated specification of a variable rule from 
 \right]
 \beta(\sim \mbox{V})$ \label{variable.rule}
 \end{exe}
+
 The variables, $\alpha, \beta, \gamma \ldots$ included in the definition of the triggering environment represent weights, or preferences, which bias the application of the deletion process. 
 They are assigned in order of the magnitude of the effect ($\alpha$: whether or not the preceding segment is consonantal\footnote{From the data in \citet{3288}, it appears that in AAE, {\sl t}/{\sl d} deletion is not absolutely restricted to occur only within coda clusters.
 Rather, it is just more likely to occur in coda clusters.
@@ -393,7 +443,7 @@ Grammar 1 (\ref{ot.grammar1}) produces {\sl t}/{\sl d} deletion, and Grammar 2 (
 
 The selection of Grammar 1 or Grammar 2 is probabilistic, and driven by perhaps the same kind of cognitive system that selects different flavors of functional heads in syntactic variation.
 It has been richly established that Topicalization and Heavy NP Shift are sensitive to syntactic and pragmatic factors, as well as prosodic factors, such as the phonological weight of the XP to be moved \citep[e.g.][]{arnoldetal2000, speyer2008, speyer2010, wallenberg2012}. %% Citation Please
-Likewise {\sl t}/{\sl d} deletion is sensitive the featural properties of the preceding and following segments, morphological boundaries, frequency of the target word, and as recently demonstrated by \citet{MacKenzie.Tamminga2012}, whether or not {\sl t}/{\sl d} deletion applied at its most recent opportunity. \noteme{Double check with Meredith about these results.}
+Likewise {\sl t}/{\sl d} deletion is sensitive the featural properties of the preceding and following segments, morphological boundaries, frequency of the target word, and as recently demonstrated by \citet{MacKenzie.Tamminga2012, tamminga2014}, whether or not {\sl t}/{\sl d} deletion applied at its most recent opportunity. 
 It has also been richly demonstrated that speakers utilize all kinds of non-linguistic information in the process of speech perception, including perceived age and social class of the speaker \citep{Hay2006}, and the speaker's race \citep{StaumCasasanto2010}, all properties which would probably be best left out of the narrow grammar by a reasonably conservative theory.
 The proposal of the Competing Grammars hypothesis is that all of these influencing factors exist outside of the grammar proper.
 
@@ -404,16 +454,6 @@ Obviously, our answer is yes.
 First, from a purely conceptual perspective, it is desirable to reduce the number of entities and phenomena proposed by a theory.
 By recasting phonological variation in terms of Competing Grammars, we are bringing the phenomena of syntactic and phonological variation under the same explanatory principles, and therefore subject to the same analytical tools.
 Note that it is not necessary that we posit the same or even similar formal systems for the syntactic and phonological grammars themselves; just that there is a unitary mechanism for linguistic variation: the cognitive systems which govern language use can make a selection from among syntactic grammars and phonological grammars in a similar way.
-%% To write
-%%% - Empirical basis: CRE in phonological change
-%%% - Conditioning factors that are not otherwise in grammars (frequency, MacKenzie & Tamminga)
-%% Bonus:
-%%% - Most insights from probabilistic grammars are importable (maybe not gradient well formedness)
-
-
-
-
-
 
 \subsection{Principle of Contrast: Why does specialization occur?}
 
@@ -425,51 +465,29 @@ If we extend the Principle of Contrast beyond simple words to functional heads, 
 This is not to say that doublets cannot be learned by a given child, of course; it means that children try to distinguish 2 forms in use if at all possible as an acquisition strategy, which can lead to the specialization of two variants for different functions over time.
 Doublets specialize over time because generations of children repeatedly try out hypotheses which specialize the forms for different uses.
 
-As with any linguistic change, an innovation might well begin in the mind of a single child during acquisition, but that is only ever part of the story of language change: it remains to be explained why a particular change catches on and spreads in a given speech community.
-The question is whether any ``consensus'' among a group of children will develop as to how the terms should be specialized before one of the terms is lost completely (the other possible outcome for a doublet, according to Kroch).
-We suggest the strong hypothesis that no child ever accepts two forms to have exactly the same function, whether word-forms or functional heads.
-However, unless there is some salient dimension of use which the forms can be mapped onto, a speech community of acquirers will never converge on the same mapping of forms to functions such that the forms successfully specialize over time.
-Thus, in order for specialization to occur successfully over time, there needs to be some particular dimension of use (e.g. lexical meaning or social structure) that is so salient that different speakers will converge on it by chance.
-Once this dimension is found, the mathematical characteristics of the how the dimension of specialization is structured will determine various aspects of how the specialization turns out.
-The simplest case is where the dimension of specialization is categorical, matching the categorical variation, and the number of salient categories in the dimension of specialization matches the number of variants involved in the linguistic variation. 
-In that case, every variant can be specialized to one category.
-Of course, many other types of dimensions are imaginable, and we will discuss a number of scenarios in the remainder of this article.
-We begin with a few simple lexical synonyms below, but ultimately we will extend the hypothesis to abstract syntactic or phonological forms.
-
-
-%At this point, maybe we should say more about the empirical basis for the PoC
-
-%Cite Laurel
-
-If everyone in a given generation comes up with a different interpretation of how the synonyms contrast, then the resulting pattern in the speech community will be a mixture of idiolectal interpretations.
-The next generation will then likely be unable to pick out any particular pattern among the interspeaker variation in the input, and as this process is iterated over generations, the speech community will appear to exhibit free variation between the forms; no specialization of forms will occur.
-One simple case of this type of variation is in the terms \textsl{cougar, mountain lion, puma}, and for some speakers, \textsl{panther} and \textsl{catamount}, for the species \textsl{puma concolor}.
+How, exactly, a speech community will strike upon the same theory of specialization for a competing doublet is an open question.
+Presumably, individual learners will initially arrive at idiosyncratic hypotheses, then through processes coordination \notejoe{Clark game theory stuff?} and cultural evolution \citep{kirby.cornish.smith2008} the speech community will converge. 
+There are a number of examples of this kind of process clearly taking place in lexical competition.
+For example, \textsl{shirt} and \textsl{skirt} have the same etymological source with the latter being borrowed into English from Old Norse \textsl{skyrta} (``shirt'', to the extent that the garment type can be deduced; \citealt{cleasbyvigfusson}).
+They were likely to have been synonymous or nearly synonymous, as far as we can tell based on their shared etymology and overlapping meanings in Middle English (cf. e.g. citations in the \textsl{OED}).
+However, the two terms clearly specialized over time along two binary dimensions (not exactly simultaneously): upper garment vs. lower garment, male garment vs. female garment.
+Both are obvious categorizations of clothing in human society, but neither was, to our knowledge, a component of the original meaning of the words.
+A more contemporary example is variation in the terms \textsl{cougar, mountain lion, puma}, and for some speakers, \textsl{panther} and \textsl{catamount}, for the species \textsl{puma concolor}.
 While few speakers would call the same animal by all of these names, and some are region-specific, many speakers have 2-3 terms for the same feline.
 And while speakers may have some intuition that the terms refer to different cats in some way, they may have so poor a sense of the difference that they cannot report any difference at all (as is the case for one of the authors of this article).
 Until some of the terms drop out of use entirely in a particular speech community, different speakers may posit different interpretations, but the interpretations can differ (by chance) along so many possible dimensions of cat characteristics that a consensus is unlikely to develop in the speech community.
 Ultimately we would expect a situation like this one to resolve with some of the terms dropping out of use, if any of the terms have any sort of evolutionary advantage over the others (e.g. if one were less marked phonologically).
+However, their metaphorical uses referring to women have specialized fairly strictly in the US: \textsl{cougar} for a woman over c. 40 years old dating a man in his twenties or late teens, and \textsl{puma} for a younger woman (e.g. 30s) dating a man in his twenties or late teens.
 
-Another possible case might be the variation between the terms \textsl{sprinkles} and \textsl{jimmies} in Philadelphia English, which both refer to ice-cream or cake toppings consisting of lots of tiny candies.
-While speakers have a strong intuition that the terms have different referents, there is little or no consensus on what that difference is, and the words are largely overlapping in use.
-The \textsl{jimmy}/\textsl{sprinkle} doublet may be an intermediate case, however, since some consensus has developed around the idea that \textsl{jimmies} are oblong while \textsl{sprinkles} are more nearly spherical, or at least other-shaped.
-But the effect of color, taste, and mouth feel on the use of the two terms may still differ widely from speaker to speaker.
-However, the fact that partial consensus has developed around a gross categorization of the set of candy toppings into two shape-based categories is perhaps a clue as to how the Principle of Contrast can come to assert itself.
+Just like the Principle of Contrast pushes competing lexical items to specialize in meaning, we posit that it pushes competing functional heads and grammatical rules to similarly specialize.
+As the examples of lexical competition (\textsl{shirt}$\sim$\textsl{skirt}, \textsl{cougar}$\sim$\textsl{puma}) demonstrate, the possible dimensions along which competing doublets can specialize are rich and can be culturally specific.
+Barring theoretical breakthroughs in cultural anthropology, a comprehensive model of the dimensions along which competing doublets can compete will not be forthcoming.
+Sufficed to say, they may be purely linguistic (e.g. constituent heaviness, polarity of embedded questions), purely social (e.g. language choice in a bilingual setting \notejoe{ok a ref for this}), or a mixture of the two.
+The key feature of the dimension of specialization is whether it is \emph{categorizable}, or \emph{continuous}.
+Specialization along categorizable dimensions will be more likely to completely specialize (e.g. \textsl{shirt} and \textsl{shirt}).
+Specialization along continuous dimensions will lead to only partial specialization (e.g. constituent weight and topicalization).
 
-If the referent of the two synonyms shows an obvious dimension on which it can be divided into a few categories (e.g. two or three, rather than 500), then it is likely that different speakers will arrive at the same specialization of the two terms in their idiolects by chance.
-If different speakers in the speech community converge on the same interpretation often enough, then the next generation may be able to find a pattern of specialization to acquire.
-If the pattern of use in the synonyms can be detected at all on the basis of the primary linguistic data, even if it is far from categorical, then the Principle of Contrast suggests that children will detect it and exaggerate it.
-Once the pattern is strong enough that the next generation is able to take their parents' generation's distribution and make it even more bimodal in character, then the following generation will have an even stronger pattern to detect and try to match, and the trend to specialize should continue in the same direction over future generations.
-
-Another simple word example of the latter situation is the historical doublet of \textsl{shirt} and \textsl{skirt}.
-These have the same etymological ancestor, with the latter being borrowed into English from Old Norse \textsl{skyrta} (``shirt'', to the extent that the garment type can be deduced; \citealt{cleasbyvigfusson}), and were likely to have been synonymous or nearly synonymous, as far as we can tell based on their shared etymology and overlapping meanings in Middle English (cf. e.g. citations in the \textsl{OED}).
-However, the two terms clearly specialized over time along two binary dimensions (not exactly simultaneously): upper garment vs. lower garment, male garment vs. female garment.
-Both are obvious categorizations of clothing in human society, but neither was, to our knowledge, a component of the original meaning of the words.
-
-In a similar way, while the feline words above don't naturally specialize along a particularly salient set of cat characteristics, their metaphorical uses referring to women have specialized in precisely this way (at least in the US): \textsl{cougar} for a woman over c. 40 years old dating a man in his twenties or late teens, and \textsl{puma} for a younger woman (e.g. 30s) dating a man in his twenties or late teens.
-It is probably not an accident that while the terms for cats have been around in the relevant speech communities for longer without clear specialization, the dating-related versions have specialized quickly along a dimension with clear social significance.
-Though as we will see later with other domains of specialization, since age is a continuous dimension, we would not expect the cut-off ages for these terms to be absolutely clear in the mind of any speaker. %Is this last big too hokey?
-
-\noteme{Talk about specialization of them/'em and it/hit}
+\notejoel{Talk about specialization of them/'em and it/hit}
 %Describe that we are generalising PoC to linguistic structures of an arbitrary type and linguistically important dimensions of an arbitrary type. Which should be done, if it is really a learning strategy. And the same problem with learning if you dont have this for word learning, the same problems apply to structure learning. 
 
 \section{Solution}
@@ -509,7 +527,7 @@ Thus, our theory of variation predicts that every observed case of synchronic op
 \subsection{Example: Whether/If in Historical English and Icelandic}
 \label{whetherifsect}
 
-A quantitative study of embedded polar questions in English and Icelandic shows that the same doublet can resolve by \textbf{specialization} in one language or speech community, but by \textbf{replacement} in another. Bailey, Wallenberg, \& van der Wurff (2012) and \noteme{add recent ref} compared the use of \textsl{whether} vs. \textsl{if} in the history of English, and their cognates \textsl{hvort} and \textsl{ef} in the history of Icelandic, and found that the same Proto-Northwest Germanic doublet situation (two syntactic forms with overlapping functions) led to specialization in English and to replacement in Icelandic, thus illustrating the two possible outcomes of competing grammars that our theory of variation predicts.
+A quantitative study of embedded polar questions in English and Icelandic shows that the same doublet can resolve by \textbf{specialization} in one language or speech community, but by \textbf{replacement} in another. Bailey, Wallenberg, \& van der Wurff (2012) and \notejoel{add recent ref} compared the use of \textsl{whether} vs. \textsl{if} in the history of English, and their cognates \textsl{hvort} and \textsl{ef} in the history of Icelandic, and found that the same Proto-Northwest Germanic doublet situation (two syntactic forms with overlapping functions) led to specialization in English and to replacement in Icelandic, thus illustrating the two possible outcomes of competing grammars that our theory of variation predicts.
 
 First, the variation between \textsl{whether} and \textsl{if} in modern English, shown in (\ref{whether1})-(\ref{whether2}), is an illustration of the second scenario from the end of section \ref{options}, the case of \textsl{perfect} specialization in progress.
 
@@ -519,7 +537,7 @@ First, the variation between \textsl{whether} and \textsl{if} in modern English,
 	\end{exe}
 	
 \noindent Upon close investigation, this apparent synchronic optionality turns out to be a specialization change in progress of the type which could go to completion.
-Bailey, Wallenberg, \& van der Wurff (2012) and \noteme{add recent ref} show that the two variants are specializing along a binary, categorical dimension, and so the specialization could eventually remove all competition between the variants.
+Bailey, Wallenberg, \& van der Wurff (2012) and \notejoel{add recent ref} show that the two variants are specializing along a binary, categorical dimension, and so the specialization could eventually remove all competition between the variants.
 \footnote{Of course, if the variants also specialize along a continuous dimension simultaneously, then this could become a case of the third scenario above instead.
 For example, \citet[][690--3]{biberetal1999} and \citet[][973--5]{huddlestonpullum2002} suggest that \textsl{whether} is associated with more formal styles, which means that the variants may also be specializing along the continuous style dimension.
 More research is needed, however, to determine to what extent this is the case.}
@@ -556,7 +574,7 @@ In this way, disjunction favours the use of \textsl{hvort} (``whether'') in ever
 Instead, the probability of \textsl{hvort} use in the simple context ultimately catches up over time with the probability of \textsl{hvort} use in the disjunctive context, because \textsl{hvort} replaces \textsl{ef} (``if'') completely in embedded polar questions in Icelandic.
 This is shown in Figure \ref{hvort}, with data plotted at 100 year intervals from the Icelandic Parsed Historical Corpus \citep[IcePaHC][]{icepahc09}.
 Presumably, there is a selectional pressure in the Icelandic case which is strong enough to do this.
-(For more specific details about these historical developments, and what the selectional pressure might be, see the full analysis in \noteme{cite to appear paper}).
+(For more specific details about these historical developments, and what the selectional pressure might be, see the full analysis in \notejoel{cite to appear paper}).
 
 
 \begin{figure}
@@ -579,7 +597,7 @@ The diachronic trend in English is shown in Figure \ref{whetherfig}.
 \end{figure}
 
 Figure \ref{whetherfig} shows the two variants slowly diverging in their favoring contexts, so that \textsl{whether} is favored more and more over time by the disjunction context, while the simple context comes to increasingly favor the \textsl{if} variant.
-Though the data is admittedly noisy, no doubt due to imperfect dating and sampling of dialect and genre during the Old and Middle English periods, a statistical model confirms that the diachronic trend is indeed one of specialization. \noteme{should be a mixed model...oh dear}
+Though the data is admittedly noisy, no doubt due to imperfect dating and sampling of dialect and genre during the Old and Middle English periods, a statistical model confirms that the diachronic trend is indeed one of specialization. \notejoel{should be a mixed model...oh dear}
 This effect is what our theory predicts for competing grammars in the absence of a selective pressure in favor of one of the variants, or in the case where the selective pressure is smaller than the effect of the Principle of Contrast.
 
 \subsection{Sketch: A Model For Specialization along a Categorical Dimension}
@@ -716,13 +734,13 @@ Running this model over 20 generations produces the chart below.
 
 
 \subsection{\textsl{-in}/\textsl{-ing} Variation}
-\noteme{Do we really want to use this? Do we really want t/d also?
+\notejoel{Do we really want to use this? Do we really want t/d also?
 We could stay away from these since they seem to be a mix of lexical and morophological.
 Instead, could use:}
 
 \subsection{\textsl{h}-Dropping}
 
-Baranowsky \& Turton (\textsl{to appear}) \noteme{get ref} present a quantitative study of syllable-initial [h]-deletion in Manchester, which illustrates our theory of (apparent) stable variation in the phonological domain: two categorical variants have partially specialized along a continuous extragrammatical dimension.
+Baranowsky \& Turton (\textsl{to appear}) \notejoel{get ref} present a quantitative study of syllable-initial [h]-deletion in Manchester, which illustrates our theory of (apparent) stable variation in the phonological domain: two categorical variants have partially specialized along a continuous extragrammatical dimension.
 ``\textsl{h}-dropping'' is characterized by the presence or absence of initial [h] in the relevant set of words, and is clearly a case of categorical variation in the phonological domain, so it is a candidate for the kind of specialization we have described above.
 The variation is definitely phonological in nature, rather than purely phonetic (i.e. either a new allophone of /h/, or total loss of the phoneme /h/ in the relevant positions), as can be seen from its interaction with the phonological rule of [\textipa{\*r}]-insertion (``linking'' \textsl{r}):
 
