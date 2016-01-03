@@ -57,6 +57,7 @@ grestore
 \usepackage[T1]{fontenc}
 \usepackage{ tipa }
 \usepackage{hyperref}
+\usepackage{soul}
 \bibpunct[: ]{(}{)}{,}{a}{}{,}
 \newcommand{\noteme}[1]{\noindent \textbf{[[JCW:  #1 ]]}}
 \renewcommand{\theequation}{\Alph{equation}}
@@ -218,25 +219,37 @@ But this is only true under a simple, restrictive model of grammar: if the gramm
 
 \subsection{Consequences for the Analysis of Relative Clause Extraposition}
 
-This basic generalization stands regardless of the specific analysis one proposes for relative clause extraposition, and must be accommodated in any reasonable analysis: the diachronic instability means that somewhere in the derivation, the speaker makes a (probably unconscious) choice between two syntactic formatives that are functionally equivalent in many contexts.(Note that they need not be \textbf{entirely} functionally equivalent for change to be imperative: I return to this point in section \ref{slow}.) While various analyses could accommodate this generalization, there is currently an analysis of English relative clauses, proposed for independent reasons, that treats relative clauses as being in a state of competing grammars: \citet{sauerland2003}. Given the parsimony between Sauerland's independent arguments, the theory of competing grammars, and the empirical result above, I suggest evidence is lining up in favor of the Sauerland analysis of relatives.
+This basic generalization stands regardless of the specific analysis one proposes for relative clause extraposition, and must be accommodated in any reasonable analysis: the diachronic instability means that somewhere in the derivation, the speaker makes a (probably unconscious) choice between two syntactic formatives that are functionally equivalent in many contexts.(Note that they need not be \textbf{entirely} functionally equivalent for change to be imperative: I return to this point in section \ref{slow}.) While various analyses could accommodate this generalization, there is currently an analysis of English relative clauses, proposed for independent reasons, that treats relative clauses as being in a state of competing grammars: \citet{sauerland2003}. Given the parsimony between Sauerland's independent arguments, the theory of competing grammars, and the empirical result above, I suggest the evidence lines up in favor of the Sauerland analysis of relatives. The loss of relative clause extraposition can then seen as the loss of Sauerland's ``matching'' type of relative, and the slow ascendency of the ``raising'' type of relative.
 %Revise last sentence, discuss Sauerland briefly, say how it implies competing grammars, then move on to culicover and rochemont after these examples:
 
-\citet{sauerland2003}, building on a proposal in \citet{carlson1977}, proposes that English relative clauses, are usually ambiguous between two possible structures. These two structures, the \textsl{matching structure} and the \textsl{raising structure}, are used inerchangeably in most cases, though their syntax is subtley different, and circumstances can arise that force a choice between them.\footnote{Sauerland's proposal is intended to resolve the longstanding controversy in the relative clause literature over whether relative clauses involved empty operator movement, as was standardly assumed in most treatments prior to \citet{kayne1994}, or whether they result from the NP ``head'' of the relative itself moving from the gap site inside the relative clause.} According to Sauerland, the raising structure is one along the lines of \citet{kayne1994}'s analysis, where the ``head'' of the relative clause is moved from a position internal to the relative clause, as I schematize below in (\ref{sauerStruc1}), and then the D heading the DP containing the relative clause takes a CP, rather than an NP, complement. The matching analysis has a similar structure internal to the relative clause
-
-
-\noindent Sauerland's analysis is actually a competing grammars analysis of relatives, though he does not use that term. Combined with the hypothesis presented above, his analysis predicts that there should some sort of change in progress in relative clauses.
-
-As it turns out, one of the two structures in variation that Sauerland proposes, the \textsl{raising structure}, is incompatible with extraposition, and so the loss of relative clause extraposition can be viewed as a side-effect of the gradual out-competition of the matching structure by the raising structure. First, \citet{baltin2006}
+\citet{sauerland2003}, building on a proposal in \citet{carlson1977}, proposes that English relative clauses, are usually ambiguous between two possible structures. These two structures, the \textsl{matching structure} and the \textsl{raising structure}, are used inerchangeably in most cases, though their syntax is subtley different, and circumstances can arise that force a choice between them.\footnote{Sauerland's proposal is intended to resolve the longstanding controversy in the relative clause literature over whether relative clauses involved empty operator movement, as was standardly assumed in most treatments prior to \citet{kayne1994}, or whether they result from the NP ``head'' of the relative itself moving from the gap site inside the relative clause.} According to Sauerland, the raising structure is one along the lines of \citet{kayne1994}'s analysis, where the ``head'' of the relative clause is moved from a position internal to the relative clause, as I schematize below in (\ref{sauerStruc1}), and then the D heading the DP containing the relative clause takes a clausal complement, rather than an NP complement (shown as ``FP'' below just because I'm not committed to the particular version of the split-CP hypothesis one adopts to make this analysis work). The matching analysis has a similar structure internal to the relative clause, but with ellipsis of the NP rather than movement of the NP to Spec(FP), as in (\ref{sauerStruc2}) below.
 
 \begin{exe}
-   \ex \begin{xlist}
-         \ex \label{controlAsitu} That picture that John likes was just published.
-         \ex \label{controlAex} That picture was just published that John likes.
-                  \end{xlist}
+    \ex \label{sauerStruc1} \Tree [.DP {D\\a} [.FP {NP_j\\book} [.F' F [.CP [.DP_i {D\\which} {NP\\\textsl{t_j}} ] [.C' C \qroof{Kim read \textsl{t_i}}.TP ] ] ] ] ]
+    \ex \label{sauerStruc2} \Tree [.DP {D\\a} [.NP {NP\\book} [.CP [.DP_i {D\\which} {NP\\\st{book}} ] [.C' C \qroof{Kim read \textsl{t_i}}.TP ] ] ] ]
+\end{exe}
+
+\noindent For the matching-type relative, Sauerland does assume that the relative clause modifies an NP ``relative head'', which is its own constituent outside the relative clause. Though he doesn't give the details of how the relative relates syntactically to the upstairs NP, I'll assume the relative clause is right-adjoined to the NP in the upstairs clause, as in the classical analysis of relative clauses (as I show in \ref{sauerStruc2}). This is in contrast to the raising-type relative in (\ref{sauerStruc1}), in which the relative clause is itself the complement of D. I've shown this in the structures above.
+
+Sauerland's analysis is actually a competing grammars analysis of relatives, though he does not use that term. Combined with the hypothesis presented above, his analysis predicts that there should some sort of change in progress in relative clauses. Note that the matching-type of relative is entirely compatible with relative clause extraposition, as it adjoins freely to maximal projections. As with other kinds of modification, the only restriction as to where it adjoins is that it must be interpretable in its adjoined position; it must be interpreted with respect to some antecdent ``relative head'' NP, and in Sauerland's account, trigger ellipsis of the NP. This is very similar to \citet{culicoverrochemont1990}'s analysis of relative clause extraposition, where it doesn't involve movement \textsl{per se}, but rather choice of adjunction sites for the relative clause, and a structural restriction on how far the relative can be from a potential antecedent. In fact, the locality restriction on interpretation that Culicover and Rochemont propose probably makes more sense as a restriction on ellipsis. Thus, the matching relative is an adjoined modifier with some limited freedom of adjunction.
+
+Sauerland's raising-type relative, on the other hand, is incompatible with extraposition, and so the loss of relative clause extraposition can be viewed as a side-effect of the gradual out-competition of the matching structure by the raising structure. First, \citet{baltin2006} lists a number of problems with accounting for extraposition under the raising analysis, which would apply to raising-type relatives under Sauerland's analysis. A full discussion of these issues is beyond the scope of this article, but suffice it to say that the challenges Baltin catalogues for the raising analysis fall away if there is another possible structure, the matching structure, which can accommodate extraposition as simply an additional adjunction site.
+
+Secondly, there is independent evidence from binding that extraposed relatives are always matching relatives. Sauerland discusses a number of binding examples which are only grammatical under one or the other structure, and so force a particular structure to emerge in the mind of the speaker. Among these are Condition A, which forces the raising structure when an anaphor inside the relative head is bound by a DP inside the relative clause; such sentences can only be grammatical if the NP containing the reflexive has raised from inside the relative, and so can reconstruct and be bound in that position. Similarly, Sauerland discusses variable binding, where a quantifier inside the relative can only bind a variable inside the relative head NP if the NP can reconstruct to a position inside the relative. Examples of these two with relative clauses \textsl{in situ} are shown below in (\ref{prinAsitu}) and (\ref{boundVarSitu}). 
+
+Sauerland claims that when the Principle A and quantifier binding are not possible in a sentence, it is because only the matching analysis is available, and so the necessary reconstruction cannot take place. Note that the extraposed versions of (\ref{prinAsitu}) and (\ref{boundVarSitu}), namely (\ref{prinAex}) and (\ref{boundVarEx}) are ungrammatical. (I've also included parallel examples of extraposition without the binding in \ref{control1} and \ref{control2}, just to show that there's no independent problem with extraposition in these examples.) \footnote{Note that the examples below all contain demonstratives in the DP containing the relative, or which the relative is interpreted with respect to. This is because, as Sauerland discusses, the raising analysis is only possible inside a definite DP. Unfortunately for our purposes, extraposition is degraded from definite DPs \citep[][and references therein]{baltin2006}, unless they are headed by a demonstrative, so I've included only examples with demonstratives here in order to avoid this confound.}
+
+\begin{exe}
                   
     \ex \begin{xlist}
          \ex \label{prinAsitu} That picture of himself that John likes was just published.
          \ex \label{prinAex} ?* That picture of himself was just published that John likes.
+                  \end{xlist}
+                  
+              
+   \ex \label{control1} \begin{xlist}
+         \ex \label{controlAsitu} That picture that John likes was just published.
+         \ex \label{controlAex} That picture was just published that John likes.
                   \end{xlist}
 %         \citep[Adapted from][23]{culicoverrochemont1990}
          
@@ -250,7 +263,14 @@ As it turns out, one of the two structures in variation that Sauerland proposes,
  %\ex \label{idiom2} The tabs which the FBI kept on Malcolm X weren't very useful.
  %\ex \label{idiomComp} The newspaper stories were terrible 
   
-\ex  \begin{xlist}
+  \ex \begin{xlist}
+        \ex \label{boundVarSitu} That draft of her paper that every student produced at the beginning of the semester was also graded.
+         \ex \label{boundVarEx} *? That draft of her paper was also graded that every student produced at the beginning of the semester.
+%         \ex \label{boundVarSitu} At least one article of hers that every academic is actually proud of has been published.
+%         \ex \label{boundVarEx} At least one article of hers has been published that every academic is actually proud of.
+ \end{xlist}    
+ 
+\ex  \label{control2} \begin{xlist}
         \ex \label{controlSitu} That draft of the paper that the students produced at the beginning of the semester was also graded.
        %  \ex  The draft of the paper that every student had at the end of the semester was graded.
        \ex \label{controlEx} That draft of the paper was also graded that the students produced at the beginning of the semester.
@@ -260,12 +280,7 @@ As it turns out, one of the two structures in variation that Sauerland proposes,
 %         \ex \label{controlEx} At least one article has been published that every academic is actually proud of.
   \end{xlist}  
          
-\ex \begin{xlist}
-        \ex \label{boundVarSitu} That draft of her paper that every student produced at the beginning of the semester was also graded.
-         \ex \label{boundVarEx} *? That draft of her paper was also graded that every student produced at the beginning of the semester.
-%         \ex \label{boundVarSitu} At least one article of hers that every academic is actually proud of has been published.
-%         \ex \label{boundVarEx} At least one article of hers has been published that every academic is actually proud of.
- \end{xlist}        
+    
          
  %        \citep[Adapted from][]{thomsheycock2014}
 %  \begin{xlist}
@@ -274,6 +289,8 @@ As it turns out, one of the two structures in variation that Sauerland proposes,
 %         \end{xlist}
          
 \end{exe}
+
+The fact that the binding in thee examples become ungrammatical under extrapostion shows that the reconstruction required for the binding cannot take place in an extraposed relative. This fact is consistent with the idea that extraposition necessarily involves a matching structure, and cannot contain a raising structure. The reconstruction thus cannot take place because the NP in the relative head, which needs to be bound, has never moved.
 
 However, if we accept Sauerland's analysis of relatives as involving two structures in the simple \textsl{in situ} case, then extraposition can be straightforwardly analyzed as an instance of the matching type of relative adjoined to the clause level, with a principle like \citet{culicoverrochemont1990}'s determining possible antecendents for ellipsis of the moved constituent inside the relative. ...
 
