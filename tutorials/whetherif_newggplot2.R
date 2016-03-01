@@ -23,7 +23,7 @@ library(gdata)
 whether.data <- droplevels(whether.data)
 
 
-####Make sure dates abd 0/1 codes are stored as numbers.
+####Make sure dates and 0/1 codes are stored as numbers.
 
 whether.data$Year <- as.numeric(as.character(whether.data$Year))
 whether.data$WQ <- as.numeric(as.character(whether.data$WQ))
