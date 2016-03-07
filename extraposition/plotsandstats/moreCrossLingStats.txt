@@ -1,0 +1,162 @@
+
+
+
+> ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z" & Language != "" & Language != "French" & Language != "Portuguese")
+> library(gdata)
+> 
+> 
+> ####Make sure R factor groups don't include factors for the irrelevant codes.
+> 
+> ex.data <- droplevels(ex.data)
+> 
+> "finished droplevels"
+[1] "finished droplevels"
+> 
+> ####Make sure dates abd 0/1 codes are stored as numbers, and weights
+> 
+> ex.data$Year <- as.numeric(as.character(ex.data$Year))
+> ex.data$Extraposed <- as.numeric(as.character(ex.data$Extraposed))
+> ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
+> ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight*Language, family = binomial, data=ex.data)
+> anova(ex.fit, test = "Chisq")
+Analysis of Deviance Table
+
+Model: binomial, link: logit
+
+Response: Extraposed
+
+Terms added sequentially (first to last)
+
+
+                                                  Df Deviance Resid. Df Resid. Dev
+NULL                                                              22015      23797
+Year                                               1   260.30     22014      23536
+Position                                           1   496.72     22013      23040
+Clause                                             1   137.53     22012      22902
+TextOrSpeech                                       1    19.83     22011      22882
+Weight                                             1   332.02     22010      22550
+Language                                           1   155.20     22009      22395
+Year:Position                                      1    13.64     22008      22382
+Year:Clause                                        1    65.42     22007      22316
+Position:Clause                                    1    62.26     22006      22254
+Year:TextOrSpeech                                  1    42.61     22005      22211
+Position:TextOrSpeech                              1     1.55     22004      22210
+Clause:TextOrSpeech                                1     0.00     22003      22210
+Year:Weight                                        1     4.71     22002      22205
+Position:Weight                                    1    48.27     22001      22157
+Clause:Weight                                      1     0.22     22000      22156
+TextOrSpeech:Weight                                1    10.30     21999      22146
+Year:Language                                      1     6.21     21998      22140
+Position:Language                                  1     1.83     21997      22138
+Clause:Language                                    1     2.25     21996      22136
+TextOrSpeech:Language                              1     4.68     21995      22131
+Weight:Language                                    1     3.96     21994      22127
+Year:Position:Clause                               1     3.76     21993      22124
+Year:Position:TextOrSpeech                         1     2.86     21992      22121
+Year:Clause:TextOrSpeech                           1     0.12     21991      22121
+Position:Clause:TextOrSpeech                       1     2.20     21990      22118
+Year:Position:Weight                               1     0.33     21989      22118
+Year:Clause:Weight                                 1     1.35     21988      22117
+Position:Clause:Weight                             1     0.04     21987      22117
+Year:TextOrSpeech:Weight                           1     0.01     21986      22117
+Position:TextOrSpeech:Weight                       1     3.53     21985      22113
+Clause:TextOrSpeech:Weight                         1     0.06     21984      22113
+Year:Position:Language                             1    14.70     21983      22098
+Year:Clause:Language                               1     3.64     21982      22095
+Position:Clause:Language                           1     4.45     21981      22090
+Year:TextOrSpeech:Language                         1     4.52     21980      22086
+Position:TextOrSpeech:Language                     1     0.06     21979      22086
+Clause:TextOrSpeech:Language                       1     2.10     21978      22084
+Year:Weight:Language                               1     0.15     21977      22083
+Position:Weight:Language                           1     5.49     21976      22078
+Clause:Weight:Language                             1     0.80     21975      22077
+TextOrSpeech:Weight:Language                       1     0.06     21974      22077
+Year:Position:Clause:TextOrSpeech                  1     2.02     21973      22075
+Year:Position:Clause:Weight                        1     9.65     21972      22065
+Year:Position:TextOrSpeech:Weight                  1     0.63     21971      22065
+Year:Clause:TextOrSpeech:Weight                    1     2.28     21970      22062
+Position:Clause:TextOrSpeech:Weight                1     0.52     21969      22062
+Year:Position:Clause:Language                      1     0.00     21968      22062
+Year:Position:TextOrSpeech:Language                1     1.83     21967      22060
+Year:Clause:TextOrSpeech:Language                  1     0.65     21966      22060
+Position:Clause:TextOrSpeech:Language              1     0.02     21965      22060
+Year:Position:Weight:Language                      1     0.02     21964      22060
+Year:Clause:Weight:Language                        1     3.65     21963      22056
+Position:Clause:Weight:Language                    1     0.13     21962      22056
+Year:TextOrSpeech:Weight:Language                  1     0.14     21961      22056
+Position:TextOrSpeech:Weight:Language              1    11.20     21960      22044
+Clause:TextOrSpeech:Weight:Language                1     0.04     21959      22044
+Year:Position:Clause:TextOrSpeech:Weight           1     1.86     21958      22042
+Year:Position:Clause:TextOrSpeech:Language         1     1.40     21957      22041
+Year:Position:Clause:Weight:Language               1     3.34     21956      22038
+Year:Position:TextOrSpeech:Weight:Language         1     0.56     21955      22037
+Year:Clause:TextOrSpeech:Weight:Language           1     0.18     21954      22037
+Position:Clause:TextOrSpeech:Weight:Language       1     1.09     21953      22036
+Year:Position:Clause:TextOrSpeech:Weight:Language  1     2.36     21952      22034
+                                                   Pr(>Chi)    
+NULL                                                           
+Year                                              < 2.2e-16 ***
+Position                                          < 2.2e-16 ***
+Clause                                            < 2.2e-16 ***
+TextOrSpeech                                      8.467e-06 ***
+Weight                                            < 2.2e-16 ***
+Language                                          < 2.2e-16 ***
+Year:Position                                     0.0002209 ***
+Year:Clause                                       6.066e-16 ***
+Position:Clause                                   3.009e-15 ***
+Year:TextOrSpeech                                 6.671e-11 ***
+Position:TextOrSpeech                             0.2132131    
+Clause:TextOrSpeech                               0.9727363    
+Year:Weight                                       0.0300725 *  
+Position:Weight                                   3.714e-12 ***
+Clause:Weight                                     0.6395327    
+TextOrSpeech:Weight                               0.0013338 ** 
+Year:Language                                     0.0127025 *  
+Position:Language                                 0.1764856    
+Clause:Language                                   0.1339789    
+TextOrSpeech:Language                             0.0305360 *  
+Weight:Language                                   0.0466326 *  
+Year:Position:Clause                              0.0525608 .  
+Year:Position:TextOrSpeech                        0.0909987 .  
+Year:Clause:TextOrSpeech                          0.7307723    
+Position:Clause:TextOrSpeech                      0.1378350    
+Year:Position:Weight                              0.5634377    
+Year:Clause:Weight                                0.2452356    
+Position:Clause:Weight                            0.8388835    
+Year:TextOrSpeech:Weight                          0.9152047    
+Position:TextOrSpeech:Weight                      0.0602212 .  
+Clause:TextOrSpeech:Weight                        0.8052496    
+Year:Position:Language                            0.0001258 ***
+Year:Clause:Language                              0.0563054 .  
+Position:Clause:Language                          0.0348083 *  
+Year:TextOrSpeech:Language                        0.0335540 *  
+Position:TextOrSpeech:Language                    0.8079573    
+Clause:TextOrSpeech:Language                      0.1472985    
+Year:Weight:Language                              0.6997585    
+Position:Weight:Language                          0.0191108 *  
+Clause:Weight:Language                            0.3715122    
+TextOrSpeech:Weight:Language                      0.7992047    
+Year:Position:Clause:TextOrSpeech                 0.1549044    
+Year:Position:Clause:Weight                       0.0018948 ** 
+Year:Position:TextOrSpeech:Weight                 0.4290054    
+Year:Clause:TextOrSpeech:Weight                   0.1313719    
+Position:Clause:TextOrSpeech:Weight               0.4710015    
+Year:Position:Clause:Language                     0.9723191    
+Year:Position:TextOrSpeech:Language               0.1760178    
+Year:Clause:TextOrSpeech:Language                 0.4206330    
+Position:Clause:TextOrSpeech:Language             0.8749161    
+Year:Position:Weight:Language                     0.8988571    
+Year:Clause:Weight:Language                       0.0562267 .  
+Position:Clause:Weight:Language                   0.7212228    
+Year:TextOrSpeech:Weight:Language                 0.7075996    
+Position:TextOrSpeech:Weight:Language             0.0008195 ***
+Clause:TextOrSpeech:Weight:Language               0.8428959    
+Year:Position:Clause:TextOrSpeech:Weight          0.1725489    
+Year:Position:Clause:TextOrSpeech:Language        0.2360497    
+Year:Position:Clause:Weight:Language              0.0674161 .  
+Year:Position:TextOrSpeech:Weight:Language        0.4557694    
+Year:Clause:TextOrSpeech:Weight:Language          0.6717087    
+Position:Clause:TextOrSpeech:Weight:Language      0.2960884    
+Year:Position:Clause:TextOrSpeech:Weight:Language 0.1241042    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 

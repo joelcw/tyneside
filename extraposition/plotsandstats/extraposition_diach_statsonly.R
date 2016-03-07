@@ -16,6 +16,8 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 "Got up to subsetting"
 
+#####Note that it is crucial to make sure empty string Year is not included, because this deletes codes which correspond to clauses above the clause containing the relevant token. They were never coded for Year because they were not relevant.
+
 ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
 
 

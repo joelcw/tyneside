@@ -15,6 +15,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 ####Throw out all the codes that refer to tokens that are irrelevant for the study.
 
 "Got up to subsetting"
+#####Note that it is crucial to make sure empty string Year and empty string Language are not included, because this deletes codes which correspond to clauses above the clause containing the relevant token. (Language gets appended by a script later, and will get appended in the Year place, creating empty string in the last field of those codes, so excluding empty strings in the last field will likewise exclude these codes.) If you see "NAs introduced by coercion" for Year in French and Portuguese, then you've failed to exclude codes that you should exclude.
 
 ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z" & Language != "")
 
