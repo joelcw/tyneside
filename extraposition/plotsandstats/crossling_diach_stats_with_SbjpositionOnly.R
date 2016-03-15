@@ -4,7 +4,7 @@ library(plyr)
 ####For English data.
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/cprelExtrapos.ymeb.cod.ooo",header=F,sep=":")
+foo <- read.delim("~/tyneside/extraposition/queriesandoutput/cprelExtrapos.ymeb.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
@@ -18,7 +18,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 #####Note that it is crucial to make sure empty string Year is not included, because this deletes codes which correspond to clauses above the clause containing the relevant token. They were never coded for Year because they were not relevant.
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
 
 
 library(gdata)
@@ -42,7 +42,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 
 "English Model"
 
-ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
+ex.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
 
@@ -51,7 +51,7 @@ anova(ex.fit, test = "Chisq")
 ####For Icelandic data.
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/cprelExtrapos.ice.cod.ooo",header=F,sep=":")
+foo <- read.delim("~/tyneside/extraposition/queriesandoutput/cprelExtrapos.ice.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
@@ -63,7 +63,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 "Got up to subsetting"
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
 
 
 ####Make sure R factor groups don't include factors for the irrelevant codes.
@@ -84,7 +84,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 
 "Icelandic Model"
 
-ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight*Genre, family = binomial, data=ex.data)
+ex.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight*Genre, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
 
@@ -93,7 +93,7 @@ anova(ex.fit, test = "Chisq")
 ####For Middle French data.
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/cprelExtrapos.fre.cod.ooo",header=F,sep=":")
+foo <- read.delim("~/tyneside/extraposition/queriesandoutput/cprelExtrapos.fre.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
@@ -105,7 +105,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 "Got up to subsetting"
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
 
 
 ####Make sure R factor groups don't include factors for the irrelevant codes.
@@ -127,7 +127,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 
 "French Model"
 
-ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
+ex.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
 
@@ -136,7 +136,7 @@ anova(ex.fit, test = "Chisq")
 ####For Portuguese data.
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/cprelExtrapos.port.cod.ooo",header=F,sep=":")
+foo <- read.delim("~/tyneside/extraposition/queriesandoutput/cprelExtrapos.port.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
@@ -148,7 +148,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 "Got up to subsetting"
 
-ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position != "z" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
+ex.data <- subset(foo,Extraposed != "z" & Clause != "z" & Position == "sbj" & Year != "z" & Year != "0" & Year != "" & Weight != "z")
 
 
 ####Make sure R factor groups don't include factors for the irrelevant codes.
@@ -170,7 +170,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 
 "Portuguese Model"
 
-ex.fit <- glm(Extraposed~Year*Position*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
+ex.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight, family = binomial, data=ex.data)
 summary(ex.fit)
 anova(ex.fit, test = "Chisq")
 
@@ -193,6 +193,7 @@ colnames(foo) <- c("Extraposed","Position","Clause","TextOrSpeech", "Weight","Ye
 
 
 ####Throw out all the codes that refer to tokens that are irrelevant for the study.
+#####Note that it is crucial to make sure empty string Year and empty string Language are not included, because this deletes codes which correspond to clauses above the clause containing the relevant token. (Language gets appended by a script later, and will get appended in the Year place, creating empty string in the last field of those codes, so excluding empty strings in the last field will likewise exclude these codes.) If you see "NAs introduced by coercion" for Year in French and Portuguese, then you've failed to exclude codes that you should exclude.
 
 "Got up to subsetting"
 
@@ -217,7 +218,7 @@ ex.data$Weight <- as.numeric(as.character(ex.data$Weight))
 "finished converting to numeric"
 
 nrow(ex.data)
-#Note that I only consider subject position below
+#Note that I only consider subject position below.
 "Note that I only consider subject position below"
 ex.crossLing.fit <- glm(Extraposed~Year*Clause*TextOrSpeech*Weight*Language, family = binomial, data=ex.data)
 summary(ex.crossLing.fit)
