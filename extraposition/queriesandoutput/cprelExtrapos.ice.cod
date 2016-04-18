@@ -403,7 +403,7 @@ betur-vel .-.
 	  (NP-OB1 (PRO-A það-það)
 		  (CP-REL (WNP-2 0)
 			  (C er-er)
-			  (IP-SUB RMV:z:z:z:txt:z_*T*-2_honum-hann...)))))
+			  (IP-SUB RMV:z:z:z:txt:z_*T*-2_honum-hann...)))) (ID 1150.FIRSTGRAMMAR.SCI-LIN,.151))
 /~*
 En-en sú-sá þjónasta-þjónusta önnur-annar er-vera oss-ég boðin-bjóða við-við
 Guð-guð á-á helgum-helgur tíðum-tíð ,-, að-að vér-ég skulum-skulu hans-hann
@@ -34970,7 +34970,7 @@ $inu-hinn á-á drottningu$-drottning $nni-hinn
 		  (D-A $na-hinn)
 		  (CP-REL (WNP-1 0)
 			  (C er-er)
-			  (IP-SUB RMV:z:z:z:txt:z_*T*-1_var-vera...)))))
+			  (IP-SUB RMV:z:z:z:txt:z_*T*-1_var-vera...)))) (ID 1525.GEORGIUS.NAR-REL,.1052))
 /~*
 Hér-hér hefst-hefja upp-upp sá-sá annar-annar partur-partur S.-s. Lúkas-lúkas
 guðsspjalla-guðsspjall sem-sem er-vera út-út af-af postula-postuli
