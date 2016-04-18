@@ -78,3 +78,5 @@ $CS cprelExtrapos.port.c relevant.port.out
 
 rm cprelExtrapos.port.cod.ooo
 $CS codes.q cprelExtrapos.port.cod
+
+#To do a mixed effects model you'll have to change the text ids with fixIdFormat.py as the last step
