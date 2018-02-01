@@ -3,7 +3,7 @@ library(plyr)
 
 ####Read the file of CorpusSearch codes into an R data frame.
 
-foo <- read.delim("../queriesandoutput/cprelExtrapos.pceec.cod.ooo",header=F,sep=":")
+foo <- read.delim("~/tyneside/extraposition/queriesandoutput/cprelExtrapos.pceec.cod.ooo",header=F,sep=":")
 
 
 ####Give appropriate column names to the columns
@@ -45,14 +45,18 @@ anova(ex.fit, test = "Chisq")
 
 library(lme4)
 
-ex.fit2 <- lmer(Extraposed ~ Year + Position + Clause + TextOrSpeech + Weight + ASex + RSex + Author + (1 + Weight|Author), data = ex.data, family = binomial)
+ex.fit2 <- glmer(Extraposed ~ Year + Position + Clause + TextOrSpeech + Weight + ASex + RSex + Author + (1 + Weight|Author), data = ex.data, family = binomial)
 summary(ex.fit2)
 
-ex.fit3 <- lmer(Extraposed ~ Year + Position + Clause + TextOrSpeech + Weight + ASex + RSex + Author + (1 + Weight|Author) + Year*Extraposed, data = ex.data, family = binomial)
+ex.fit3 <- glmer(Extraposed ~ Year + Position + Clause + TextOrSpeech + Weight + ASex + RSex + Author + (1 + Weight|Author) + Year*Extraposed, data = ex.data, family = binomial)
 
 summary(ex.fit3)
 
 anova(ex.fit3,ex.fit2)
+
+ex.fit4 <- glmer(Extraposed ~ Position + Clause + Weight + (1 + Weight|Author), data = ex.data, family = binomial)
+summary(ex.fit4)
+
 
 ####Plot the logistic model of the data with ggplot2, creating a plot object.
 
