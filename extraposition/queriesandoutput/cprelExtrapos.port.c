@@ -3,7 +3,7 @@
 //CAVEAT: this query is long enough that it will take over a day to run. A better way is to first extract a list of tokens relevant to the variation by leaving out the last few parts of the query (which is the query cprelExtraposSimplified.pceec.c), and then use relevant.q, and then run this whole query on the output and recode it that way. See runstudyPCEEC.sh
 
 node: IP*
-define: /Users/yoelw/CurrentLx/OldNorse/verbtopic.def
+define: verbtopic.def
 coding_query:
 
 /*

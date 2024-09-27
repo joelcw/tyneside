@@ -3,7 +3,7 @@
 //CAVEAT: Simplified query, to create output for cprelExtrapos.pceec.c and relevant.q. See runstudyPCEEC.sh
 
 node: IP*
-define: /Users/yoelw/CurrentLx/OldNorse/verbtopic.def
+define: verbtopic.def
 coding_query:
 
 
